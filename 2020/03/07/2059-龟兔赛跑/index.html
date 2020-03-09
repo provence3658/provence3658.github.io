@@ -79,14 +79,14 @@
 
 
 
-<meta name="description" content="解题思路：因为兔子所需的时间很容易就得出，所以本题的关键是得出乌龟到达终点所需的最短时间。  把起点和终点以及路途中的充电桩的位置记录在数组p中，p[0]为起点，p[n+1]为终点 用数组dp[i]保存乌龟从起点到p[i]这个点所需的最短时间 dp[i] &#x3D; min( (dp[0] + 从起点充满电到p[i]所需的时间),​                     (dp[1] + 从第一个充电桩">
+<meta name="description" content="龟兔赛跑 解题思路：因为兔子所需的时间很容易就得出，所以本题的关键是得出乌龟到达终点所需的最短时间。  把起点和终点以及路途中的充电桩的位置记录在数组p中，p[0]为起点，p[n+1]为终点 用数组dp[i]保存乌龟从起点到p[i]这个点所需的最短时间 dp[i] &#x3D; min( (dp[0] + 从起点充满电到p[i]所需的时间),​                     (dp[1] + 从第">
 <meta property="og:type" content="article">
 <meta property="og:title" content="HDUOJ 2059-龟兔赛跑">
 <meta property="og:url" content="http://blog.provence36.cn/2020/03/07/2059-%E9%BE%9F%E5%85%94%E8%B5%9B%E8%B7%91/index.html">
 <meta property="og:site_name" content="Provence&#39; Blog">
-<meta property="og:description" content="解题思路：因为兔子所需的时间很容易就得出，所以本题的关键是得出乌龟到达终点所需的最短时间。  把起点和终点以及路途中的充电桩的位置记录在数组p中，p[0]为起点，p[n+1]为终点 用数组dp[i]保存乌龟从起点到p[i]这个点所需的最短时间 dp[i] &#x3D; min( (dp[0] + 从起点充满电到p[i]所需的时间),​                     (dp[1] + 从第一个充电桩">
+<meta property="og:description" content="龟兔赛跑 解题思路：因为兔子所需的时间很容易就得出，所以本题的关键是得出乌龟到达终点所需的最短时间。  把起点和终点以及路途中的充电桩的位置记录在数组p中，p[0]为起点，p[n+1]为终点 用数组dp[i]保存乌龟从起点到p[i]这个点所需的最短时间 dp[i] &#x3D; min( (dp[0] + 从起点充满电到p[i]所需的时间),​                     (dp[1] + 从第">
 <meta property="article:published_time" content="2020-03-07T14:00:19.000Z">
-<meta property="article:modified_time" content="2020-03-07T14:05:17.143Z">
+<meta property="article:modified_time" content="2020-03-09T04:00:31.132Z">
 <meta property="article:author" content="Provence">
 <meta property="article:tag" content="HDUOJ">
 <meta property="article:tag" content="动态规划">
@@ -315,18 +315,7 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%AE%97%E6%B3%95/" itemprop="url" rel="index">
-                    <span itemprop="name">算法</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%AE%97%E6%B3%95/%E6%9D%AD%E7%94%B5%E5%A4%8D%E8%AF%95%E5%87%86%E5%A4%87/" itemprop="url" rel="index">
+                  <a href="/categories/%E6%9D%AD%E7%94%B5%E5%A4%8D%E8%AF%95%E5%87%86%E5%A4%87/" itemprop="url" rel="index">
                     <span itemprop="name">杭电复试准备</span>
                   </a>
                 </span>
@@ -374,14 +363,15 @@
       
 
       
-        <p>解题思路：<br>因为兔子所需的时间很容易就得出，所以本题的关键是得出乌龟到达终点所需的最短时间。</p>
+        <p><a href="http://acm.hdu.edu.cn/showproblem.php?pid=2059" target="_blank" rel="noopener">龟兔赛跑</a></p>
+<p>解题思路：<br>因为兔子所需的时间很容易就得出，所以本题的关键是得出乌龟到达终点所需的最短时间。</p>
 <ul>
 <li>把起点和终点以及路途中的充电桩的位置记录在数组p中，p[0]为起点，p[n+1]为终点</li>
 <li>用数组dp[i]保存乌龟从<strong>起点</strong>到<strong>p[i]这个点</strong>所需的最短时间</li>
 <li>dp[i] = min( (dp[0] + 从起点充满电到p[i]所需的时间),<br>​                     (dp[1] + 从第一个充电桩充满电到p[i]所需的时间),<br>​                     …<br>​                     (dp[i-1] + 从第i-1个充电桩充满电到p[i]所需的时间) )</li>
-<li>最后得到的dp[n+1]就是乌龟到达终点所需的最短时间</li>
+<li>最后得到的dp[n+1]就是乌龟到达终点所需的最短时间<a id="more"></a>
+代码如下：</li>
 </ul>
-<p>代码如下：</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;set&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  <span class="keyword">int</span> l, n, c, t, vr, v1, v2, len;</span><br><span class="line">  <span class="keyword">int</span> p[<span class="number">102</span>]; <span class="comment">//充电桩的位置</span></span><br><span class="line">  <span class="keyword">double</span> dp[<span class="number">102</span>], <span class="built_in">min</span>, e; </span><br><span class="line">  <span class="keyword">while</span> (<span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;l) != EOF) &#123;</span><br><span class="line">      <span class="built_in">scanf</span>(<span class="string">"%d %d %d"</span>, &amp;n, &amp;c, &amp;t);</span><br><span class="line">      <span class="built_in">scanf</span>(<span class="string">"%d %d %d"</span>, &amp;vr, &amp;v1, &amp;v2);</span><br><span class="line">      </span><br><span class="line">      dp[<span class="number">0</span>] = p[<span class="number">0</span>] = <span class="number">0</span>;</span><br><span class="line">      <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">          <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;p[i]);</span><br><span class="line">      &#125;</span><br><span class="line">      p[n+<span class="number">1</span>] = l;</span><br><span class="line">      </span><br><span class="line">      <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; n+<span class="number">2</span>; i++) &#123; <span class="comment">//终点</span></span><br><span class="line">          <span class="built_in">min</span> = <span class="number">0xffffff</span>;</span><br><span class="line">          <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; i; j++) &#123; <span class="comment">//起点</span></span><br><span class="line">              len = p[i] - p[j];</span><br><span class="line">              e = len &gt; c ? <span class="number">1.0</span> * c / v1 + <span class="number">1.0</span> * (len - c) / v2 : <span class="number">1.0</span> * len / v1;</span><br><span class="line">              e += dp[j];</span><br><span class="line">              <span class="keyword">if</span> (j) &#123;</span><br><span class="line">                  e += t;</span><br><span class="line">              &#125;</span><br><span class="line">              <span class="keyword">if</span> (<span class="built_in">min</span> &gt; e) &#123;</span><br><span class="line">                  <span class="built_in">min</span> = e;</span><br><span class="line">              &#125;</span><br><span class="line">          &#125;</span><br><span class="line">          dp[i] = <span class="built_in">min</span>;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="built_in">puts</span>(<span class="number">1.0</span> * l / vr &gt; dp[n+<span class="number">1</span>] ? <span class="string">"What a pity rabbit!"</span> : <span class="string">"Good job,rabbit!"</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
@@ -416,8 +406,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2020/03/07/%E5%BF%AB%E9%80%9F%E5%B9%82/" rel="next" title="快速幂 & HDUOJ 2035-人见人爱A^B">
-                <i class="fa fa-chevron-left"></i> 快速幂 & HDUOJ 2035-人见人爱A^B
+              <a href="/2020/03/07/2035-%E4%BA%BA%E8%A7%81%E4%BA%BA%E7%88%B1A%5EB/" rel="next" title="HDUOJ 2035-人见人爱A^B">
+                <i class="fa fa-chevron-left"></i> HDUOJ 2035-人见人爱A^B
               </a>
             
           </div>
@@ -535,6 +525,12 @@
                     <a href="https://github.com/provence3658" target="_blank" title="GitHub">
                       
                         <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:13386528836@163.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
                   </span>
                 
             </div>
@@ -871,5 +867,5 @@
 
   
 
-  </body>
+  <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"scale":1,"hHeadPos":0.5,"vHeadPos":0.618},"display":{"superSample":2,"width":200,"height":400,"position":"right","hOffset":0,"vOffset":-20},"mobile":{"show":false},"react":{"opacity":0.7},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
 </html>
