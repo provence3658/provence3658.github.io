@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="HDUOJ," />
 
 
 
@@ -79,12 +79,21 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="Provence&#39; Blog">
-<meta property="og:url" content="http://blog.provence36.cn/index.html">
+<meta name="description" content="2064 汉诺塔III汉诺塔III 游戏玩法：不允许直接从最左(右)边移到最右(左)边(每次移动一定是移到中间杆或从中间移出)，也不允许大盘放到下盘的上面   设f(n)为间隔一个柱子移动n个所需要的步数由上图可得，f(n) &#x3D; 3*f(n-1) + 2即 f(n) + 1 &#x3D; 3 * (f(n-1) + 1)可得 f(n) &#x3D; 3^(n-1) * (f(1) + 1) - 1f(1) &#x3D; 2f(">
+<meta property="og:type" content="article">
+<meta property="og:title" content="两道汉诺塔问题">
+<meta property="og:url" content="http://blog.provence36.cn/2020/03/10/%E6%B1%89%E8%AF%BA%E5%A1%94/index.html">
 <meta property="og:site_name" content="Provence&#39; Blog">
+<meta property="og:description" content="2064 汉诺塔III汉诺塔III 游戏玩法：不允许直接从最左(右)边移到最右(左)边(每次移动一定是移到中间杆或从中间移出)，也不允许大盘放到下盘的上面   设f(n)为间隔一个柱子移动n个所需要的步数由上图可得，f(n) &#x3D; 3*f(n-1) + 2即 f(n) + 1 &#x3D; 3 * (f(n-1) + 1)可得 f(n) &#x3D; 3^(n-1) * (f(1) + 1) - 1f(1) &#x3D; 2f(">
+<meta property="og:image" content="http://blog.provence36.cn/.cn//03/10/%E6%B1%89%E8%AF%BA%E5%A1%94/hanoi3.png">
+<meta property="og:image" content="http://blog.provence36.cn/.cn//03/10/%E6%B1%89%E8%AF%BA%E5%A1%94/hanoi4.png">
+<meta property="og:image" content="http://blog.provence36.cn/.cn//03/10/%E6%B1%89%E8%AF%BA%E5%A1%94/hanoi5.png">
+<meta property="article:published_time" content="2020-03-10T08:56:01.000Z">
+<meta property="article:modified_time" content="2020-03-10T09:34:15.401Z">
 <meta property="article:author" content="Provence">
+<meta property="article:tag" content="HDUOJ">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://blog.provence36.cn/.cn//03/10/%E6%B1%89%E8%AF%BA%E5%A1%94/hanoi3.png">
 
 
 
@@ -114,13 +123,13 @@
 
 
 
-  <link rel="canonical" href="http://blog.provence36.cn/"/>
+  <link rel="canonical" href="http://blog.provence36.cn/2020/03/10/汉诺塔/"/>
 
 
 
 
 
-  <title>Provence' Blog</title>
+  <title>两道汉诺塔问题 | Provence' Blog</title>
   
 
 
@@ -139,8 +148,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -243,9 +251,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -275,9 +283,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/03/10/%E6%B1%89%E8%AF%BA%E5%A1%94/" itemprop="url">两道汉诺塔问题</a></h1>
+          <h1 class="post-title" itemprop="name headline">两道汉诺塔问题</h1>
         
 
         <div class="post-meta">
@@ -360,9 +366,7 @@
       
 
       
-        
-          
-            <h3 id="2064-汉诺塔III"><a href="#2064-汉诺塔III" class="headerlink" title="2064 汉诺塔III"></a>2064 汉诺塔III</h3><p><a href="http://acm.hdu.edu.cn/showproblem.php?pid=2064" target="_blank" rel="noopener">汉诺塔III</a></p>
+        <h3 id="2064-汉诺塔III"><a href="#2064-汉诺塔III" class="headerlink" title="2064 汉诺塔III"></a>2064 汉诺塔III</h3><p><a href="http://acm.hdu.edu.cn/showproblem.php?pid=2064" target="_blank" rel="noopener">汉诺塔III</a></p>
 <p>游戏玩法：不允许直接从最左(右)边移到最右(左)边(每次移动一定是移到中间杆或从中间移出)，也不允许大盘放到下盘的上面</p>
 <img src="/.cn//03/10/%E6%B1%89%E8%AF%BA%E5%A1%94/hanoi3.png" class title="步骤">
 
@@ -380,8 +384,6 @@
 
 <p>由上图可得，g(n) = 3*g(n-1) + 1</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;set&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> T;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;T);</span><br><span class="line">    <span class="keyword">int</span> g[<span class="number">24</span>];</span><br><span class="line">    g[<span class="number">0</span>] = <span class="number">0</span>;</span><br><span class="line">    g[<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">2</span>; i &lt; <span class="number">20</span>; i ++) &#123;</span><br><span class="line">        g[i] = <span class="number">3</span> * g[i<span class="number">-1</span>] + <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">while</span> (T--) &#123;</span><br><span class="line">        <span class="keyword">int</span> n;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;n);</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%d\n"</span>, g[n - <span class="number">1</span>] * <span class="number">2</span> + <span class="number">2</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-          
-        
       
     </div>
     
@@ -396,337 +398,36 @@
 
     <footer class="post-footer">
       
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://blog.provence36.cn/2020/03/07/2059-%E9%BE%9F%E5%85%94%E8%B5%9B%E8%B7%91/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Provence">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://avatars3.githubusercontent.com/u/26401802?s=400&u=87db6b0edfa75ed2b59f1fe0f0da23215082c344&v=4">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Provence' Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/03/07/2059-%E9%BE%9F%E5%85%94%E8%B5%9B%E8%B7%91/" itemprop="url">HDUOJ 2059-龟兔赛跑</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-07T22:00:19+08:00">
-                2020-03-07
-              </time>
-            
-
-            
-
-            
-          </span>
-
+        <div class="post-tags">
           
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%9D%AD%E7%94%B5%E5%A4%8D%E8%AF%95%E5%87%86%E5%A4%87/" itemprop="url" rel="index">
-                    <span itemprop="name">杭电复试准备</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
+            <a href="/tags/HDUOJ/" rel="tag"># HDUOJ</a>
           
-
-          
-            
-          
-
-          
-          
-             <span id="/2020/03/07/2059-%E9%BE%9F%E5%85%94%E8%B5%9B%E8%B7%91/" class="leancloud_visitors" data-flag-title="HDUOJ 2059-龟兔赛跑">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
         </div>
-      </header>
-    
+      
 
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
+      
       
       
 
       
-        
-          <p><a href="http://acm.hdu.edu.cn/showproblem.php?pid=2059" target="_blank" rel="noopener">龟兔赛跑</a></p>
-<p>解题思路：<br>因为兔子所需的时间很容易就得出，所以本题的关键是得出乌龟到达终点所需的最短时间。</p>
-<ul>
-<li>把起点和终点以及路途中的充电桩的位置记录在数组p中，p[0]为起点，p[n+1]为终点</li>
-<li>用数组dp[i]保存乌龟从<strong>起点</strong>到<strong>p[i]这个点</strong>所需的最短时间</li>
-<li>dp[i] = min( (dp[0] + 从起点充满电到p[i]所需的时间),<br>​                     (dp[1] + 从第一个充电桩充满电到p[i]所需的时间),<br>​                     …<br>​                     (dp[i-1] + 从第i-1个充电桩充满电到p[i]所需的时间) )</li>
-<li>最后得到的dp[n+1]就是乌龟到达终点所需的最短时间
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2020/03/07/2059-%E9%BE%9F%E5%85%94%E8%B5%9B%E8%B7%91/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/03/07/2059-%E9%BE%9F%E5%85%94%E8%B5%9B%E8%B7%91/" rel="next" title="HDUOJ 2059-龟兔赛跑">
+                <i class="fa fa-chevron-left"></i> HDUOJ 2059-龟兔赛跑
+              </a>
+            
           </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
 
-    
+          <span class="post-nav-divider"></span>
 
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://blog.provence36.cn/2020/03/07/2035-%E4%BA%BA%E8%A7%81%E4%BA%BA%E7%88%B1A%5EB/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Provence">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://avatars3.githubusercontent.com/u/26401802?s=400&u=87db6b0edfa75ed2b59f1fe0f0da23215082c344&v=4">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Provence' Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/03/07/2035-%E4%BA%BA%E8%A7%81%E4%BA%BA%E7%88%B1A%5EB/" itemprop="url">HDUOJ 2035-人见人爱A^B</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
+          <div class="post-nav-prev post-nav-item">
             
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-07T16:17:21+08:00">
-                2020-03-07
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%9D%AD%E7%94%B5%E5%A4%8D%E8%AF%95%E5%87%86%E5%A4%87/" itemprop="url" rel="index">
-                    <span itemprop="name">杭电复试准备</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2020/03/07/2035-%E4%BA%BA%E8%A7%81%E4%BA%BA%E7%88%B1A%5EB/" class="leancloud_visitors" data-flag-title="HDUOJ 2035-人见人爱A^B">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
+          </div>
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          <blockquote>
-<p>这是一道关于快速幂的题目，那就先讲讲快速幂。</p>
-</blockquote>
-<h3 id="快速幂"><a href="#快速幂" class="headerlink" title="快速幂"></a>快速幂</h3><p>用于求a^b%m<br>普通算法：O(b)<br>快速幂：O(logb)</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2020/03/07/2035-%E4%BA%BA%E8%A7%81%E4%BA%BA%E7%88%B1A%5EB/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -736,167 +437,11 @@
   </article>
 
 
-    
-      
 
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://blog.provence36.cn/2020/03/06/Birthday/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Provence">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://avatars3.githubusercontent.com/u/26401802?s=400&u=87db6b0edfa75ed2b59f1fe0f0da23215082c344&v=4">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Provence' Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/03/06/Birthday/" itemprop="url">Happy Birthday</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-06T00:25:02+08:00">
-                2020-03-06
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%94%9F%E6%B4%BB/" itemprop="url" rel="index">
-                    <span itemprop="name">生活</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2020/03/06/Birthday/" class="leancloud_visitors" data-flag-title="Happy Birthday">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h3 id="胡言乱语"><a href="#胡言乱语" class="headerlink" title="胡言乱语"></a>胡言乱语</h3><p>23岁啦！祝自己生日快乐！<br>本来只是想写篇关于快速幂的博客（最近在准备复试，有很多知识点需要整理）<br>没想到博客搭到了第二天~</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2020/03/06/Birthday/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
+    <div class="post-spread">
       
     </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
   </div>
-  
-  
-  
-  </article>
-
-
-    
-  </section>
-
-  
 
 
           </div>
@@ -904,6 +449,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -924,8 +473,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -1005,6 +563,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#2064-汉诺塔III"><span class="nav-number">1.</span> <span class="nav-text">2064 汉诺塔III</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2077-汉诺塔IV"><span class="nav-number">2.</span> <span class="nav-text">2077 汉诺塔IV</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -1152,6 +726,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
