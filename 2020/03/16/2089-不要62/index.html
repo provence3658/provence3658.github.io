@@ -86,7 +86,7 @@
 <meta property="og:site_name" content="Provence&#39; Blog">
 <meta property="og:description" content="不要62 解题思路：输入n和m，求[n,m]内的幸运数个数，分解成求[0,n-1]和[0,m]内的幸运数，然后相减。1、先求从0到i位数的幸运数，如i&#x3D;3即求[0,999]的幸运数 用dp[i][0] 来存储 0 到 i 位数字中不含4和62的数字个数，即幸运数用dp[i][1] 来存储 0 到 i 位数字中以 2 开头的幸运数。用dp[i][2] 来存储 0 到 i 位数字中的非幸运数，即包含4">
 <meta property="article:published_time" content="2020-03-16T12:57:05.000Z">
-<meta property="article:modified_time" content="2020-03-16T13:48:29.930Z">
+<meta property="article:modified_time" content="2020-03-17T03:55:18.097Z">
 <meta property="article:author" content="Provence">
 <meta property="article:tag" content="HDUOJ">
 <meta property="article:tag" content="动态规划">
@@ -334,7 +334,7 @@
                   <i class="fa fa-comment-o"></i>
                 </span>
                 <a href="/2020/03/16/2089-%E4%B8%8D%E8%A6%8162/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count gitment-comments-count" data-xid="/2020/03/16/2089-%E4%B8%8D%E8%A6%8162/" itemprop="commentsCount"></span>
+                  <span class="post-comments-count valine-comment-count" data-xid="/2020/03/16/2089-%E4%B8%8D%E8%A6%8162/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -491,11 +491,7 @@
 
   
     <div class="comments" id="comments">
-      
-        <div id="gitment-container"></div>
-      
     </div>
-
   
 
 
@@ -789,6 +785,28 @@
 
 
 
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'VkIzMck3EIKgH98yjFiIcQwO-gzGzoHsz',
+        appKey: 'WR9f1QOyqG9N1AOVBmtEikFY',
+        placeholder: '欢迎畅所欲言',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
 
 
 

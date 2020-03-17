@@ -334,7 +334,7 @@
                   <i class="fa fa-comment-o"></i>
                 </span>
                 <a href="/2020/03/07/2035-%E4%BA%BA%E8%A7%81%E4%BA%BA%E7%88%B1A%5EB/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count gitment-comments-count" data-xid="/2020/03/07/2035-%E4%BA%BA%E8%A7%81%E4%BA%BA%E7%88%B1A%5EB/" itemprop="commentsCount"></span>
+                  <span class="post-comments-count valine-comment-count" data-xid="/2020/03/07/2035-%E4%BA%BA%E8%A7%81%E4%BA%BA%E7%88%B1A%5EB/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -499,11 +499,7 @@
 
   
     <div class="comments" id="comments">
-      
-        <div id="gitment-container"></div>
-      
     </div>
-
   
 
 
@@ -822,6 +818,28 @@
 
 
 
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'VkIzMck3EIKgH98yjFiIcQwO-gzGzoHsz',
+        appKey: 'WR9f1QOyqG9N1AOVBmtEikFY',
+        placeholder: '欢迎畅所欲言',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
 
 
 
