@@ -248,6 +248,516 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://blog.provence36.cn/2020/03/18/2066-%E4%B8%80%E4%B8%AA%E4%BA%BA%E7%9A%84%E6%97%85%E8%A1%8C/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Provence">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://avatars3.githubusercontent.com/u/26401802?s=400&u=87db6b0edfa75ed2b59f1fe0f0da23215082c344&v=4">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Provence' Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/03/18/2066-%E4%B8%80%E4%B8%AA%E4%BA%BA%E7%9A%84%E6%97%85%E8%A1%8C/" itemprop="url">2066-一个人的旅行</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-18T18:37:43+08:00">
+                2020-03-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%9D%AD%E7%94%B5%E5%A4%8D%E8%AF%95%E5%87%86%E5%A4%87/" itemprop="url" rel="index">
+                    <span itemprop="name">杭电复试准备</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2020/03/18/2066-%E4%B8%80%E4%B8%AA%E4%BA%BA%E7%9A%84%E6%97%85%E8%A1%8C/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2020/03/18/2066-%E4%B8%80%E4%B8%AA%E4%BA%BA%E7%9A%84%E6%97%85%E8%A1%8C/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2020/03/18/2066-%E4%B8%80%E4%B8%AA%E4%BA%BA%E7%9A%84%E6%97%85%E8%A1%8C/" class="leancloud_visitors" data-flag-title="2066-一个人的旅行">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  789 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  4 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><a href="http://acm.hdu.edu.cn/showproblem.php?pid=2066" target="_blank" rel="noopener">一个人的旅行</a></p>
+<p>这是一道多起点多终点的最短路径问题。先跟着样例简单梳理一下求最短路径的算法。</p>
+<blockquote>
+<p>Sample Input<br>6 2 3<br>1 3 5<br>1 4 7<br>2 8 12<br>3 8 4<br>4 9 12<br>9 10 2<br>1 2<br>8 9 10</p>
+</blockquote>
+<img src="/2020/03/18/2066-%E4%B8%80%E4%B8%AA%E4%BA%BA%E7%9A%84%E6%97%85%E8%A1%8C/1.png" class="" title="图1">
+<p>起点为1或2，终点为8或9或10。</p>
+<p>采用Dijkstra算法求最短路径：<br>d[x]为从起点到点x的距离，多起点的情况只要把其中一个起点当做起点就OK了</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>初始情况</th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>d[1]</td>
+<td>0</td>
+<td>🉑</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>d[2]</td>
+<td>0</td>
+<td>0</td>
+<td>🉑</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>d[3]</td>
+<td>∞</td>
+<td>5</td>
+<td>5</td>
+<td>🉑</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>d[4]</td>
+<td>∞</td>
+<td>7</td>
+<td>7</td>
+<td>7</td>
+<td>🉑</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>d[8]</td>
+<td>∞</td>
+<td>∞</td>
+<td>12</td>
+<td>9</td>
+<td>9</td>
+<td>🉑</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>d[9]</td>
+<td>∞</td>
+<td>∞</td>
+<td>∞</td>
+<td>∞</td>
+<td>19</td>
+<td>19</td>
+<td>🉑</td>
+<td></td>
+</tr>
+<tr>
+<td>d[10]</td>
+<td>∞</td>
+<td>∞</td>
+<td>∞</td>
+<td>∞</td>
+<td>∞</td>
+<td>∞</td>
+<td>21</td>
+<td>🉑</td>
+</tr>
+<tr>
+<td></td>
+<td>∅</td>
+<td>{1}</td>
+<td>{1,2}</td>
+<td>{1,2,3}</td>
+<td>{1,2,3,4}</td>
+<td>{1,2,3,4,<br>8}</td>
+<td>{1,2,3,4,<br>8,9}</td>
+<td>{1,2,3,4,<br>8,9,10}</td>
+</tr>
+</tbody></table>
+<p>用Dijkstra算法求所有顶点到起点s的最短距离</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Dijkstra</span><span class="params">(<span class="keyword">int</span> s)</span> </span>&#123; <span class="comment">//s为起点</span></span><br><span class="line">    <span class="built_in">memset</span>(vis, <span class="literal">false</span>, <span class="keyword">sizeof</span>(vis)); <span class="comment">//初始化vis数组为false</span></span><br><span class="line">    <span class="built_in">fill</span>(d, d+MAXV, INF); <span class="comment">//初始化d数组为无穷大</span></span><br><span class="line">    d[s] = <span class="number">0</span>; <span class="comment">//到起点距离为0</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123; <span class="comment">//循环n次</span></span><br><span class="line">        <span class="keyword">int</span> u = <span class="number">-1</span>, MIN = INF; <span class="comment">// u使d[u]最小，MIN存放该最小的d[u]</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; n; j++) &#123; <span class="comment">//找到未访问的顶点中d[]最小的</span></span><br><span class="line">            <span class="keyword">if</span> (vis[j] == <span class="literal">false</span> &amp;&amp; d[j] &lt; MIN) &#123;</span><br><span class="line">                u = j;</span><br><span class="line">                MIN = d[j];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (u == <span class="number">-1</span>) <span class="keyword">return</span>; <span class="comment">//找不到小于INF的d[u]，说明剩下的顶点和起点不连通</span></span><br><span class="line">        vis[u] = <span class="literal">true</span>; <span class="comment">//标记u已访问</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> v = <span class="number">0</span>; v &lt; n; v++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (vis[v] == <span class="literal">false</span> &amp;&amp; G[u][v] != INF &amp;&amp; G[u][v] + d[u] &lt; d[v]) &#123; <span class="comment">//若以u为中介时，能使d[v]变小</span></span><br><span class="line">                d[v] = G[u][v] + d[u]; <span class="comment">//更新d[v]到最小</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>可套用到本题，代码如下</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;set&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MAXV = <span class="number">1000</span>; <span class="comment">//最大顶点数</span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> INF = <span class="number">1000000000</span>; <span class="comment">//设INF为一个很大的数</span></span><br><span class="line"><span class="keyword">int</span> d[MAXV]; <span class="comment">//起点s到达各点的最短路径长度</span></span><br><span class="line"><span class="keyword">bool</span> vis[MAXV] = &#123;<span class="literal">false</span>&#125;;</span><br><span class="line"><span class="keyword">int</span> s[MAXV], e[MAXV];</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> n; <span class="comment">//顶点数</span></span><br><span class="line"><span class="keyword">int</span> G[MAXV][MAXV];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Dijkstra</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">memset</span>(vis,<span class="literal">false</span>,<span class="keyword">sizeof</span>(vis));</span><br><span class="line">    vis[<span class="number">0</span>] = <span class="literal">true</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt;= n; i++) &#123;</span><br><span class="line">        d[i] = G[<span class="number">0</span>][i]; <span class="comment">//起点d[]为0，其余为INF</span></span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">        <span class="keyword">int</span> u = <span class="number">-1</span>, MIN = INF;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= n; j++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (vis[j] == <span class="literal">false</span> &amp;&amp; d[j] &lt; MIN) &#123;</span><br><span class="line">                u = j;</span><br><span class="line">                MIN = d[j];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (u == <span class="number">-1</span>) <span class="keyword">return</span>;</span><br><span class="line">        vis[u] = <span class="literal">true</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> v = <span class="number">1</span>; v &lt;= n; v++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (vis[v] == <span class="literal">false</span> &amp;&amp; G[u][v] != INF &amp;&amp; G[u][v] + d[u] &lt; d[v]) &#123;</span><br><span class="line">                d[v] = G[u][v] + d[u];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> T, S, D;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">while</span>(<span class="built_in">scanf</span>(<span class="string">"%d %d %d"</span>, &amp;T, &amp;S, &amp;D) != EOF) &#123;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; MAXV; i++) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; MAXV; j++) &#123;</span><br><span class="line">                G[i][j] = INF;</span><br><span class="line">            &#125;</span><br><span class="line">            G[i][i] = <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        n = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; T; i++) &#123;</span><br><span class="line">            <span class="keyword">int</span> s, e, t;</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">"%d %d %d"</span>, &amp;s, &amp;e, &amp;t);</span><br><span class="line">            <span class="keyword">if</span> (G[s][e] &gt; t) &#123;</span><br><span class="line">                G[s][e] = t;</span><br><span class="line">                G[e][s] = t;</span><br><span class="line">            &#125;</span><br><span class="line">            n = <span class="built_in">max</span>(<span class="built_in">max</span>(n, s), e);</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; S; i++) &#123;</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;s[i]);</span><br><span class="line">            G[<span class="number">0</span>][s[i]] = G[s[i]][<span class="number">0</span>] = <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        Dijkstra();</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; D; i++) &#123;</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;e[i]);</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">int</span> minn = INF;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; D; i++) &#123;</span><br><span class="line">            minn = <span class="built_in">min</span>(minn, d[e[i]]);</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%d\n"</span>, minn);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://blog.provence36.cn/2020/03/18/2063-%E8%BF%87%E5%B1%B1%E8%BD%A6/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Provence">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://avatars3.githubusercontent.com/u/26401802?s=400&u=87db6b0edfa75ed2b59f1fe0f0da23215082c344&v=4">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Provence' Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/03/18/2063-%E8%BF%87%E5%B1%B1%E8%BD%A6/" itemprop="url">2063-过山车</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-18T16:05:52+08:00">
+                2020-03-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%9D%AD%E7%94%B5%E5%A4%8D%E8%AF%95%E5%87%86%E5%A4%87/" itemprop="url" rel="index">
+                    <span itemprop="name">杭电复试准备</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2020/03/18/2063-%E8%BF%87%E5%B1%B1%E8%BD%A6/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2020/03/18/2063-%E8%BF%87%E5%B1%B1%E8%BD%A6/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2020/03/18/2063-%E8%BF%87%E5%B1%B1%E8%BD%A6/" class="leancloud_visitors" data-flag-title="2063-过山车">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  679 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  2 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p><a href="http://acm.hdu.edu.cn/showproblem.php?pid=2063" target="_blank" rel="noopener">过山车</a></p>
+<p>这是一道经典的二分匹配题，可用匈牙利算法求解。<br>那就用该题的样例讲讲匈牙利算法。</p>
+<blockquote>
+<p>Sample Input<br>6 3 3<br>1 1<br>1 2<br>1 3<br>2 1<br>2 3<br>3 1<br>0</p>
+</blockquote>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2020/03/18/2063-%E8%BF%87%E5%B1%B1%E8%BD%A6/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://blog.provence36.cn/2020/03/16/2089-%E4%B8%8D%E8%A6%8162/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -758,7 +1268,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  485 字
+                  484 字
                 </span>
               
 
@@ -796,7 +1306,7 @@
 
       
         
-          <p><a href="http://acm.hdu.edu.cn/showproblem.php?pid=2069" target="_blank" rel="noopener">2069-Coin Change</a></p>
+          <p><a href="http://acm.hdu.edu.cn/showproblem.php?pid=2069" target="_blank" rel="noopener">Coin Change</a></p>
 <p>题意：有1，5，10，25，50这五种硬币<br>给出n，求组成这n块钱有几种方法</p>
           <!--noindex-->
           <div class="post-button text-center">
@@ -1690,7 +2200,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">9</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1712,7 +2222,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

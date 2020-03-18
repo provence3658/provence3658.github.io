@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="HDUOJ," />
+  <meta name="keywords" content="HDUOJ,匈牙利算法," />
 
 
 
@@ -79,21 +79,23 @@
 
 
 
-<meta name="description" content="2064 汉诺塔III汉诺塔III 游戏玩法：不允许直接从最左(右)边移到最右(左)边(每次移动一定是移到中间杆或从中间移出)，也不允许大盘放到下盘的上面">
+<meta name="description" content="过山车 这是一道经典的二分匹配题，可用匈牙利算法求解。那就用该题的样例讲讲匈牙利算法。  Sample Input6 3 31 11 21 32 12 33 10">
 <meta property="og:type" content="article">
-<meta property="og:title" content="两道汉诺塔问题">
-<meta property="og:url" content="http://blog.provence36.cn/2020/03/10/%E6%B1%89%E8%AF%BA%E5%A1%94/index.html">
+<meta property="og:title" content="2063-过山车">
+<meta property="og:url" content="http://blog.provence36.cn/2020/03/18/2063-%E8%BF%87%E5%B1%B1%E8%BD%A6/index.html">
 <meta property="og:site_name" content="Provence&#39; Blog">
-<meta property="og:description" content="2064 汉诺塔III汉诺塔III 游戏玩法：不允许直接从最左(右)边移到最右(左)边(每次移动一定是移到中间杆或从中间移出)，也不允许大盘放到下盘的上面">
-<meta property="og:image" content="http://blog.provence36.cn/2020/03/10/%E6%B1%89%E8%AF%BA%E5%A1%94/hanoi3.png">
-<meta property="og:image" content="http://blog.provence36.cn/2020/03/10/%E6%B1%89%E8%AF%BA%E5%A1%94/hanoi4.png">
-<meta property="og:image" content="http://blog.provence36.cn/2020/03/10/%E6%B1%89%E8%AF%BA%E5%A1%94/hanoi5.png">
-<meta property="article:published_time" content="2020-03-10T08:56:01.000Z">
-<meta property="article:modified_time" content="2020-03-18T10:43:14.494Z">
+<meta property="og:description" content="过山车 这是一道经典的二分匹配题，可用匈牙利算法求解。那就用该题的样例讲讲匈牙利算法。  Sample Input6 3 31 11 21 32 12 33 10">
+<meta property="og:image" content="http://blog.provence36.cn/2020/03/18/2063-%E8%BF%87%E5%B1%B1%E8%BD%A6/1.png">
+<meta property="og:image" content="http://blog.provence36.cn/2020/03/18/2063-%E8%BF%87%E5%B1%B1%E8%BD%A6/2.png">
+<meta property="og:image" content="http://blog.provence36.cn/2020/03/18/2063-%E8%BF%87%E5%B1%B1%E8%BD%A6/3.png">
+<meta property="og:image" content="http://blog.provence36.cn/2020/03/18/2063-%E8%BF%87%E5%B1%B1%E8%BD%A6/4.png">
+<meta property="article:published_time" content="2020-03-18T08:05:52.000Z">
+<meta property="article:modified_time" content="2020-03-18T10:02:39.683Z">
 <meta property="article:author" content="Provence">
 <meta property="article:tag" content="HDUOJ">
+<meta property="article:tag" content="匈牙利算法">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://blog.provence36.cn/2020/03/10/%E6%B1%89%E8%AF%BA%E5%A1%94/hanoi3.png">
+<meta name="twitter:image" content="http://blog.provence36.cn/2020/03/18/2063-%E8%BF%87%E5%B1%B1%E8%BD%A6/1.png">
 
 
 
@@ -123,13 +125,13 @@
 
 
 
-  <link rel="canonical" href="http://blog.provence36.cn/2020/03/10/汉诺塔/"/>
+  <link rel="canonical" href="http://blog.provence36.cn/2020/03/18/2063-过山车/"/>
 
 
 
 
 
-  <title>两道汉诺塔问题 | Provence' Blog</title>
+  <title>2063-过山车 | Provence' Blog</title>
   
 
 
@@ -256,7 +258,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://blog.provence36.cn/2020/03/10/%E6%B1%89%E8%AF%BA%E5%A1%94/">
+    <link itemprop="mainEntityOfPage" href="http://blog.provence36.cn/2020/03/18/2063-%E8%BF%87%E5%B1%B1%E8%BD%A6/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Provence">
@@ -273,7 +275,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">两道汉诺塔问题</h1>
+          <h1 class="post-title" itemprop="name headline">2063-过山车</h1>
         
 
         <div class="post-meta">
@@ -285,8 +287,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-10T16:56:01+08:00">
-                2020-03-10
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-18T16:05:52+08:00">
+                2020-03-18
               </time>
             
 
@@ -326,8 +328,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2020/03/10/%E6%B1%89%E8%AF%BA%E5%A1%94/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2020/03/10/%E6%B1%89%E8%AF%BA%E5%A1%94/" itemprop="commentCount"></span>
+                <a href="/2020/03/18/2063-%E8%BF%87%E5%B1%B1%E8%BD%A6/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2020/03/18/2063-%E8%BF%87%E5%B1%B1%E8%BD%A6/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -335,7 +337,7 @@
 
           
           
-             <span id="/2020/03/10/%E6%B1%89%E8%AF%BA%E5%A1%94/" class="leancloud_visitors" data-flag-title="两道汉诺塔问题">
+             <span id="/2020/03/18/2063-%E8%BF%87%E5%B1%B1%E8%BD%A6/" class="leancloud_visitors" data-flag-title="2063-过山车">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -360,7 +362,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  500 字
+                  679 字
                 </span>
               
 
@@ -397,31 +399,28 @@
       
 
       
-        <h3 id="2064-汉诺塔III"><a href="#2064-汉诺塔III" class="headerlink" title="2064 汉诺塔III"></a>2064 汉诺塔III</h3><p><a href="http://acm.hdu.edu.cn/showproblem.php?pid=2064" target="_blank" rel="noopener">汉诺塔III</a></p>
-<p>游戏玩法：不允许直接从最左(右)边移到最右(左)边(每次移动一定是移到中间杆或从中间移出)，也不允许大盘放到下盘的上面</p>
-<a id="more"></a>
-<p>以下为将4个盘子从1到3的大致步骤：</p>
-<img src="/2020/03/10/%E6%B1%89%E8%AF%BA%E5%A1%94/hanoi3.png" class="" title="将4个盘子从1到3">
-
-<p>设f(n)为间隔一个柱子移动n个所需要的步数<br>由上图可得递推公式，f(n) = 3*f(n-1) + 2<br>即 f(n) + 1 = 3 * (f(n-1) + 1)<br>可得 f(n) = 3^(n-1) * (f(1) + 1) - 1<br>f(1) = 2<br>f(n) = 3^n - 1</p>
-<p>代码如下</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;set&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> N;</span><br><span class="line">    <span class="keyword">while</span> (<span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;N) != EOF) &#123;</span><br><span class="line">        <span class="keyword">long</span> <span class="keyword">long</span> res = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span> (N--) &#123;</span><br><span class="line">            res *= <span class="number">3</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%lld\n"</span>, res - <span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="2077-汉诺塔IV"><a href="#2077-汉诺塔IV" class="headerlink" title="2077 汉诺塔IV"></a>2077 汉诺塔IV</h3><p><a href="http://acm.hdu.edu.cn/showproblem.php?pid=2077" target="_blank" rel="noopener">汉诺塔IV</a></p>
-<p>游戏玩法：不允许直接从最左(右)边移到最右(左)边(每次移动一定是移到中间杆或从中间移出)，也不允许大盘放到小盘的上面（只允许最大的放在最上面）</p>
-<p>以下为将4个盘子从1到3的大致步骤：</p>
-<img src="/2020/03/10/%E6%B1%89%E8%AF%BA%E5%A1%94/hanoi4.png" class="" title="4个盘子从1到3">
-
-<p>设f(n)为间隔一个柱子移动n个所需要的步数<br>设g(n)为相邻柱子移动n个所需要的步数</p>
-<p>由上图可得递推公式，f(n) = 2*g(n-1) + 2</p>
-<p>以下为将4个盘子从1到2的大致步骤：</p>
-<img src="/2020/03/10/%E6%B1%89%E8%AF%BA%E5%A1%94/hanoi5.png" class="" title="4个盘子从1到2">
-
-<p>由上图可得递推公式，g(n) = 3*g(n-1) + 1</p>
+        <p><a href="http://acm.hdu.edu.cn/showproblem.php?pid=2063" target="_blank" rel="noopener">过山车</a></p>
+<p>这是一道经典的二分匹配题，可用匈牙利算法求解。<br>那就用该题的样例讲讲匈牙利算法。</p>
 <blockquote>
-<p>为什么不是g(n) = g(n-1) + f(n-1) + 1<br>因为第n-1大的盘子不能放到最上面<br>所以n-1个盘子从1到3不能由f(n-1)表示</p>
+<p>Sample Input<br>6 3 3<br>1 1<br>1 2<br>1 3<br>2 1<br>2 3<br>3 1<br>0</p>
 </blockquote>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;set&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> T;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;T);</span><br><span class="line">    <span class="keyword">int</span> g[<span class="number">24</span>];</span><br><span class="line">    g[<span class="number">0</span>] = <span class="number">0</span>;</span><br><span class="line">    g[<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">2</span>; i &lt; <span class="number">20</span>; i ++) &#123;</span><br><span class="line">        g[i] = <span class="number">3</span> * g[i<span class="number">-1</span>] + <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">while</span> (T--) &#123;</span><br><span class="line">        <span class="keyword">int</span> n;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;n);</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%d\n"</span>, g[n - <span class="number">1</span>] * <span class="number">2</span> + <span class="number">2</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<p>三男三女，左边为女，右边为男，有连线代表女愿意和男坐过山车，关系图如下所示：</p>
+<img src="/2020/03/18/2063-%E8%BF%87%E5%B1%B1%E8%BD%A6/1.png" class="" title="关系图">
+
+<p>先看1号女生，她愿意和1，2，3号坐过山车，那按照顺序，1号男生暂未匹配，就和1号男生匹配上了</p>
+<img src="/2020/03/18/2063-%E8%BF%87%E5%B1%B1%E8%BD%A6/2.png" class="" title="关系图">
+
+<p>再看2号女生，她愿意和1，3号坐过山车，那按照顺序，就试着和1号男生匹配，发现1号男生已经匹配好了<br>那就试着让和1号男生匹配好的1号女生换个人选，1号女生就去找2号男生，发现2号男生暂未匹配，1号女生就和2号男生匹配上了<br>那么这时1号男生就暂未匹配了，2号女生就和1号男生匹配了</p>
+<img src="/2020/03/18/2063-%E8%BF%87%E5%B1%B1%E8%BD%A6/3.png" class="" title="关系图">
+
+<p>最后看3号女生，她愿意和1号男生坐过山车，那按照顺序，就试着和1号男生匹配，发现1号男生已经匹配好了<br>那就试着让和1号男生匹配好的2号女生换个人选，2号女生就去找3号男生，发现3号男生暂未匹配，2号女生就和3号男生匹配上了<br>那么这时1号男生就暂未匹配了，3号女生就和1号男生匹配了</p>
+<img src="/2020/03/18/2063-%E8%BF%87%E5%B1%B1%E8%BD%A6/4.png" class="" title="关系图">
+
+<p>匈牙利算法注重的是一个<strong>让</strong>字。先选的会让着后选的，但也只有先选的能再选其他人，我才会让给你哦😯</p>
+<p>用line[x][y]来表示连线，line[x][y]==1说明x与y可以匹配<br>用boy[x]来表示x号男生匹配到的女生是几号，初始化为0<br>用used[x]来表示当前这一轮x号男生匹配到的女生是几号，每轮都会初始化为0（先选的会让着后选的）</p>
+<p>代码如下：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;set&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">int</span> <span class="built_in">line</span>[<span class="number">512</span>][<span class="number">512</span>];</span><br><span class="line"><span class="keyword">int</span> used[<span class="number">512</span>];</span><br><span class="line"><span class="keyword">int</span> boy[<span class="number">512</span>];</span><br><span class="line"><span class="keyword">int</span> m, n; <span class="comment">//m个女生，n个男生</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">Find</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="built_in">line</span>[x][i] &amp;&amp; !used[i]) &#123;</span><br><span class="line">            used[i] = <span class="number">1</span>; </span><br><span class="line">            <span class="keyword">if</span> (boy[i] == <span class="number">0</span> || Find(boy[i])) &#123;</span><br><span class="line">                boy[i] = x;</span><br><span class="line">                <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> k, a, b;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">while</span> (<span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;k) &amp;&amp; k) &#123;</span><br><span class="line">        <span class="keyword">int</span> ans = <span class="number">0</span>;</span><br><span class="line">        <span class="built_in">memset</span>(<span class="built_in">line</span>, <span class="number">0</span>, <span class="keyword">sizeof</span>(<span class="built_in">line</span>));</span><br><span class="line">        <span class="built_in">memset</span>(used, <span class="number">0</span>, <span class="keyword">sizeof</span>(used));</span><br><span class="line">        <span class="built_in">memset</span>(boy, <span class="number">0</span>, <span class="keyword">sizeof</span>(boy));</span><br><span class="line">        </span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d %d"</span>, &amp;m, &amp;n);</span><br><span class="line">        <span class="keyword">while</span> (k--) &#123;</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">"%d %d"</span>, &amp;a, &amp;b);</span><br><span class="line">            <span class="built_in">line</span>[a][b] = <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= m; i++) &#123;</span><br><span class="line">            <span class="built_in">memset</span>(used, <span class="number">0</span>, <span class="keyword">sizeof</span>(used));</span><br><span class="line">            <span class="keyword">if</span>(Find(i)) &#123;</span><br><span class="line">                ans++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%d\n"</span>, ans);</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -440,6 +439,8 @@
           
             <a href="/tags/HDUOJ/" rel="tag"># HDUOJ</a>
           
+            <a href="/tags/%E5%8C%88%E7%89%99%E5%88%A9%E7%AE%97%E6%B3%95/" rel="tag"># 匈牙利算法</a>
+          
         </div>
       
 
@@ -451,8 +452,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2020/03/07/2059-%E9%BE%9F%E5%85%94%E8%B5%9B%E8%B7%91/" rel="next" title="HDUOJ 2059-龟兔赛跑">
-                <i class="fa fa-chevron-left"></i> HDUOJ 2059-龟兔赛跑
+              <a href="/2020/03/16/2089-%E4%B8%8D%E8%A6%8162/" rel="next" title="2089-不要62">
+                <i class="fa fa-chevron-left"></i> 2089-不要62
               </a>
             
           </div>
@@ -461,8 +462,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2020/03/10/2069-Coin%20Change/" rel="prev" title="2069-Coin Change">
-                2069-Coin Change <i class="fa fa-chevron-right"></i>
+              <a href="/2020/03/18/2066-%E4%B8%80%E4%B8%AA%E4%BA%BA%E7%9A%84%E6%97%85%E8%A1%8C/" rel="prev" title="2066-一个人的旅行">
+                2066-一个人的旅行 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -518,17 +519,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -608,22 +600,6 @@
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#2064-汉诺塔III"><span class="nav-number">1.</span> <span class="nav-text">2064 汉诺塔III</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2077-汉诺塔IV"><span class="nav-number">2.</span> <span class="nav-text">2077 汉诺塔IV</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
