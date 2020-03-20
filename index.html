@@ -248,6 +248,208 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://blog.provence36.cn/2020/03/20/2065-%E7%BA%A2%E8%89%B2%E7%97%85%E6%AF%92%E9%97%AE%E9%A2%98/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Provence">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://avatars3.githubusercontent.com/u/26401802?s=400&u=87db6b0edfa75ed2b59f1fe0f0da23215082c344&v=4">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Provence' Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/03/20/2065-%E7%BA%A2%E8%89%B2%E7%97%85%E6%AF%92%E9%97%AE%E9%A2%98/" itemprop="url">2065-红色病毒问题</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-20T21:44:09+08:00">
+                2020-03-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%9D%AD%E7%94%B5%E5%A4%8D%E8%AF%95%E5%87%86%E5%A4%87/" itemprop="url" rel="index">
+                    <span itemprop="name">杭电复试准备</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2020/03/20/2065-%E7%BA%A2%E8%89%B2%E7%97%85%E6%AF%92%E9%97%AE%E9%A2%98/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2020/03/20/2065-%E7%BA%A2%E8%89%B2%E7%97%85%E6%AF%92%E9%97%AE%E9%A2%98/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2020/03/20/2065-%E7%BA%A2%E8%89%B2%E7%97%85%E6%AF%92%E9%97%AE%E9%A2%98/" class="leancloud_visitors" data-flag-title="2065-红色病毒问题">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  701 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  3 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><a href="http://acm.hdu.edu.cn/showproblem.php?pid=2065" target="_blank" rel="noopener">红色病毒问题</a></p>
+<p>f[n][0]保存长度为n，合法的字符串的个数。<br>f[n][1]保存长度为n，只有A出现奇数次的字符串的个数。<br>f[n][2]保存长度为n，只有C出现奇数次的字符串的个数。<br>f[n][3]保存长度为n，A、C都出现奇数次的字符串的个数。</p>
+<p>可以得出递推公式：<br>f[n][0] = 2 × f[n-1][0] + f[n-1][1] + f[n-1][2]<br>f[n][1] = 2 × f[n-1][1] + f[n-1][0] + f[n-1][3]<br>f[n][2] = 2 × f[n-1][2] + f[n-1][0] + f[n-1][3]<br>f[n][3] = 2 × f[n-1][3] + f[n-1][1] + f[n-1][2]</p>
+<p>f[1][0] = 2<br>f[1][1] = 1<br>f[1][2] = 1<br>f[1][3] = 0</p>
+<p>发现f[1][1]与f[1][2]初始状态相同，而且以后迭代方程也相同，所以f[n][1] = f[n][2]<br>又有<br>f[n][0] + f[n][3] = f[n][1] + f[n][2]<br>= 2 × f[n-1][0] + 2 × f[n-1][3] + 2 × f[n-1][1] + 2 × f[n-1][2]</p>
+<p>∵f[n][0] + f[n][1] + f[n][2] + f[n][3] = $4^n$<br>∴f[n][0] + f[n][3] = f[n][1] + f[n][2] = 2 × $4^{n-1}$<br>∴f[n-1][1] + f[n-1][2] = 2 × $4^{n-2}$<br>∴f[n][0] = 2 × f[n-1][0] + f[n-1][1] + f[n-1][2] = 2 × f[n-1][0] + 2 × $4^{n-2}$<br>我们得到:<br>f[n][0] = 2 × f[n-1][0] + $2^{2n-3}$<br>f[n-1][0] = 2 × f[n-2][0] + $2^{2n-5}$<br>${\vdots}$<br>f[n-m][0] = 2 × f[n-m-1][0] + $2^{2n-2m-3}$<br>${\vdots}$<br>f[2][0] = 2 × f[1][0] + $2^1$<br>f[1][0] = 2</p>
+<p>开始一层层往下迭代:<br>f[n][0]<br> = 2 × f[n-1][0] + $2^{2n-3}$<br> = $2^2$ × f[n-2][0] + $2^{2n-4}$ + $2^{2n-3}$<br> ┋<br> = $2^m$ × f[n-m][0] + $2^{2(n-m)-1+m-1}$ + … + $2^{2n-3}$<br> = $2^{n-1}$ × f[1][0] + $2^{n-1}$ + $2^n$ +… + $2^{2n-3}$<br>∵f[1][0] = 2;<br>∴f[n][0] = $2^n + 2^{n-1} + 2^n +… + 2^{2n-3} = 2^{2n-2} + 2^{n-1}$<br>公式得到了:$f(n) = 2^{2n-2} + 2^{n-1}$</p>
+<p>找规律：$2^n$的后两位<br>$2^0=1$ $2^1=2$ $2^2=4$ $2^3=8$ $2^4=16$ $2^5=32$ $2^6=64$ $2^7=28$ $2^8=56$ $2^9=12$<br>$2^{10}=24$ $2^{11}=48$ $2^{12}=96$ $2^{13}=92$ $2^{14}=84$ $2^{15}=68$ $2^{16}=36$ $2^{17}=72$<br>$2^{18}=44$ $2^{19}=88$ $2^{20}=76$ $2^{21}=52$ $2^{12}=4$<br>发现从12开始循环了。</p>
+<p>代码如下：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;set&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> LL;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> d[<span class="number">23</span>] = &#123;<span class="number">4</span>, <span class="number">8</span>, <span class="number">16</span>, <span class="number">32</span>, <span class="number">64</span>,</span><br><span class="line">            <span class="number">28</span>, <span class="number">56</span>, <span class="number">12</span>, <span class="number">24</span>, <span class="number">48</span>,</span><br><span class="line">            <span class="number">96</span>, <span class="number">92</span>, <span class="number">84</span>, <span class="number">68</span>, <span class="number">36</span>,</span><br><span class="line">            <span class="number">72</span>, <span class="number">44</span>, <span class="number">88</span>, <span class="number">76</span>, <span class="number">52</span>&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">get</span><span class="params">(LL n)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(n == <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span>(n == <span class="number">1</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">2</span>;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> d[(n<span class="number">-2</span>)%<span class="number">20</span>];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">int</span> T;</span><br><span class="line">    <span class="keyword">while</span> (<span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;T) &amp;&amp; T) &#123;</span><br><span class="line">        <span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line">        LL N;</span><br><span class="line">        <span class="keyword">while</span> (T--) &#123;</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">"%lld"</span>, &amp;N);</span><br><span class="line">            </span><br><span class="line">            LL m = <span class="number">2</span>*N<span class="number">-2</span>, n = N<span class="number">-1</span>;</span><br><span class="line">            </span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">"Case %d: %d\n"</span>, ++i, (<span class="built_in">get</span>(n)+<span class="built_in">get</span>(m))%<span class="number">100</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"\n"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://blog.provence36.cn/2020/03/19/2068-RPG%E7%9A%84%E9%94%99%E6%8E%92/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -2060,207 +2262,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://blog.provence36.cn/2020/03/07/2035-%E4%BA%BA%E8%A7%81%E4%BA%BA%E7%88%B1A%5EB/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Provence">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://avatars3.githubusercontent.com/u/26401802?s=400&u=87db6b0edfa75ed2b59f1fe0f0da23215082c344&v=4">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Provence' Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/03/07/2035-%E4%BA%BA%E8%A7%81%E4%BA%BA%E7%88%B1A%5EB/" itemprop="url">HDUOJ 2035-人见人爱A^B</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-07T16:17:21+08:00">
-                2020-03-07
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%9D%AD%E7%94%B5%E5%A4%8D%E8%AF%95%E5%87%86%E5%A4%87/" itemprop="url" rel="index">
-                    <span itemprop="name">杭电复试准备</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2020/03/07/2035-%E4%BA%BA%E8%A7%81%E4%BA%BA%E7%88%B1A%5EB/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2020/03/07/2035-%E4%BA%BA%E8%A7%81%E4%BA%BA%E7%88%B1A%5EB/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2020/03/07/2035-%E4%BA%BA%E8%A7%81%E4%BA%BA%E7%88%B1A%5EB/" class="leancloud_visitors" data-flag-title="HDUOJ 2035-人见人爱A^B">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  428 字
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  2 分钟
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <blockquote>
-<p>这是一道关于快速幂的题目，那就先讲讲快速幂。</p>
-</blockquote>
-<h3 id="快速幂"><a href="#快速幂" class="headerlink" title="快速幂"></a>快速幂</h3><p>用于求a^b%m<br>普通算法：O(b)<br>快速幂：O(logb)</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2020/03/07/2035-%E4%BA%BA%E8%A7%81%E4%BA%BA%E7%88%B1A%5EB/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2315,7 +2316,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-count">12</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
