@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="HDUOJ,快速幂," />
+  <meta name="keywords" content="链表," />
 
 
 
@@ -79,17 +79,16 @@
 
 
 
-<meta name="description" content="这是一道关于快速幂的题目，那就先讲讲快速幂。  快速幂用于求a^b%m普通算法：O(b)快速幂：O(logb)">
+<meta name="description" content="静态链表通用解题步骤 定义静态链表。123456struct Node &amp;#123;    int address; &#x2F;&#x2F;结点地址    typename data; &#x2F;&#x2F;数据域    int next; &#x2F;&#x2F;指针域    XXX; &#x2F;&#x2F;结点的某个属性，不同的题目会有不同的设置(如结点是否为链表上的一个结点)&amp;#125;node[100010];">
 <meta property="og:type" content="article">
-<meta property="og:title" content="HDUOJ 2035-人见人爱A^B">
-<meta property="og:url" content="http://blog.provence36.cn/2020/03/07/2035-%E4%BA%BA%E8%A7%81%E4%BA%BA%E7%88%B1A^B/index.html">
+<meta property="og:title" content="静态链表解题方法">
+<meta property="og:url" content="http://blog.provence36.cn/2020/03/26/%E9%9D%99%E6%80%81%E9%93%BE%E8%A1%A8%E8%A7%A3%E9%A2%98%E6%96%B9%E6%B3%95/index.html">
 <meta property="og:site_name" content="Provence&#39; Blog">
-<meta property="og:description" content="这是一道关于快速幂的题目，那就先讲讲快速幂。  快速幂用于求a^b%m普通算法：O(b)快速幂：O(logb)">
-<meta property="article:published_time" content="2020-03-07T08:17:21.000Z">
-<meta property="article:modified_time" content="2020-03-09T04:01:05.658Z">
+<meta property="og:description" content="静态链表通用解题步骤 定义静态链表。123456struct Node &amp;#123;    int address; &#x2F;&#x2F;结点地址    typename data; &#x2F;&#x2F;数据域    int next; &#x2F;&#x2F;指针域    XXX; &#x2F;&#x2F;结点的某个属性，不同的题目会有不同的设置(如结点是否为链表上的一个结点)&amp;#125;node[100010];">
+<meta property="article:published_time" content="2020-03-26T07:11:09.000Z">
+<meta property="article:modified_time" content="2020-03-26T07:47:35.749Z">
 <meta property="article:author" content="Provence">
-<meta property="article:tag" content="HDUOJ">
-<meta property="article:tag" content="快速幂">
+<meta property="article:tag" content="链表">
 <meta name="twitter:card" content="summary">
 
 
@@ -120,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://blog.provence36.cn/2020/03/07/2035-人见人爱A^B/"/>
+  <link rel="canonical" href="http://blog.provence36.cn/2020/03/26/静态链表解题方法/"/>
 
 
 
 
 
-  <title>HDUOJ 2035-人见人爱A^B | Provence' Blog</title>
+  <title>静态链表解题方法 | Provence' Blog</title>
   
 
 
@@ -253,7 +252,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://blog.provence36.cn/2020/03/07/2035-%E4%BA%BA%E8%A7%81%E4%BA%BA%E7%88%B1A%5EB/">
+    <link itemprop="mainEntityOfPage" href="http://blog.provence36.cn/2020/03/26/%E9%9D%99%E6%80%81%E9%93%BE%E8%A1%A8%E8%A7%A3%E9%A2%98%E6%96%B9%E6%B3%95/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Provence">
@@ -270,7 +269,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">HDUOJ 2035-人见人爱A^B</h1>
+          <h1 class="post-title" itemprop="name headline">静态链表解题方法</h1>
         
 
         <div class="post-meta">
@@ -282,8 +281,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-07T16:17:21+08:00">
-                2020-03-07
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-26T15:11:09+08:00">
+                2020-03-26
               </time>
             
 
@@ -305,8 +304,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%9D%AD%E7%94%B5%E5%A4%8D%E8%AF%95%E5%87%86%E5%A4%87/" itemprop="url" rel="index">
-                    <span itemprop="name">杭电复试准备</span>
+                  <a href="/categories/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index">
+                    <span itemprop="name">算法笔记</span>
                   </a>
                 </span>
 
@@ -323,8 +322,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2020/03/07/2035-%E4%BA%BA%E8%A7%81%E4%BA%BA%E7%88%B1A%5EB/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2020/03/07/2035-%E4%BA%BA%E8%A7%81%E4%BA%BA%E7%88%B1A%5EB/" itemprop="commentCount"></span>
+                <a href="/2020/03/26/%E9%9D%99%E6%80%81%E9%93%BE%E8%A1%A8%E8%A7%A3%E9%A2%98%E6%96%B9%E6%B3%95/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2020/03/26/%E9%9D%99%E6%80%81%E9%93%BE%E8%A1%A8%E8%A7%A3%E9%A2%98%E6%96%B9%E6%B3%95/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -332,7 +331,7 @@
 
           
           
-             <span id="/2020/03/07/2035-%E4%BA%BA%E8%A7%81%E4%BA%BA%E7%88%B1A%5EB/" class="leancloud_visitors" data-flag-title="HDUOJ 2035-人见人爱A^B">
+             <span id="/2020/03/26/%E9%9D%99%E6%80%81%E9%93%BE%E8%A1%A8%E8%A7%A3%E9%A2%98%E6%96%B9%E6%B3%95/" class="leancloud_visitors" data-flag-title="静态链表解题方法">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -357,7 +356,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  428 字
+                  1k 字
                 </span>
               
 
@@ -373,7 +372,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  2 分钟
+                  5 分钟
                 </span>
               
             </div>
@@ -394,27 +393,22 @@
       
 
       
-        <blockquote>
-<p>这是一道关于快速幂的题目，那就先讲讲快速幂。</p>
-</blockquote>
-<h3 id="快速幂"><a href="#快速幂" class="headerlink" title="快速幂"></a>快速幂</h3><p>用于求a^b%m<br>普通算法：O(b)<br>快速幂：O(logb)</p>
-<a id="more"></a>
-<p>通过例子🌰简单了解一下快速幂：<br>例如求2^13<br>2^13=2 * 2^12<br>2^12=2^6 * 2^6<br>2^6=2^3 * 2^3<br>2^3=2 * 2^2<br>2^2=2^1 * 2^1<br>2^1=2 * 2^0</p>
-<p>可以得出递推公式：<br>当b是奇数时，a^b = a * a^(b-1)<br>当b是偶数时，a^b = a^(b/2) * a^(b/2)</p>
-<p>根据上述结论，容易写出递归版本：</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">fastpow</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span> </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (b == <span class="number">0</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">  &#125; <span class="keyword">else</span> <span class="keyword">if</span> (b % <span class="number">2</span> == <span class="number">0</span>) &#123;</span><br><span class="line">    <span class="keyword">int</span> n = fastpow(a, b/<span class="number">2</span>);</span><br><span class="line">    <span class="keyword">return</span> n*n;</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> a*fastpow(a,b<span class="number">-1</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>其中b%2==0可优化成b&amp;1==0，b/2可优化成b&gt;&gt;1</p>
-<p>接下来写快速幂的<strong>迭代版本</strong>：<br>还是继续上面那个2^13的例子<br>13写成二进制是1101<br>13=2^0 + 2^2 + 2^3<br>所以2^13 = 2 ^(2^0 + 2^2 + 2^3) = 2^1 * 2^4 * 2^8(1,4,8正好对应1101中1的值)</p>
-<ul>
-<li>用ans记录最终结果，初始化为1</li>
-<li>用res记录当前二进制位上代表的值，初始化为a</li>
-<li>若b在当前为上为1，ans = ans * res % mod</li>
-</ul>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">fastpow</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b, <span class="keyword">int</span> mod)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> res = a;</span><br><span class="line">    <span class="keyword">int</span> ans = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span> (b) &#123;</span><br><span class="line">        <span class="keyword">if</span> (b&amp;<span class="number">1</span>) ans = ans * res % mod;</span><br><span class="line">        res = res * res % mod;</span><br><span class="line">        b &gt;&gt;= <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="2035-人见人爱A-B"><a href="#2035-人见人爱A-B" class="headerlink" title="2035 人见人爱A^B"></a>2035 人见人爱A^B</h3><p><a href="http://acm.hdu.edu.cn/showproblem.php?pid=2035" target="_blank" rel="noopener">人见人爱A^B</a></p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> mod = <span class="number">1000</span>;</span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">fastpow</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> res = a;</span><br><span class="line">    <span class="keyword">int</span> ans = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span> (b) &#123;</span><br><span class="line">        <span class="keyword">if</span> (b&amp;<span class="number">1</span>) ans = ans * res % mod;</span><br><span class="line">        res = res * res % mod;</span><br><span class="line">        b &gt;&gt;= <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n, m;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">while</span> (<span class="built_in">scanf</span>(<span class="string">"%d %d"</span>, &amp;n, &amp;m), n+m) &#123;</span><br><span class="line">        <span class="keyword">int</span> ans = fastpow(n, m);</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%d\n"</span>, ans);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <h5 id="静态链表通用解题步骤"><a href="#静态链表通用解题步骤" class="headerlink" title="静态链表通用解题步骤"></a>静态链表通用解题步骤</h5><ol>
+<li>定义静态链表。<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Node</span> &#123;</span></span><br><span class="line">    <span class="keyword">int</span> address; <span class="comment">//结点地址</span></span><br><span class="line">    <span class="keyword">typename</span> data; <span class="comment">//数据域</span></span><br><span class="line">    <span class="keyword">int</span> next; <span class="comment">//指针域</span></span><br><span class="line">    XXX; <span class="comment">//结点的某个属性，不同的题目会有不同的设置(如结点是否为链表上的一个结点)</span></span><br><span class="line">&#125;node[<span class="number">100010</span>];</span><br></pre></td></tr></table></figure>
+<a id="more"></a></li>
+<li>对静态链表进行初始化，如对结点是否在链表上这个性质，可以初始化为0，表示该结点不在链表上。<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; maxn; i++) &#123;</span><br><span class="line">    node[i].XXX = <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li>根据首地址遍历整个链表，这一步可以对结点的性质XXX进行标记，统计有效结点个数，如对结点是否在链表上这个性质，可以置为1。<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> (p != <span class="number">-1</span>) &#123;</span><br><span class="line">    node[p].XXX = <span class="number">1</span>;</span><br><span class="line">    p = node[p].next;</span><br><span class="line">    count++;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li>由于使用静态链表，是直接采用地址映射的方式，这就会使得数组下表不连续。为了方便访问有效结点，一般都会用数组排序把有效结点放在数组的前面。那怎么把有效结点放到前面呢？之前定义的XXX就起到了作用，无效结点的XXX属性比有效结点的小，在写sort的排序函数cmp时，就可以使结点按XXX属性从大到小排序。除此之外，题目一般会有其他的要求，就可以在cmp函数的第二级排序中实现。<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">cmp</span><span class="params">(Node a, Node b)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (a.XXX == <span class="number">0</span> || b.XXX == <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> a.XXX &gt; b.XXX;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="comment">//第二级排序</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li>链表中的有效结点就都在左端了，且已经按结点的性质进行了排序。</li>
+</ol>
+<h5 id="例题-PAT-A1052-Linked-List-Sorting"><a href="#例题-PAT-A1052-Linked-List-Sorting" class="headerlink" title="例题[PAT A1052] Linked List Sorting"></a>例题[PAT A1052] Linked List Sorting</h5><p><strong>Description:</strong><br>A linked list consists of a series of structures, which are not necessarily adjacent in memory. We assume that each structure contains an integer key and a Next pointer to the next structure. Now given a linked list, you are supposed to sort the structures according to their key values in increasing order.</p>
+<p><strong>Input Specification:</strong><br>Each input file contains one test case. For each case, the first line contains a positive N (&lt;10^5) and an address of the head node, where N is the total number of nodes in memory and the address of a node is a 5-digit positive integer. NULL is represented by −1.<br>Then N lines follow, each describes a node in the format:<br>Address Key Next<br>where Address is the address of the node in memory, Key is an integer in [−10^5,10^5], and Next is the address of the next node. It is guaranteed that all the keys are distinct and there is no cycle in the linked list starting from the head node.</p>
+<p><strong>Output Specification:</strong><br>For each test case, the output format is the same as that of the input, where N is the total number of nodes in the list and all the nodes must be sorted order.</p>
+<p><strong>Sample Input:</strong><br>5 00001<br>11111 100 -1<br>00001 0 22222<br>33333 100000 11111<br>12345 -1 33333<br>22222 1000 12345</p>
+<p><strong>Sample Output:</strong><br>5 12345<br>12345 -1 00001<br>00001 0 11111<br>11111 100 22222<br>22222 1000 33333<br>33333 100000 -1</p>
+<p><strong>样例说明</strong><br>按照输入，这条链表是这样的（结点格式为[address, data, next]）：<br>[00001,0,22222]-&gt;[22222,1000,12345]-&gt;[12345,-1,33333]-&gt;[33333,100000,11111]-&gt;[11111,100,-1]<br>按照结点值，从小到大排序：<br>[12345,-1,00001]-&gt;[00001,0,11111]-&gt;[11111,100,22222]-&gt;[22222,1000,33333]-&gt;[33333,100000,-1]</p>
+<p><strong>代码</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stack&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;map&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;set&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> LL;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">100010</span>;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">NODE</span> &#123;</span> <span class="comment">//定义静态链表（步骤1）</span></span><br><span class="line">    <span class="keyword">int</span> address;</span><br><span class="line">    <span class="keyword">int</span> data;</span><br><span class="line">    <span class="keyword">int</span> next;</span><br><span class="line">    <span class="keyword">bool</span> flag;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">NODE</span> <span class="title">node</span>[<span class="title">maxn</span>];</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">cmp</span><span class="params">(NODE a, NODE b)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (a.flag == <span class="literal">false</span> || b.flag == <span class="literal">false</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> a.flag &gt; b.flag;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> a.data &lt; b.data;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> N, a;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d %d"</span>, &amp;N, &amp;a);</span><br><span class="line">    <span class="keyword">int</span> address, next, data;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; maxn; i++) &#123; <span class="comment">//初始化（步骤2）</span></span><br><span class="line">        node[i].flag = <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; N; i++) &#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d %d %d"</span>, &amp;address, &amp;data, &amp;next);</span><br><span class="line">        node[address].address = address;</span><br><span class="line">        node[address].data = data;</span><br><span class="line">        node[address].next = next;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">int</span> p = a, count = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span> (p != <span class="number">-1</span>) &#123; <span class="comment">// 遍历链表，记录有效结点个数，标记flag（步骤3）</span></span><br><span class="line">        node[p].flag = <span class="literal">true</span>;</span><br><span class="line">        p = node[p].next;</span><br><span class="line">        count++;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span> (count == <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"0 -1\n"</span>);</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        sort(node, node + maxn, cmp); <span class="comment">// 筛选有效结点，并按结点值从小到大排序（步骤4）</span></span><br><span class="line">        <span class="keyword">int</span> i;</span><br><span class="line">        <span class="comment">// 处理并输出（步骤5）</span></span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%d %05d\n"</span>, count, node[<span class="number">0</span>].address);</span><br><span class="line">        <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; count - <span class="number">1</span>; i++) &#123;</span><br><span class="line">            node[i].next = node[i+<span class="number">1</span>].address;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">"%05d %d %05d\n"</span>, node[i].address, node[i].data, node[i].next);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%05d %d -1\n"</span>, node[i].address, node[i].data);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -431,9 +425,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/HDUOJ/" rel="tag"># HDUOJ</a>
-          
-            <a href="/tags/%E5%BF%AB%E9%80%9F%E5%B9%82/" rel="tag"># 快速幂</a>
+            <a href="/tags/%E9%93%BE%E8%A1%A8/" rel="tag"># 链表</a>
           
         </div>
       
@@ -446,8 +438,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2020/03/06/Birthday/" rel="next" title="Happy Birthday">
-                <i class="fa fa-chevron-left"></i> Happy Birthday
+              <a href="/2020/03/26/%E7%AE%80%E5%8D%95%E8%AE%A1%E7%AE%97%E6%9C%BA/" rel="next" title="简单计算机">
+                <i class="fa fa-chevron-left"></i> 简单计算机
               </a>
             
           </div>
@@ -455,10 +447,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2020/03/07/2059-%E9%BE%9F%E5%85%94%E8%B5%9B%E8%B7%91/" rel="prev" title="HDUOJ 2059-龟兔赛跑">
-                HDUOJ 2059-龟兔赛跑 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -613,7 +601,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#快速幂"><span class="nav-number">1.</span> <span class="nav-text">快速幂</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2035-人见人爱A-B"><span class="nav-number">2.</span> <span class="nav-text">2035 人见人爱A^B</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#静态链表通用解题步骤"><span class="nav-number">1.</span> <span class="nav-text">静态链表通用解题步骤</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#例题-PAT-A1052-Linked-List-Sorting"><span class="nav-number">2.</span> <span class="nav-text">例题[PAT A1052] Linked List Sorting</span></a></li></ol></div>
             
 
           </div>
