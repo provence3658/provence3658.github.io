@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="HDUOJ," />
+  <meta name="keywords" content="二叉树," />
 
 
 
@@ -79,16 +79,16 @@
 
 
 
-<meta name="description" content="红色病毒问题">
+<meta name="description" content="【题目描述】Suppose that all the keys in a binary tree are distinct positive integers. Given the postorder and inorder traversal sequences, you are supposed to output the level order traversal sequence of t">
 <meta property="og:type" content="article">
-<meta property="og:title" content="2065-红色病毒问题">
-<meta property="og:url" content="http://blog.provence36.cn/2020/03/20/2065-%E7%BA%A2%E8%89%B2%E7%97%85%E6%AF%92%E9%97%AE%E9%A2%98/index.html">
+<meta property="og:title" content="Tree Traversals">
+<meta property="og:url" content="http://blog.provence36.cn/2020/03/28/Traversals/index.html">
 <meta property="og:site_name" content="Provence&#39; Blog">
-<meta property="og:description" content="红色病毒问题">
-<meta property="article:published_time" content="2020-03-20T13:44:09.000Z">
-<meta property="article:modified_time" content="2020-03-21T04:15:16.278Z">
+<meta property="og:description" content="【题目描述】Suppose that all the keys in a binary tree are distinct positive integers. Given the postorder and inorder traversal sequences, you are supposed to output the level order traversal sequence of t">
+<meta property="article:published_time" content="2020-03-28T07:33:13.000Z">
+<meta property="article:modified_time" content="2020-03-28T07:47:31.869Z">
 <meta property="article:author" content="Provence">
-<meta property="article:tag" content="HDUOJ">
+<meta property="article:tag" content="二叉树">
 <meta name="twitter:card" content="summary">
 
 
@@ -119,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://blog.provence36.cn/2020/03/20/2065-红色病毒问题/"/>
+  <link rel="canonical" href="http://blog.provence36.cn/2020/03/28/Traversals/"/>
 
 
 
 
 
-  <title>2065-红色病毒问题 | Provence' Blog</title>
+  <title>Tree Traversals | Provence' Blog</title>
   
 
 
@@ -252,7 +252,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://blog.provence36.cn/2020/03/20/2065-%E7%BA%A2%E8%89%B2%E7%97%85%E6%AF%92%E9%97%AE%E9%A2%98/">
+    <link itemprop="mainEntityOfPage" href="http://blog.provence36.cn/2020/03/28/Traversals/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Provence">
@@ -269,7 +269,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">2065-红色病毒问题</h1>
+          <h1 class="post-title" itemprop="name headline">Tree Traversals</h1>
         
 
         <div class="post-meta">
@@ -281,8 +281,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-20T21:44:09+08:00">
-                2020-03-20
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-28T15:33:13+08:00">
+                2020-03-28
               </time>
             
 
@@ -304,8 +304,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%9D%AD%E7%94%B5%E5%A4%8D%E8%AF%95%E5%87%86%E5%A4%87/" itemprop="url" rel="index">
-                    <span itemprop="name">杭电复试准备</span>
+                  <a href="/categories/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index">
+                    <span itemprop="name">算法笔记</span>
                   </a>
                 </span>
 
@@ -322,8 +322,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2020/03/20/2065-%E7%BA%A2%E8%89%B2%E7%97%85%E6%AF%92%E9%97%AE%E9%A2%98/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2020/03/20/2065-%E7%BA%A2%E8%89%B2%E7%97%85%E6%AF%92%E9%97%AE%E9%A2%98/" itemprop="commentCount"></span>
+                <a href="/2020/03/28/Traversals/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2020/03/28/Traversals/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -331,7 +331,7 @@
 
           
           
-             <span id="/2020/03/20/2065-%E7%BA%A2%E8%89%B2%E7%97%85%E6%AF%92%E9%97%AE%E9%A2%98/" class="leancloud_visitors" data-flag-title="2065-红色病毒问题">
+             <span id="/2020/03/28/Traversals/" class="leancloud_visitors" data-flag-title="Tree Traversals">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -356,7 +356,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  703 字
+                  641 字
                 </span>
               
 
@@ -393,17 +393,18 @@
       
 
       
-        <p><a href="http://acm.hdu.edu.cn/showproblem.php?pid=2065" target="_blank" rel="noopener">红色病毒问题</a></p>
+        <p>【题目描述】<br>Suppose that all the keys in a binary tree are distinct positive integers. Given the postorder and inorder traversal sequences, you are supposed to output the level order traversal sequence of the corresponding binary tree.</p>
 <a id="more"></a>
-<p>f[n][0]保存长度为n，合法的字符串的个数。<br>f[n][1]保存长度为n，只有A出现奇数次的字符串的个数。<br>f[n][2]保存长度为n，只有C出现奇数次的字符串的个数。<br>f[n][3]保存长度为n，A、C都出现奇数次的字符串的个数。</p>
-<p>可以得出递推公式：<br>f[n][0] = 2 × f[n-1][0] + f[n-1][1] + f[n-1][2]<br>f[n][1] = 2 × f[n-1][1] + f[n-1][0] + f[n-1][3]<br>f[n][2] = 2 × f[n-1][2] + f[n-1][0] + f[n-1][3]<br>f[n][3] = 2 × f[n-1][3] + f[n-1][1] + f[n-1][2]</p>
-<p>f[1][0] = 2<br>f[1][1] = 1<br>f[1][2] = 1<br>f[1][3] = 0</p>
-<p>发现f[1][1]与f[1][2]初始状态相同，而且以后迭代方程也相同，所以f[n][1] = f[n][2]<br>又有<br>f[n][0] + f[n][3] = f[n][1] + f[n][2]<br>= 2 × f[n-1][0] + 2 × f[n-1][3] + 2 × f[n-1][1] + 2 × f[n-1][2]</p>
-<p>∵f[n][0] + f[n][1] + f[n][2] + f[n][3] = $4^n$<br>∴f[n][0] + f[n][3] = f[n][1] + f[n][2] = 2 × $4^{n-1}$<br>∴f[n-1][1] + f[n-1][2] = 2 × $4^{n-2}$<br>∴f[n][0] = 2 × f[n-1][0] + f[n-1][1] + f[n-1][2] = 2 × f[n-1][0] + 2 × $4^{n-2}$<br>我们得到:<br>f[n][0] = 2 × f[n-1][0] + $2^{2n-3}$<br>f[n-1][0] = 2 × f[n-2][0] + $2^{2n-5}$<br>${\vdots}$<br>f[n-m][0] = 2 × f[n-m-1][0] + $2^{2n-2m-3}$<br>${\vdots}$<br>f[2][0] = 2 × f[1][0] + $2^1$<br>f[1][0] = 2</p>
-<p>开始一层层往下迭代:<br>f[n][0]<br> = 2 × f[n-1][0] + $2^{2n-3}$<br> = $2^2$ × f[n-2][0] + $2^{2n-4}$ + $2^{2n-3}$<br> ${\vdots}$<br> = $2^m$ × f[n-m][0] + $2^{2(n-m)-1+m-1}$ + … + $2^{2n-3}$<br> = $2^{n-1}$ × f[1][0] + $2^{n-1}$ + $2^n$ +… + $2^{2n-3}$<br>∵f[1][0] = 2;<br>∴f[n][0] = $2^n + 2^{n-1} + 2^n +… + 2^{2n-3} = 2^{2n-2} + 2^{n-1}$<br>公式得到了：f[n][0] = $2^{2n-2} + 2^{n-1}$</p>
-<p>找规律：$2^n$的后两位<br>$2^0=1$ $2^1=2$ $2^2=4$ $2^3=8$ $2^4=16$ $2^5=32$ $2^6=64$ $2^7=28$ $2^8=56$ $2^9=12$<br>$2^{10}=24$ $2^{11}=48$ $2^{12}=96$ $2^{13}=92$ $2^{14}=84$ $2^{15}=68$ $2^{16}=36$ $2^{17}=72$<br>$2^{18}=44$ $2^{19}=88$ $2^{20}=76$ $2^{21}=52$ $2^{12}=4$<br>发现从12开始循环了。</p>
-<p>代码如下：</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;set&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> LL;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> d[<span class="number">23</span>] = &#123;<span class="number">4</span>, <span class="number">8</span>, <span class="number">16</span>, <span class="number">32</span>, <span class="number">64</span>,</span><br><span class="line">            <span class="number">28</span>, <span class="number">56</span>, <span class="number">12</span>, <span class="number">24</span>, <span class="number">48</span>,</span><br><span class="line">            <span class="number">96</span>, <span class="number">92</span>, <span class="number">84</span>, <span class="number">68</span>, <span class="number">36</span>,</span><br><span class="line">            <span class="number">72</span>, <span class="number">44</span>, <span class="number">88</span>, <span class="number">76</span>, <span class="number">52</span>&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">get</span><span class="params">(LL n)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(n == <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span>(n == <span class="number">1</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">2</span>;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> d[(n<span class="number">-2</span>)%<span class="number">20</span>];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">int</span> T;</span><br><span class="line">    <span class="keyword">while</span> (<span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;T) &amp;&amp; T) &#123;</span><br><span class="line">        <span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line">        LL N;</span><br><span class="line">        <span class="keyword">while</span> (T--) &#123;</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">"%lld"</span>, &amp;N);</span><br><span class="line">            </span><br><span class="line">            LL m = <span class="number">2</span>*N<span class="number">-2</span>, n = N<span class="number">-1</span>;</span><br><span class="line">            </span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">"Case %d: %d\n"</span>, ++i, (<span class="built_in">get</span>(n)+<span class="built_in">get</span>(m))%<span class="number">100</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"\n"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>【输入格式】<br>Each input file contains one test case. For each case, the first line gives a positive integer N (≤30), the total number of nodes in the binary tree. The second line gives the postorder sequence and the third line gives the inorder sequence. All the numbers in a line are separated by a space.<br>【输出格式】<br>For each test case, print in one line the level order traversal sequence of the corresponding binary tree. All the numbers in a line must be separated by exactly one space, and there must be no extra space at the end of the line.<br>【输入样例】</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">7</span><br><span class="line">2 3 1 5 7 6 4</span><br><span class="line">1 2 3 4 5 6 7</span><br></pre></td></tr></table></figure>
+<p>【输出样例】</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">4 1 6 3 5 7 2</span><br></pre></td></tr></table></figure>
+<p>【题意】<br>给出一棵二叉树的后序遍历序列和中序遍历序列，求这课二叉树的层序遍历序列。<br>【解题思路】</p>
+<ol>
+<li>用后序遍历序列和中序遍历序列来建二叉树，后序序列的最后一个元素是根结点，然后在中序序列中找到这个结点的位置，得知，左子树和右子树分别有几个结点，再递归分别建左子树和右子树即可。</li>
+<li>层序遍历很简单，用队列就可实现。<br>【代码】<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MAX 50</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> N;</span><br><span class="line"><span class="keyword">int</span> post[MAX], in[MAX];</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">node</span> &#123;</span></span><br><span class="line">    <span class="keyword">int</span> data;</span><br><span class="line">    node* left;</span><br><span class="line">    node* right;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">//当前二叉树的后序序列区间为[postL, postR],中序序列区间为[inL, inR]</span></span><br><span class="line"><span class="comment">//create函数返回构建出的二叉树的根结点地址</span></span><br><span class="line"><span class="function">node* <span class="title">create</span><span class="params">(<span class="keyword">int</span> postL, <span class="keyword">int</span> postR, <span class="keyword">int</span> inL, <span class="keyword">int</span> inR)</span> </span>&#123; </span><br><span class="line">    <span class="keyword">if</span> (postL &gt; postR || inL &gt; inR) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">NULL</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    node* root = <span class="keyword">new</span> node;</span><br><span class="line">    root-&gt;data = post[postR];</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">int</span> k;</span><br><span class="line">    <span class="keyword">for</span>(k = inL; k &lt;= inR; k++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (in[k] == post[postR]) &#123; <span class="comment">//在中序序列中找到当前根结点的位置</span></span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">int</span> numLeft = k - inL; <span class="comment">//左子树的结点个数</span></span><br><span class="line">    </span><br><span class="line">    root-&gt;left = create(postL, postL+numLeft<span class="number">-1</span>, inL, k<span class="number">-1</span>); <span class="comment">//返回左子树的根结点位置</span></span><br><span class="line">    root-&gt;right = create(postL+numLeft, postR<span class="number">-1</span>, k+<span class="number">1</span>, inR); <span class="comment">//返回右子树的根结点位置</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> root;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">LayerOrder</span><span class="params">(node* root)</span> </span>&#123;</span><br><span class="line">    <span class="built_in">queue</span>&lt;node*&gt; q;</span><br><span class="line">    q.push(root);</span><br><span class="line">    <span class="keyword">int</span> flag = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span> (!q.empty()) &#123;</span><br><span class="line">        node* now = <span class="keyword">new</span> node;</span><br><span class="line">        now = q.front();</span><br><span class="line">        q.pop();</span><br><span class="line">        <span class="keyword">if</span> (flag == <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">"%d"</span>, now-&gt;data);</span><br><span class="line">            flag = <span class="number">1</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">" %d"</span>, now-&gt;data);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (now-&gt;left != <span class="literal">NULL</span>) &#123;</span><br><span class="line">            q.push(now-&gt;left);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (now-&gt;right != <span class="literal">NULL</span>) &#123;</span><br><span class="line">            q.push(now-&gt;right);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"\n"</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;N);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; N; i++) &#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;post[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; N; i++) &#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;in[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    node* root = <span class="keyword">new</span> node;</span><br><span class="line">    root = create(<span class="number">0</span>, N<span class="number">-1</span>, <span class="number">0</span>, N<span class="number">-1</span>);</span><br><span class="line">    LayerOrder(root);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ol>
+
       
     </div>
     
@@ -420,7 +421,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/HDUOJ/" rel="tag"># HDUOJ</a>
+            <a href="/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/" rel="tag"># 二叉树</a>
           
         </div>
       
@@ -433,8 +434,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2020/03/19/2068-RPG%E7%9A%84%E9%94%99%E6%8E%92/" rel="next" title="2068-RPG的错排">
-                <i class="fa fa-chevron-left"></i> 2068-RPG的错排
+              <a href="/2020/03/27/%E5%B9%BF%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2%EF%BC%88BFS%EF%BC%89/" rel="next" title="广度优先搜索（BFS）">
+                <i class="fa fa-chevron-left"></i> 广度优先搜索（BFS）
               </a>
             
           </div>
@@ -442,10 +443,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2020/03/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%80%BB%E7%BB%93/" rel="prev" title="计算机网络总结">
-                计算机网络总结 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
