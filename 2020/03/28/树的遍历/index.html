@@ -79,19 +79,19 @@
 
 
 
-<meta name="description" content="【题目描述】Given a non-empty tree with root $R$, and with weight $W_{i}$ assigned to each tree node $T_{i}$. The weight of a path from $R$ to $L$ is defined to be the sum of the weights of all the nodes al">
+<meta name="description" content="解题方法 结构体node的定义1234struct Node &amp;#123;    typename data;    vector&lt;typename&gt; child; &#x2F;&#x2F;孩子结点的下标&amp;#125;node[MAX];">
 <meta property="og:type" content="article">
-<meta property="og:title" content="【PAT A1053】Path of Equal Weight">
-<meta property="og:url" content="http://blog.provence36.cn/2020/03/28/%E3%80%90PAT%20A1053%E3%80%91Path%20of%20Equal%20Weight/index.html">
+<meta property="og:title" content="树的遍历">
+<meta property="og:url" content="http://blog.provence36.cn/2020/03/28/%E6%A0%91%E7%9A%84%E9%81%8D%E5%8E%86/index.html">
 <meta property="og:site_name" content="Provence&#39; Blog">
-<meta property="og:description" content="【题目描述】Given a non-empty tree with root $R$, and with weight $W_{i}$ assigned to each tree node $T_{i}$. The weight of a path from $R$ to $L$ is defined to be the sum of the weights of all the nodes al">
-<meta property="og:image" content="http://blog.provence36.cn/2020/03/28/%E3%80%90PAT%20A1053%E3%80%91Path%20of%20Equal%20Weight/1.png">
+<meta property="og:description" content="解题方法 结构体node的定义1234struct Node &amp;#123;    typename data;    vector&lt;typename&gt; child; &#x2F;&#x2F;孩子结点的下标&amp;#125;node[MAX];">
+<meta property="og:image" content="http://blog.provence36.cn/2020/03/28/%E6%A0%91%E7%9A%84%E9%81%8D%E5%8E%86/1.png">
 <meta property="article:published_time" content="2020-03-28T08:58:47.000Z">
-<meta property="article:modified_time" content="2020-03-29T11:06:42.556Z">
+<meta property="article:modified_time" content="2020-03-31T07:11:35.045Z">
 <meta property="article:author" content="Provence">
 <meta property="article:tag" content="树">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://blog.provence36.cn/2020/03/28/%E3%80%90PAT%20A1053%E3%80%91Path%20of%20Equal%20Weight/1.png">
+<meta name="twitter:image" content="http://blog.provence36.cn/2020/03/28/%E6%A0%91%E7%9A%84%E9%81%8D%E5%8E%86/1.png">
 
 
 
@@ -121,13 +121,13 @@
 
 
 
-  <link rel="canonical" href="http://blog.provence36.cn/2020/03/28/【PAT A1053】Path of Equal Weight/"/>
+  <link rel="canonical" href="http://blog.provence36.cn/2020/03/28/树的遍历/"/>
 
 
 
 
 
-  <title>【PAT A1053】Path of Equal Weight | Provence' Blog</title>
+  <title>树的遍历 | Provence' Blog</title>
   
 
 
@@ -254,7 +254,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://blog.provence36.cn/2020/03/28/%E3%80%90PAT%20A1053%E3%80%91Path%20of%20Equal%20Weight/">
+    <link itemprop="mainEntityOfPage" href="http://blog.provence36.cn/2020/03/28/%E6%A0%91%E7%9A%84%E9%81%8D%E5%8E%86/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Provence">
@@ -271,7 +271,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">【PAT A1053】Path of Equal Weight</h1>
+          <h1 class="post-title" itemprop="name headline">树的遍历</h1>
         
 
         <div class="post-meta">
@@ -324,8 +324,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2020/03/28/%E3%80%90PAT%20A1053%E3%80%91Path%20of%20Equal%20Weight/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2020/03/28/%E3%80%90PAT%20A1053%E3%80%91Path%20of%20Equal%20Weight/" itemprop="commentCount"></span>
+                <a href="/2020/03/28/%E6%A0%91%E7%9A%84%E9%81%8D%E5%8E%86/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2020/03/28/%E6%A0%91%E7%9A%84%E9%81%8D%E5%8E%86/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -333,7 +333,7 @@
 
           
           
-             <span id="/2020/03/28/%E3%80%90PAT%20A1053%E3%80%91Path%20of%20Equal%20Weight/" class="leancloud_visitors" data-flag-title="【PAT A1053】Path of Equal Weight">
+             <span id="/2020/03/28/%E6%A0%91%E7%9A%84%E9%81%8D%E5%8E%86/" class="leancloud_visitors" data-flag-title="树的遍历">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -358,7 +358,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1.1k 字
+                  1.4k 字
                 </span>
               
 
@@ -374,7 +374,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  5 分钟
+                  7 分钟
                 </span>
               
             </div>
@@ -395,10 +395,52 @@
       
 
       
-        <p>【题目描述】<br>Given a non-empty tree with root $R$, and with weight $W_{i}$ assigned to each tree node $T_{i}$. The weight of a path from $R$ to $L$ is defined to be the sum of the weights of all the nodes along the path from $R$ to any leaf node $L$.</p>
-<a id="more"></a>
-<p>Now given any weighted tree, you are supposed to find all the paths with their weights equal to a given number. For example, let’s consider the tree showed in the following figure: for each node, the upper number is the node ID which is a two-digit number, and the lower number is the weight of that node. Suppose that the given number is 24, then there exists 4 different paths which have the same given weight: {10 5 2 7}, {10 4 10}, {10 3 3 6 2} and {10 3 3 6 2}, which correspond to the red edges in the figure.</p>
-<img src="/2020/03/28/%E3%80%90PAT%20A1053%E3%80%91Path%20of%20Equal%20Weight/1.png" class="">
+        <h5 id="解题方法"><a href="#解题方法" class="headerlink" title="解题方法"></a>解题方法</h5><ol>
+<li>结构体node的定义<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Node</span> &#123;</span></span><br><span class="line">    <span class="keyword">typename</span> data;</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">typename</span>&gt; child; <span class="comment">//孩子结点的下标</span></span><br><span class="line">&#125;node[MAX];</span><br></pre></td></tr></table></figure>
+<a id="more"></a></li>
+<li>树的先根遍历<br>采用DFS的思想<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">preorder</span><span class="params">(<span class="keyword">int</span> index)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (node[index].child.<span class="built_in">size</span>() == <span class="number">0</span>) &#123; <span class="comment">//递归边界</span></span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%d "</span>, node[index].data); <span class="comment">//访问当前根结点</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; node[index].child.<span class="built_in">size</span>(); i++) &#123;</span><br><span class="line">        <span class="keyword">int</span> child = node[index].child[i];</span><br><span class="line">        preorder(child);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li>数的层序遍历<br>采用BFS的思想<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">layerorder</span><span class="params">(<span class="keyword">int</span> root)</span> </span>&#123;</span><br><span class="line">    <span class="built_in">queue</span>&lt;<span class="keyword">int</span>&gt; q; <span class="comment">//队列中放结点的下标</span></span><br><span class="line">    q.push(root);</span><br><span class="line">    <span class="keyword">while</span>(!q.empty()) &#123;</span><br><span class="line">        <span class="keyword">int</span> front = q.front();</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%d "</span>, node[front].data); <span class="comment">//访问当前结点</span></span><br><span class="line">        q.pop();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; node[front].child.<span class="built_in">size</span>(); i++) &#123;</span><br><span class="line">            <span class="keyword">int</span> child = node[front].child[i];</span><br><span class="line">            q.push(child);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="PAT例题"><a href="#PAT例题" class="headerlink" title="PAT例题"></a>PAT例题</h5><table>
+ <tr>
+     <td colspan="3">PAT A中相关题目</td>
+ </tr>
+ <tr>
+     <td>A1090</td>
+     <td>Highest Price in Supply</td>
+     <td>深度最大的叶子结点的价格以及个数</td>
+ </tr>
+ <tr>
+     <td>A1106</td>
+     <td>Lowest Price in Supply</td>
+     <td>深度最小的叶子结点的价格以及个数</td>
+ </tr>
+ <tr>
+     <td>A1079</td>
+     <td>Total Sales of Supply Chain</td>
+     <td>每个叶子结点的价格之和</td>
+ </tr>
+ <tr>
+     <td>A1094</td>
+     <td>The Largest Generation</td>
+     <td>深度为多少时，结点最多，求结点数和对应的深度</td>
+ </tr>
+ <tr>
+     <td>A1004</td>
+     <td>Counting Leaves</td>
+     <td>每一层叶子结点的个数</td>
+ </tr>
+ <tr>
+     <td>A1053</td>
+     <td>Path of Equal Weight</td>
+     <td>求从根结点到叶子结点的路径，使得每条路径上结点之和等于给定的数</td>
+ </tr>
+</table>
+
+</li>
+</ol>
+<p>下面讲一道例题<br>【PAT A1053】Path of Equal Weight</p>
+<p>【题目描述】<br>Given a non-empty tree with root $R$, and with weight $W_{i}$ assigned to each tree node $T_{i}$. The weight of a path from $R$ to $L$ is defined to be the sum of the weights of all the nodes along the path from $R$ to any leaf node $L$.<br>Now given any weighted tree, you are supposed to find all the paths with their weights equal to a given number. For example, let’s consider the tree showed in the following figure: for each node, the upper number is the node ID which is a two-digit number, and the lower number is the weight of that node. Suppose that the given number is 24, then there exists 4 different paths which have the same given weight: {10 5 2 7}, {10 4 10}, {10 3 3 6 2} and {10 3 3 6 2}, which correspond to the red edges in the figure.</p>
+<img src="/2020/03/28/%E6%A0%91%E7%9A%84%E9%81%8D%E5%8E%86/1.png" class="">
 <p>【输入格式】<br>Each input file contains one test case. Each case starts with a line containing $0&lt;N\leq100$, the number of nodes in a tree, $M (&lt;N)$, the number of non-leaf nodes, and $0&lt;S&lt;2^{30}$, the given weight number. The next line contains $N$ positive numbers where $W_i$(&lt;1000) corresponds to the tree node $T_i$. Then $M$ lines follow, each in the format:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ID K ID[1] ID[2] ... ID[K]</span><br></pre></td></tr></table></figure>
 <p>where <code>ID</code> is a two-digit number representing a given non-leaf node, <code>K</code> is the number of its children, followed by a sequence of two-digit <code>ID</code>‘s of its children. For the sake of simplicity, let us fix the root ID to be <code>00</code>.<br>【输出格式】<br>For each test case, print all the paths with weight S in non-increasing order. Each path occupies a line with printed weights from the root to the leaf in order. All the numbers must be separated by a space with no extra space at the end of the line.<br>Note: sequence $\lbrace{A_1,A_2,⋯,A_n}\rbrace$ is said to be greater than sequence $\lbrace{B_1,B_2,⋯,B_m}\rbrace$ if there exists $1{\leq}k&lt;min \lbrace n,m \rbrace$ such that $A_i=B_i$ for $i=1,⋯,k,$ and $A_{k+1}&gt;B_{k+1}$.<br>【输入样例】</p>
@@ -509,8 +551,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -590,6 +641,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#解题方法"><span class="nav-number">1.</span> <span class="nav-text">解题方法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#PAT例题"><span class="nav-number">2.</span> <span class="nav-text">PAT例题</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
