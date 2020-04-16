@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="HDUOJ,卡特兰数," />
+  <meta name="keywords" content="图," />
 
 
 
@@ -79,21 +79,17 @@
 
 
 
-<meta name="description" content="本文是先介绍一下卡特兰数，再讲几道相关例题。 关于卡特兰数 卡特兰数是一种经典的组合数，经常出现在各种计算中，其前几项为 :1, 2, 5, 14, 42,132, 429, 1430, 4862, 16796,58786, 208012, 742900, 2674440, 9694845,35357670, 129644790, 477638700, 1767263190,6564120420,">
+<meta name="description" content="AOV网和AOE网顶点活动网（AOV网）是指用顶点表示活动，而用边集表示活动间优先关系的有向图。边活动网（AOE网）是指用带权的边集表示活动，而用顶点表示事件的有向图，其中边权表示完成活动需要的时间。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="卡特兰数">
-<meta property="og:url" content="http://blog.provence36.cn/2020/03/19/%E5%8D%A1%E7%89%B9%E5%85%B0%E6%95%B0/index.html">
+<meta property="og:title" content="关键路径">
+<meta property="og:url" content="http://blog.provence36.cn/2020/04/15/%E5%85%B3%E9%94%AE%E8%B7%AF%E5%BE%84/index.html">
 <meta property="og:site_name" content="Provence&#39; Blog">
-<meta property="og:description" content="本文是先介绍一下卡特兰数，再讲几道相关例题。 关于卡特兰数 卡特兰数是一种经典的组合数，经常出现在各种计算中，其前几项为 :1, 2, 5, 14, 42,132, 429, 1430, 4862, 16796,58786, 208012, 742900, 2674440, 9694845,35357670, 129644790, 477638700, 1767263190,6564120420,">
-<meta property="og:image" content="http://blog.provence36.cn/2020/03/19/%E5%8D%A1%E7%89%B9%E5%85%B0%E6%95%B0/1.png">
-<meta property="og:image" content="http://blog.provence36.cn/2020/03/19/%E5%8D%A1%E7%89%B9%E5%85%B0%E6%95%B0/2.png">
-<meta property="article:published_time" content="2020-03-19T11:13:48.000Z">
-<meta property="article:modified_time" content="2020-03-19T13:05:11.144Z">
+<meta property="og:description" content="AOV网和AOE网顶点活动网（AOV网）是指用顶点表示活动，而用边集表示活动间优先关系的有向图。边活动网（AOE网）是指用带权的边集表示活动，而用顶点表示事件的有向图，其中边权表示完成活动需要的时间。">
+<meta property="article:published_time" content="2020-04-15T11:49:53.000Z">
+<meta property="article:modified_time" content="2020-04-16T03:10:51.674Z">
 <meta property="article:author" content="Provence">
-<meta property="article:tag" content="HDUOJ">
-<meta property="article:tag" content="卡特兰数">
+<meta property="article:tag" content="图">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://blog.provence36.cn/2020/03/19/%E5%8D%A1%E7%89%B9%E5%85%B0%E6%95%B0/1.png">
 
 
 
@@ -123,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://blog.provence36.cn/2020/03/19/卡特兰数/"/>
+  <link rel="canonical" href="http://blog.provence36.cn/2020/04/15/关键路径/"/>
 
 
 
 
 
-  <title>卡特兰数 | Provence' Blog</title>
+  <title>关键路径 | Provence' Blog</title>
   
 
 
@@ -256,7 +252,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://blog.provence36.cn/2020/03/19/%E5%8D%A1%E7%89%B9%E5%85%B0%E6%95%B0/">
+    <link itemprop="mainEntityOfPage" href="http://blog.provence36.cn/2020/04/15/%E5%85%B3%E9%94%AE%E8%B7%AF%E5%BE%84/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Provence">
@@ -273,7 +269,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">卡特兰数</h1>
+          <h1 class="post-title" itemprop="name headline">关键路径</h1>
         
 
         <div class="post-meta">
@@ -285,8 +281,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-19T19:13:48+08:00">
-                2020-03-19
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-04-15T19:49:53+08:00">
+                2020-04-15
               </time>
             
 
@@ -308,8 +304,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%9D%AD%E7%94%B5%E5%A4%8D%E8%AF%95%E5%87%86%E5%A4%87/" itemprop="url" rel="index">
-                    <span itemprop="name">杭电复试准备</span>
+                  <a href="/categories/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index">
+                    <span itemprop="name">算法笔记</span>
                   </a>
                 </span>
 
@@ -326,8 +322,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2020/03/19/%E5%8D%A1%E7%89%B9%E5%85%B0%E6%95%B0/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2020/03/19/%E5%8D%A1%E7%89%B9%E5%85%B0%E6%95%B0/" itemprop="commentCount"></span>
+                <a href="/2020/04/15/%E5%85%B3%E9%94%AE%E8%B7%AF%E5%BE%84/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2020/04/15/%E5%85%B3%E9%94%AE%E8%B7%AF%E5%BE%84/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -335,7 +331,7 @@
 
           
           
-             <span id="/2020/03/19/%E5%8D%A1%E7%89%B9%E5%85%B0%E6%95%B0/" class="leancloud_visitors" data-flag-title="卡特兰数">
+             <span id="/2020/04/15/%E5%85%B3%E9%94%AE%E8%B7%AF%E5%BE%84/" class="leancloud_visitors" data-flag-title="关键路径">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -360,7 +356,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  409 字
+                  1.8k 字
                 </span>
               
 
@@ -376,7 +372,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1 分钟
+                  7 分钟
                 </span>
               
             </div>
@@ -397,28 +393,35 @@
       
 
       
-        <p>本文是先介绍一下卡特兰数，再讲几道相关例题。</p>
-<h3 id="关于卡特兰数"><a href="#关于卡特兰数" class="headerlink" title="关于卡特兰数"></a>关于卡特兰数</h3><blockquote>
-<p>卡特兰数是一种经典的组合数，经常出现在各种计算中，其前几项为 :<br>1, 2, 5, 14, 42,<br>132, 429, 1430, 4862, 16796,<br>58786, 208012, 742900, 2674440, 9694845,<br>35357670, 129644790, 477638700, 1767263190,<br>6564120420, 24466267020, 91482563640, 343059613650, 1289904147324,<br>4861946401452, …</p>
-</blockquote>
+        <h5 id="AOV网和AOE网"><a href="#AOV网和AOE网" class="headerlink" title="AOV网和AOE网"></a>AOV网和AOE网</h5><p>顶点活动网（AOV网）是指用顶点表示活动，而用边集表示活动间优先关系的有向图。<br>边活动网（AOE网）是指用带权的边集表示活动，而用顶点表示事件的有向图，其中边权表示完成活动需要的时间。</p>
 <a id="more"></a>
-<h3 id="卡特兰数的一些公式"><a href="#卡特兰数的一些公式" class="headerlink" title="卡特兰数的一些公式"></a>卡特兰数的一些公式</h3><p>令$f(0)=1$,$f(1)=1$,Catalan数满足递归式：<br>$f(n)=f(n-1){\times}f(0)+f(n-2){\times}f(1)+{\cdots}+f(0){\times}f(n-1)$<br>$f(n)=\sum_{i=0}^{n-1}f(n-i-1){\times}f(i)$</p>
-<p>其他递推公式<br>$f(n)=\frac{C_{2n}^n}{n+1}$<br>$f(n)={C_{2n}^n}-{C_{2n}^{n-1}}$</p>
-<h3 id="卡特兰数的应用"><a href="#卡特兰数的应用" class="headerlink" title="卡特兰数的应用"></a>卡特兰数的应用</h3><p><strong>1、小兔的棋盘</strong><br><a href="http://acm.hdu.edu.cn/showproblem.php?pid=2067" target="_blank" rel="noopener">小兔的棋盘</a><br>求从点S到点E的最短路径有几条（只能按格子走且不能穿过SE这条线），下图中的红线是其中一种走法。</p>
-<img src="/2020/03/19/%E5%8D%A1%E7%89%B9%E5%85%B0%E6%95%B0/1.png" class="" title="图1">
+<p>如果给定AOV网中个顶点活动所需要的时间，那么就可以将AOV网转换为AOE网。转换方法：将AOV网中的每个顶点都拆成两个顶点，分别表示活动的起点和终点，而两个顶点之间用有向边连接，该有向边表示原顶点的活动，边权给定；原AOV网中的边全部视为空活动，边权为0。</p>
+<p>AOE网是基于工程提出的概念，着重解决的问题有：</p>
+<ol>
+<li>工程起始到终止至少需要多少时间。</li>
+<li>哪条路径上的活动是影响整个工程进度的关键。</li>
+</ol>
+<p>AOE网中的最长路径是关键路径，关键路径上的活动为关键活动。</p>
+<h5 id="最长路径"><a href="#最长路径" class="headerlink" title="最长路径"></a>最长路径</h5><p>如何求解最长路径长度？</p>
+<ul>
+<li>没有正环的图<br>把所有边的边权乘以-1，然后使用Bellman-Ford算法或SPFA算法求最短路径长度，将所求结果取反即可。（不能使用Dijkstra算法，因为Dijkstra算法不能处理负边权的情况）。</li>
+<li>有正环的图<br>最长路径不存在。但如果需要求最长简单路径（每个顶点最多只经过一次的路径），那么虽然最长简单路径本身存在，却没有办法通过Bellman-Ford等算法来求解，该问题是一个NP-Hard问题。</li>
+</ul>
+<h5 id="关键路径"><a href="#关键路径" class="headerlink" title="关键路径"></a>关键路径</h5><p>求解有向无环图（DAG）中最长路径的方法。<br>关键活动的特征是最早开始时间等于最迟开始时间，因此可以设置数组e和l，其中e[r]和l[r]分别表示活动$a_r$的最早开始时间和最迟开始时间。于是，当求出这两个数组之后，就可以通过判断e[r]==l[r]是否成立来确定活动r是否是关键活动。<br>那么，如何求解数组e和l呢？<br>顶点表示事件，边表示活动。如事件$V_i$在经过活动$a_r$之后到达事件$V_j$。设置数组ve[i]和vl[i]分别表示事件i的最早发生时间和最迟发生时间。则活动r的最早发生时间就是事件i的最早发生时间，即e[r]=ve[i];活动r的最迟发生时间就是事件j的最迟发生时间减活动r的花费时间，即l[r]=vl[j]-length[r]。<br>那么，如何求解数组ve和vl呢？</p>
+<ol>
+<li>求解数组ve<br>如有k个事件$V_{i1}$~$V_{ik}$通过相应的活动$a_{r1}$~$a_{rk}$到达事件$V_j$，活动的边权为length[r1]~length[rk],那么事件$V_j$的最早发生时间是ve[i1]+length[r1]~ve[ik]+length[rk]中的最大值。<br>那么，要得到ve[j]的正确值，必须先得到ve[i1]~ve[ik]的值。如何得到？使用<strong>拓扑排序</strong>！但是我们发现使用拓扑排序的话，访问后继结点很容易，但访问前驱结点却不易。于是我们可以在访问结点$V_{i1}$~$V_{ik}$时不断更新ve[j]（ve[j]的值为ve[i1]+length[r1]~ve[ik]+length[rk]中的最大值）。这部分的代码如下：<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//拓扑排序</span></span><br><span class="line"><span class="built_in">stack</span>&lt;<span class="keyword">int</span>&gt; topOrder;</span><br><span class="line"><span class="comment">//拓扑排序，求ve数组</span></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">topologicalSort</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">queue</span>&lt;<span class="keyword">int</span>&gt; q;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span>(inDegree[i] == <span class="number">0</span>) &#123;</span><br><span class="line">            q.push(i);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span>(!q.empty()) &#123;</span><br><span class="line">        <span class="keyword">int</span> u = q.front();</span><br><span class="line">        q.pop();</span><br><span class="line">        topOrder.push(u);</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; G[u].<span class="built_in">size</span>(); i++) &#123;</span><br><span class="line">            <span class="keyword">int</span> v = G[u][i].v; <span class="comment">//u的i号后继结点编号</span></span><br><span class="line">            inDegree[v]--;</span><br><span class="line">            <span class="keyword">if</span>(inDegree[v] == <span class="number">0</span>) &#123;</span><br><span class="line">                q.push(v);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">//用ve[u]来更新u的所有后继结点v</span></span><br><span class="line">            <span class="keyword">if</span>(ve[u]+G[u][i].w &gt; ve[v]) &#123;</span><br><span class="line">                ve[v] = ve[u]+G[u][i].w;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(topOrder.<span class="built_in">size</span>() == n) <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li>求解数组vl<br>如事件$V_i$通过相应的活动$a_{r1}$~$a_{rk}$到达k个事件$V_{j1}$~$V_{jk}$，活动的边权为length[r1]~length[rk],那么事件$V_i$的最迟发生时间是vl[j1]-length[r1]~vl[jk]-length[rk]中的最小值。<br>那么，要得到vl[i]的正确值，必须先得到vl[j1]~vl[jk]的值。如何得到？使用<strong>逆拓扑排序</strong>！不必再做一次ni拓扑排序来得到逆拓扑序列，而是可以通过颠倒拓扑序列来得到一组合法的逆拓扑序列。我们在求ve数组的时候用栈存储了拓扑序列，那么只需要顺序出栈就是逆拓扑序列。于是当我们在访问结点$V_i$时，就可以遍历所有后继结点$V_{j1}$~$V_{jk}$，使用vl[j1]~vl[jk]来不断更新vl[i]（vl[i]的值为vl[j1]-length[r1]~vl[ik]-length[rk]中的最小值）。这部分的代码如下：<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">fill</span>(vl, vl+n, ve[n<span class="number">-1</span>]); <span class="comment">//vl数组初始化，初始值为终点的ve值</span></span><br><span class="line"><span class="comment">//直接使用topOrder出栈即为逆拓扑序列，求解vl数组</span></span><br><span class="line"><span class="keyword">while</span> (!topOrder.empty()) &#123;</span><br><span class="line">    <span class="keyword">int</span> u = topOrder.top();</span><br><span class="line">    topOrder.pop();</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; G[u].<span class="built_in">size</span>(); i++) &#123;</span><br><span class="line">        <span class="keyword">int</span> v = G[u][i].v; <span class="comment">//u的后继结点</span></span><br><span class="line">        <span class="keyword">if</span> (vl[v] - G[u][v].w &lt; vl[u]) &#123;</span><br><span class="line">            vl[u] = vl[v] - G[u][v].w;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
+</li>
+</ol>
+<p><strong>总结：</strong></p>
+<ol>
+<li>按拓扑序和逆拓扑序分别计算各顶点的最早发生时间和最迟发生时间。<br>最早（拓扑序）：ve[j] = max{ve[i] + length[i-&gt;j]}<br>最迟（逆拓扑序）：vl[i] = min{vl[j] - length[i-&gt;j]}</li>
+<li>用上面的结果计算各边的最早开始时间和最迟开始时间。<br>最早：e[i-&gt;j] = ve[i]<br>最迟：l[i-&gt;j] = vl[j] - length[i-&gt;j]</li>
+<li>e[i-&gt;j] == l[i-&gt;j]的活动就是关键活动</li>
+</ol>
 <p>代码如下：</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;set&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">long</span> <span class="keyword">long</span> h[<span class="number">40</span>] = &#123;<span class="number">0</span>&#125;;</span><br><span class="line">    h[<span class="number">0</span>] = h[<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">int</span> i,j ;</span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">2</span>; i &lt;= <span class="number">35</span>; i++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (j = <span class="number">0</span>; j &lt;= i - <span class="number">1</span>; j++) &#123;</span><br><span class="line">            h[i] += h[j] * h[i - <span class="number">1</span> - j];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">int</span> n, k = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span> (<span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;n) &amp;&amp; n != <span class="number">-1</span>) &#123;</span><br><span class="line">        k++;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%d %d %lld\n"</span>, k, n, <span class="number">2</span> * h[n]);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><strong>2、进出栈问题</strong><br>如以1,2,3,4,…,n顺序进栈，那么有多少种出栈顺序。</p>
-<blockquote>
-<p>如n=3<br>123,132,213,231,321</p>
-</blockquote>
-<p><strong>3、二叉树构成问题</strong><br>有n个结点，问总共能构成几种不同的二叉树。<br>如n=3，情况如下图：</p>
-<img src="/2020/03/19/%E5%8D%A1%E7%89%B9%E5%85%B0%E6%95%B0/2.png" class="" title="图2">
-
-
-<p>参考链接：<a href="https://blog.csdn.net/wu_tongtong/article/details/78161211" target="_blank" rel="noopener">https://blog.csdn.net/wu_tongtong/article/details/78161211</a></p>
-
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//关键路径，不是有向无环图返回-1，否则返回关键路径长度</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">CriticalPath</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">memset</span>(ve, <span class="number">0</span>, <span class="keyword">sizeof</span>(ve));</span><br><span class="line">    <span class="keyword">if</span> (topologicalSort() == <span class="literal">false</span>) &#123; <span class="comment">//topologicalSort()代码在上面</span></span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span>; <span class="comment">//不是有向无环图</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">fill</span>(vl, vl+n, ve[n<span class="number">-1</span>]); <span class="comment">//vl数组初始化，初始值为终点的ve值</span></span><br><span class="line">    <span class="comment">//直接使用topOrder出栈即为逆拓扑序列，求解vl数组</span></span><br><span class="line">    <span class="keyword">while</span> (!topOrder.empty()) &#123;</span><br><span class="line">        <span class="keyword">int</span> u = topOrder.top();</span><br><span class="line">        topOrder.pop();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; G[u].<span class="built_in">size</span>(); i++) &#123;</span><br><span class="line">            <span class="keyword">int</span> v = G[u][i].v; <span class="comment">//u的后继结点</span></span><br><span class="line">            <span class="keyword">if</span> (vl[v] - G[u][v].w &lt; vl[u]) &#123;</span><br><span class="line">                vl[u] = vl[v] - G[u][v].w;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//遍历邻接表的所有边，计算活动的最早开始时间e和最迟开始时间l</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> u = <span class="number">0</span>; u &lt; n; u++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; G[u].<span class="built_in">size</span>(); i++) &#123;</span><br><span class="line">            <span class="keyword">int</span> v = G[u][i].v; </span><br><span class="line">            <span class="keyword">int</span> w = G[u][i].w;</span><br><span class="line">            <span class="comment">//活动的最早开始时间e和最迟开始时间l</span></span><br><span class="line">            <span class="keyword">int</span> e = ve[u], l = vl[v] - w;</span><br><span class="line">            <span class="comment">//如果e==l，说明活动u-&gt;v是关键活动</span></span><br><span class="line">            <span class="keyword">if</span> (e == l) &#123;</span><br><span class="line">                <span class="built_in">printf</span>(<span class="string">"%d-&gt;%d\n"</span>, u, v); <span class="comment">//输出关键活动</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ve[n<span class="number">-1</span>]; <span class="comment">//返回关键路径长度</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -435,9 +438,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/HDUOJ/" rel="tag"># HDUOJ</a>
-          
-            <a href="/tags/%E5%8D%A1%E7%89%B9%E5%85%B0%E6%95%B0/" rel="tag"># 卡特兰数</a>
+            <a href="/tags/%E5%9B%BE/" rel="tag"># 图</a>
           
         </div>
       
@@ -450,8 +451,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2020/03/18/2066-%E4%B8%80%E4%B8%AA%E4%BA%BA%E7%9A%84%E6%97%85%E8%A1%8C/" rel="next" title="2066-一个人的旅行">
-                <i class="fa fa-chevron-left"></i> 2066-一个人的旅行
+              <a href="/2020/04/12/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" rel="next" title="动态规划">
+                <i class="fa fa-chevron-left"></i> 动态规划
               </a>
             
           </div>
@@ -459,10 +460,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2020/03/19/2068-RPG%E7%9A%84%E9%94%99%E6%8E%92/" rel="prev" title="2068-RPG的错排">
-                2068-RPG的错排 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -617,7 +614,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#关于卡特兰数"><span class="nav-number">1.</span> <span class="nav-text">关于卡特兰数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#卡特兰数的一些公式"><span class="nav-number">2.</span> <span class="nav-text">卡特兰数的一些公式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#卡特兰数的应用"><span class="nav-number">3.</span> <span class="nav-text">卡特兰数的应用</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#AOV网和AOE网"><span class="nav-number">1.</span> <span class="nav-text">AOV网和AOE网</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#最长路径"><span class="nav-number">2.</span> <span class="nav-text">最长路径</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#关键路径"><span class="nav-number">3.</span> <span class="nav-text">关键路径</span></a></li></ol></div>
             
 
           </div>
