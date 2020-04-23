@@ -1,0 +1,1242 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="线性表的存储结构线性表有两种存储结构，分别是顺序存储结构和链式存储结构。  顺序存储结构  结点中只有自身的信息域，因此存储密度大、存储空间利用率高。  随机访问  插入和删除需要移动大量元素     链式存储结构  结点中除自身信息域外还有指针域，因此存储密度小、存储空间利用率低。 在逻辑上相邻的结点在物理上不必相邻，因此不能随机访问，只能顺序访问。 插入和删除操作方便灵活，不必移动结点，只需修">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据结构面试题">
+<meta property="og:url" content="http://blog.provence36.cn/2020/04/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E9%9D%A2%E8%AF%95%E9%A2%98/index.html">
+<meta property="og:site_name" content="Provence&#39; Blog">
+<meta property="og:description" content="线性表的存储结构线性表有两种存储结构，分别是顺序存储结构和链式存储结构。  顺序存储结构  结点中只有自身的信息域，因此存储密度大、存储空间利用率高。  随机访问  插入和删除需要移动大量元素     链式存储结构  结点中除自身信息域外还有指针域，因此存储密度小、存储空间利用率低。 在逻辑上相邻的结点在物理上不必相邻，因此不能随机访问，只能顺序访问。 插入和删除操作方便灵活，不必移动结点，只需修">
+<meta property="article:published_time" content="2020-04-23T13:41:24.000Z">
+<meta property="article:modified_time" content="2020-04-23T13:43:18.680Z">
+<meta property="article:author" content="Provence">
+<meta name="twitter:card" content="summary">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://blog.provence36.cn/2020/04/23/数据结构面试题/"/>
+
+
+
+
+
+  <title>数据结构面试题 | Provence' Blog</title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Provence' Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://blog.provence36.cn/2020/04/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E9%9D%A2%E8%AF%95%E9%A2%98/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Provence">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://avatars3.githubusercontent.com/u/26401802?s=400&u=87db6b0edfa75ed2b59f1fe0f0da23215082c344&v=4">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Provence' Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">数据结构面试题</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-04-23T21:41:24+08:00">
+                2020-04-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%9D%AD%E7%94%B5%E5%A4%8D%E8%AF%95%E5%87%86%E5%A4%87/" itemprop="url" rel="index">
+                    <span itemprop="name">杭电复试准备</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2020/04/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E9%9D%A2%E8%AF%95%E9%A2%98/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2020/04/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E9%9D%A2%E8%AF%95%E9%A2%98/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2020/04/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E9%9D%A2%E8%AF%95%E9%A2%98/" class="leancloud_visitors" data-flag-title="数据结构面试题">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  3.8k 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  13 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h4 id="线性表的存储结构"><a href="#线性表的存储结构" class="headerlink" title="线性表的存储结构"></a>线性表的存储结构</h4><p>线性表有两种存储结构，分别是顺序存储结构和链式存储结构。</p>
+<ol>
+<li><p>顺序存储结构</p>
+<ul>
+<li><p>结点中只有自身的信息域，因此存储密度大、存储空间利用率高。</p>
+</li>
+<li><p>随机访问</p>
+</li>
+<li><p>插入和删除需要移动大量元素 </p>
+</li>
+</ul>
+</li>
+<li><p>链式存储结构</p>
+<ul>
+<li>结点中除自身信息域外还有指针域，因此存储密度小、存储空间利用率低。</li>
+<li>在逻辑上相邻的结点在物理上不必相邻，因此不能随机访问，只能顺序访问。</li>
+<li>插入和删除操作方便灵活，不必移动结点，只需修改结点中的指针域。</li>
+</ul>
+</li>
+</ol>
+<h4 id="如何实现循环队列？好处？为什么要空一个位置？"><a href="#如何实现循环队列？好处？为什么要空一个位置？" class="headerlink" title="如何实现循环队列？好处？为什么要空一个位置？"></a>如何实现循环队列？好处？为什么要空一个位置？</h4><p>如何实现：把数组弄成一个环，让rear和front指针沿着环走，这样就可以产生循环队列。</p>
+<p>好处：循环队列是顺序队列的改进，在顺序队列中，在元素进队的时候，rear要向后移动，元素出队的时候，front也要向后移动，这样经过一系列的出队和入队操作之后，两个指针最后会达到数组的末端，此时虽然队中已经没有元素了，但是还是不能让元素入队，即出现了“假溢出”的现象。循环队列就能避免出现这个现象。</p>
+<p>空一个位置：这是为了用来区分队空与队满的情况。如果不空一个位置，则判断队空和队满的条件是一样的。</p>
+<h4 id="度为二的数和二叉树的区别"><a href="#度为二的数和二叉树的区别" class="headerlink" title="度为二的数和二叉树的区别"></a>度为二的数和二叉树的区别</h4><ol>
+<li>度为2的树至少有3个结点，而二叉树可以为空。</li>
+<li>度为2的有序树的孩子结点的左右次序是相对于另一个孩子结点而言的。若某个结点只有一个孩子结点，则这个孩子结点就无须区分其左右次序。而二叉树无论孩子结点数是否为2，均需确定其左右次序。</li>
+</ol>
+<h4 id="二叉树的存储方式和遍历方式"><a href="#二叉树的存储方式和遍历方式" class="headerlink" title="二叉树的存储方式和遍历方式"></a>二叉树的存储方式和遍历方式</h4><p>存储方式：</p>
+<ol>
+<li><p>顺序存储</p>
+<p>用一维数组存放二叉树中的结点，从树根开始，从上到下，每层从左到右地给所有结点按完全二叉树的树形编号，若某位置没有结点，则数组对应的位置为0。完全二叉树和满二叉树采用顺序存储比较合适，既能够节省存储空间，又可以利用数组元素的下标值确定结点在二叉树中的位置，以及结点之间的关系。</p>
+</li>
+<li><p>链式存储</p>
+<p>链表中每个结点由三个域组成，数据域和左右指针域，左右指针分别用来给出该结点左孩子和右孩子所在的链结点的存储地址。</p>
+</li>
+</ol>
+<p>遍历方式：</p>
+<ol>
+<li><p>先序遍历</p>
+<p>先访问根结点，先序遍历左子树，先序遍历右子树</p>
+</li>
+<li><p>中序遍历</p>
+<p>中序遍历左子树，访问根结点，中序遍历右子树</p>
+</li>
+<li><p>后序遍历</p>
+<p>后序遍历左子树，后序遍历右子树，访问根结点</p>
+</li>
+<li><p>层序遍历</p>
+<p>借助队列实现。先将根结点入队，然后出队，访问该结点，若它有左子树，则将该左子树根结点入队；若他有右子树，则将该右子树根结点入队。然后出队，对出队结点访问，重复以上操作，直到队列为空。</p>
+</li>
+</ol>
+<h4 id="树的存储结构和遍历方式"><a href="#树的存储结构和遍历方式" class="headerlink" title="树的存储结构和遍历方式"></a>树的存储结构和遍历方式</h4><p>存储结构：</p>
+<ol>
+<li><p>双亲表示法</p>
+<p>采用一组连续空间来存储每个结点，同时在每个结点中增设一个伪指针，指示其双亲结点在数组中的位置。根结点下标为0，伪指针域为-1。</p>
+<p>可以很快找到双亲，但求结点的孩子需要遍历整个结构。</p>
+</li>
+<li><p>孩子表示法</p>
+<p>每个结点的孩子结点都用单链表链接起来形成一个线性结构，n个结点就有n个孩子链表，叶子结点的孩子链表为空表。</p>
+<p>求结点的孩子简单，寻找双亲需要遍历n个结点中孩子链表指针域所指向的n个孩子链表。</p>
+</li>
+<li><p>孩子兄弟表示法</p>
+<p>每个结点包括三部分内容：结点值、指向结点第一个孩子结点的指针，指向结点下一个兄弟结点的指针（沿此域可以找到结点的所有兄弟结点）。</p>
+<p>可以方便地实现数转换成二叉树的操作，易于查找结点的孩子，但查找孩子的双亲结点比较麻烦。</p>
+</li>
+</ol>
+<h4 id="图的存储方式和遍历方式"><a href="#图的存储方式和遍历方式" class="headerlink" title="图的存储方式和遍历方式"></a>图的存储方式和遍历方式</h4><p>存储方式：</p>
+<ol>
+<li><p>邻接矩阵法</p>
+<p>用两个数组来表示图，一个一维数组存储顶点信息，一个二维数组（成为邻接矩阵）存储边的信息。</p>
+</li>
+<li><p>邻接表法</p>
+<p>图中的顶点用一个一维数组存储，在顶点数组中，每个数据元素需要存储一个指向第一个邻接点的指针。该顶点的邻接点组成一个线性表，用单链表存储。</p>
+</li>
+<li><p>十字链表</p>
+<p>有向图的一种链式存储结构</p>
+</li>
+<li><p>邻接多重表</p>
+<p>无向图的链式存储结构</p>
+</li>
+</ol>
+<p>遍历方式：</p>
+<ol>
+<li><p>深度优先搜索</p>
+<p>深度优先搜索是一个递归的过程。首先，选定一个出发点后进行遍历，如果有邻接的未被访问过的结点则访问这个结点。如果没有邻接且未被访问过的结点，则回退一步，看该结点有没有邻接且未被访问过的结点。有则访问，无则再次回退，重复此过程，直到该连通块中所有顶点都被访问过。</p>
+</li>
+<li><p>广度优先搜索</p>
+<p>广度优先搜索类似于树的层次遍历。从图中某顶点v出发，在访问了v之后依次访问v的各个未曾访问过的邻接点，然后分别从这些邻接点出发依次访问它们的邻接点，直至图中所有的顶点都被访问到。</p>
+</li>
+</ol>
+<p>图的深度优先搜索是否唯一：</p>
+<p>如果每个结点都只有一个孩子结点，那就是唯一的。否则，不唯一。</p>
+<p>深度优先搜索形成的是森林。</p>
+<h4 id="图的相关概念"><a href="#图的相关概念" class="headerlink" title="图的相关概念"></a>图的相关概念</h4><p>图：由结点的有穷集合V和边的集合E组成。</p>
+<p>类别：有向图和无向图。</p>
+<p>顶点的度：出度和入度。</p>
+<p>有向完全图和无向完全图：  </p>
+<p>若有向图有n个顶点，则最多有n(n-1)条边，则称为有向完全图；</p>
+<p>若无向图有n个顶点，则最多有n(n-1)/2条边，则称为无向完全图。</p>
+<p>路径：由顶点和相邻顶点序偶构成的边所形成的序列。</p>
+<p>简单路径：序列中的顶点和路径不重复出现的路径。</p>
+<p>回路：路径中第一个顶点和最后一个顶点相同的路径。</p>
+<p>连通：   </p>
+<p>无向图中，如果Vi到Vj有路径，则称这两个顶点连通。如果图中任意两个顶点之间都连通，则称改图为连通图。</p>
+<p>有向图中，如果Vi到Vj有路径，则称这两个顶点连通。如果图中每一对顶点Vi和Vj，从Vi到Vj和Vj到Vi都有路径，则称改图为强连通图。</p>
+<h4 id="图和树的区别"><a href="#图和树的区别" class="headerlink" title="图和树的区别"></a>图和树的区别</h4><p>树是一种“层次”关系，图是“网络”关系。</p>
+<p>树是一对多的关系，图是多对多的关系。</p>
+<h4 id="什么是二叉排序树？二叉排序树的查找过程？"><a href="#什么是二叉排序树？二叉排序树的查找过程？" class="headerlink" title="什么是二叉排序树？二叉排序树的查找过程？"></a>什么是二叉排序树？二叉排序树的查找过程？</h4><p>定义：</p>
+<ol>
+<li>要么二叉查找树是一棵空树。</li>
+<li>要么二叉查找树由根结点、左子树、右子树组成，其中左子树和右子树都是二叉查找树，且左子树上所有结点的数据域均<strong>小于或等于</strong>根结点的数据域，右子树上所有结点的数据域均<strong>大于</strong>根结点的数据域。</li>
+</ol>
+<p>查找过程：</p>
+<p>若查找的关键字等于根结点的关键字，则查找成功。</p>
+<p>若查找的关键字小于根结点的关键字，递归查找</p>
+<p>左子树。</p>
+<p>若查找的关键字大于根结点的关键字，递归查找右子树。</p>
+<p>若子树为空，则查找失败。</p>
+<p>二叉排序树的中序遍历是一个递增序列。</p>
+<h4 id="什么是堆？有什么作用？"><a href="#什么是堆？有什么作用？" class="headerlink" title="什么是堆？有什么作用？"></a>什么是堆？有什么作用？</h4><p>堆是一棵完全二叉树，树中每个结点的值都不小于（或不大于）其左右孩子结点的值。如果父亲结点的值大于等于孩子结点的值，那么称这样的堆为大根堆；如果父亲结点的值小于等于孩子结点的值，那么称这样的堆为小根堆；</p>
+<p>作用：应用于堆排序。</p>
+<h4 id="什么是最小生成树？求最小生成树的方法"><a href="#什么是最小生成树？求最小生成树的方法" class="headerlink" title="什么是最小生成树？求最小生成树的方法"></a>什么是最小生成树？求最小生成树的方法</h4><p>最小生成树是在一个给定的无向图中求一棵树，使得这棵树拥有图中的所有顶点，且所有边都是来自图中的边，并且满足整棵树的边权之和最小。</p>
+<ol>
+<li><p>Prim算法</p>
+<p>基本思想：设置集合S来存放已访问过的点，每次从未访问的点中找到离集合S最近的点，访问它并加入集合S，并遍历与该点相邻的点，如果能使之离集合S更近，则更新。</p>
+</li>
+<li><p>Kruskal算法</p>
+<p>基本思想：首先将每条边按边权从小到大的顺序排列，然后取出边权最小的边，如果没有构成回路，则把这条边加入最小生成树中，一直重复该操作直到加入了n-1条边为止。</p>
+</li>
+</ol>
+<h4 id="求最短路径的方法"><a href="#求最短路径的方法" class="headerlink" title="求最短路径的方法"></a>求最短路径的方法</h4><ol>
+<li><p>Dijkstra算法</p>
+<p>设有两个顶点集合S和T，其中集合S中存放的是已被访问的顶点，集合T中存放的是未被访问的顶点。每次从集合T中选择与起点s的最短距离最小的一个顶点u，访问u并加入集合S。之后，令顶点u为中介点，优化起点s与所有u能到达的顶点v之间的最短距离。重复以上操作，直到集合S已经包含所有顶点。</p>
+<p>不能解决有负边权的图的最短路径</p>
+</li>
+<li><p>Floyd算法</p>
+<p>如果存在一个顶点k，使得以k作为中介点时，顶点i到顶点j的最短距离缩短，则更新dis[i][j] = dis[i][k] + dis[k][j]  </p>
+</li>
+<li><p>Bellman-Ford算法</p>
+</li>
+<li><p>SPFA算法</p>
+</li>
+</ol>
+<h4 id="什么哈希表？如何构造哈希函数？什么是哈希冲突？如何解决？"><a href="#什么哈希表？如何构造哈希函数？什么是哈希冲突？如何解决？" class="headerlink" title="什么哈希表？如何构造哈希函数？什么是哈希冲突？如何解决？"></a>什么哈希表？如何构造哈希函数？什么是哈希冲突？如何解决？</h4><p>哈希表是根据关键字而直接访问的数据结构。哈希表建立了关键字和存储地址之间的一种映射关系。</p>
+<p>哈希函数的构造方法：</p>
+<ol>
+<li>直接定址法</li>
+<li>除留余数法</li>
+<li>数字分析法</li>
+<li>平方取中法</li>
+</ol>
+<p>哈希冲突：多个关键字映射到同一个存储地址。</p>
+<p>解决办法：</p>
+<ol>
+<li><p>开放定址法</p>
+<ol>
+<li>线性探测法：产生堆积问题</li>
+<li>平方探测法：不能探测到哈希表上所有的地址</li>
+</ol>
+</li>
+<li><p>链地址法</p>
+<p>将所有关键字为同义词的结点链接在同一个链表中</p>
+</li>
+</ol>
+<h4 id="快排的操作流程"><a href="#快排的操作流程" class="headerlink" title="快排的操作流程"></a>快排的操作流程</h4><ol>
+<li>先从数列中取出一个数作为基准数</li>
+<li>将比这个数大的数都放到右边，比这个数小的数都放到左边</li>
+<li>再对其左右分区重复以上过程，直到各区间只有一个数</li>
+</ol>
+<h4 id="各种排序算法的复杂度、稳定性"><a href="#各种排序算法的复杂度、稳定性" class="headerlink" title="各种排序算法的复杂度、稳定性"></a>各种排序算法的复杂度、稳定性</h4><table>
+  <tr>
+      <td rowspan="2"></td>
+    <td rowspan="2">排序方法</td>
+    <td colspan="3">时间复杂度</td>
+    <td rowspan="2">空间复杂度</td>
+    <td rowspan="2">稳定性</td>
+  </tr>
+  <tr>
+      <td>最好情况</td>
+    <td>平均情况</td>
+    <td>最坏情况</td>
+  </tr>
+  <tr>
+      <td rowspan="3">插入排序</td>
+    <td>直接插入</td>
+    <td>O(n)</td>
+    <td>O(n^2)</td>
+    <td>O(n^2)</td>
+    <td>O(1)</td>
+    <td>稳定</td>
+  </tr>
+  <tr>
+    <td>折半插入</td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td>O(1)</td>
+    <td>稳定</td>
+  </tr>
+  <tr>
+    <td>希尔排序</td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td>O(1)</td>
+    <td>不稳定</td>
+  </tr>
+  <tr>
+      <td rowspan="2">交换排序</td>
+    <td>冒泡排序</td>
+    <td>O(n)</td>
+    <td>O(n^2)</td>
+    <td>O(n^2)</td>
+    <td>O(1)</td>
+    <td>稳定</td>
+  </tr>
+  <tr>
+    <td>快速排序</td>
+    <td>O(nlog2n)</td>
+    <td>O(nlog2n)</td>
+    <td>O(n^2)</td>
+    <td>O(log2n)</td>
+    <td>不稳定</td>
+  </tr>
+  <tr>
+      <td rowspan="2">选择排序</td>
+    <td>简单选择</td>
+    <td>O(n^2)</td>
+    <td>O(n^2)</td>
+    <td>O(n^2)</td>
+    <td>O(1)</td>
+    <td>不稳定</td>
+  </tr>
+  <tr>
+    <td>堆排序</td>
+    <td>O(nlog2n)</td>
+    <td>O(nlog2n)</td>
+    <td>O(nlog2n)</td>
+    <td>O(1)</td>
+    <td>不稳定</td>
+  </tr>
+  <tr>
+      <td rowspan="2">其他排序</td>
+    <td>二路归并</td>
+   <td>O(nlog2n)</td>
+    <td>O(nlog2n)</td>
+    <td>O(nlog2n)</td>
+    <td>O(n)</td>
+    <td>稳定</td>
+  </tr>
+  <tr>
+    <td>基数排序</td>
+    <td>O(d(n+r))</td>
+    <td>O(d(n+r))</td>
+    <td>O(d(n+r))</td>
+    <td>O(r)</td>
+    <td>稳定</td>
+  </tr>
+</table>
+
+<h4 id="折半查找，以及其适用范围和时间复杂度"><a href="#折半查找，以及其适用范围和时间复杂度" class="headerlink" title="折半查找，以及其适用范围和时间复杂度"></a>折半查找，以及其适用范围和时间复杂度</h4><p>基本思路：在当前的查找区间[low…high]中，首先确定mid=(low+high)/2，然后拿关键字与mid位置的值比较，若相等，则查找成功，返回该位置，否则确定新的查找区间，若mid位置上的值&gt;关键字，[low…mid-1]，若mid位置上的值&lt;关键字，[mid+1…high]。</p>
+<p>适用范围：顺序结构存储，按关键字大小有序排列</p>
+<p>时间复杂度：O(log2n)</p>
+<h4 id="哈夫曼树"><a href="#哈夫曼树" class="headerlink" title="哈夫曼树"></a>哈夫曼树</h4><p>定义：</p>
+<p>给定n个权值作为n个叶子结点，构造一棵二叉树，使得这棵树的带权路径长度最小。称这样的树为哈弗曼树。</p>
+<p>构造方法：</p>
+<ol>
+<li>初试状态下共有n个结点，将他们视作n棵只有根结点的树。</li>
+<li>合并其中根结点权值最小的两棵树，生成两棵树根结点的父结点，权值为这两个根结点的权值之和，这样树的数量就减少了一个。</li>
+<li>重复上一步，直到只剩一棵树。</li>
+</ol>
+<p>特点：</p>
+<ol>
+<li>权值越大，离根结点越远。</li>
+<li>树中所有结点度都为2。</li>
+</ol>
+<p>应用：</p>
+<p>哈夫曼编码</p>
+<p>哈夫曼编码是长度最短的前缀编码。</p>
+<h4 id="平衡二叉树"><a href="#平衡二叉树" class="headerlink" title="平衡二叉树"></a>平衡二叉树</h4><p>平衡二叉树是一种特殊的二叉排序树，其左右子树都是平衡二叉树，且左右子树的高度差的绝对值不超过1。</p>
+<p>平衡因子：左右子树的高度差</p>
+<p>平衡调整：</p>
+<h4 id="拓扑排序"><a href="#拓扑排序" class="headerlink" title="拓扑排序"></a>拓扑排序</h4><p>拓扑排序是将有向无环图G的所有顶点排成一个线性序列，使得对图G中的任意两个顶点u、v，如果存在边u-&gt;v，那么在序列中u一定在v的前面。这个序列被称为拓扑序列。</p>
+<p>拓扑排序的很重要的应用就是判断一个给定的图是否是有向无环图。</p>
+<h4 id="M阶B树和M阶B-树的主要区别"><a href="#M阶B树和M阶B-树的主要区别" class="headerlink" title="M阶B树和M阶B+树的主要区别"></a>M阶B树和M阶B+树的主要区别</h4><ol>
+<li>在B+树中，具有n个关键字的结点只含有n棵子树，而在B树中，具有n个关键字的结点含有n+1棵子树。</li>
+<li>在B+树中，叶结点包含信息，所有非叶结点仅起索引作用，非叶结点中的每个索引项只含有对应子树的最大关键字和指向该子树的指针。而在B树中，每个关键字对应记录的存储地址。</li>
+<li>在B+树中，叶结点包含了全部关键字，即在非叶结点中出现的关键字也会出现在叶结点中；而在B树中，叶结点包含的关键字和其他结点包含的关键字是不重复的。</li>
+</ol>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/04/23/%E5%A4%8D%E8%AF%95%E9%9D%A2%E8%AF%95%E9%A2%98/" rel="next" title="复试面试题">
+                <i class="fa fa-chevron-left"></i> 复试面试题
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="https://avatars3.githubusercontent.com/u/26401802?s=400&u=87db6b0edfa75ed2b59f1fe0f0da23215082c344&v=4"
+                alt="Provence" />
+            
+              <p class="site-author-name" itemprop="name">Provence</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">32</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">19</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/provence3658" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:13386528836@163.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#线性表的存储结构"><span class="nav-number">1.</span> <span class="nav-text">线性表的存储结构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#如何实现循环队列？好处？为什么要空一个位置？"><span class="nav-number">2.</span> <span class="nav-text">如何实现循环队列？好处？为什么要空一个位置？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#度为二的数和二叉树的区别"><span class="nav-number">3.</span> <span class="nav-text">度为二的数和二叉树的区别</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#二叉树的存储方式和遍历方式"><span class="nav-number">4.</span> <span class="nav-text">二叉树的存储方式和遍历方式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#树的存储结构和遍历方式"><span class="nav-number">5.</span> <span class="nav-text">树的存储结构和遍历方式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#图的存储方式和遍历方式"><span class="nav-number">6.</span> <span class="nav-text">图的存储方式和遍历方式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#图的相关概念"><span class="nav-number">7.</span> <span class="nav-text">图的相关概念</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#图和树的区别"><span class="nav-number">8.</span> <span class="nav-text">图和树的区别</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#什么是二叉排序树？二叉排序树的查找过程？"><span class="nav-number">9.</span> <span class="nav-text">什么是二叉排序树？二叉排序树的查找过程？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#什么是堆？有什么作用？"><span class="nav-number">10.</span> <span class="nav-text">什么是堆？有什么作用？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#什么是最小生成树？求最小生成树的方法"><span class="nav-number">11.</span> <span class="nav-text">什么是最小生成树？求最小生成树的方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#求最短路径的方法"><span class="nav-number">12.</span> <span class="nav-text">求最短路径的方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#什么哈希表？如何构造哈希函数？什么是哈希冲突？如何解决？"><span class="nav-number">13.</span> <span class="nav-text">什么哈希表？如何构造哈希函数？什么是哈希冲突？如何解决？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#快排的操作流程"><span class="nav-number">14.</span> <span class="nav-text">快排的操作流程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#各种排序算法的复杂度、稳定性"><span class="nav-number">15.</span> <span class="nav-text">各种排序算法的复杂度、稳定性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#折半查找，以及其适用范围和时间复杂度"><span class="nav-number">16.</span> <span class="nav-text">折半查找，以及其适用范围和时间复杂度</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#哈夫曼树"><span class="nav-number">17.</span> <span class="nav-text">哈夫曼树</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#平衡二叉树"><span class="nav-number">18.</span> <span class="nav-text">平衡二叉树</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#拓扑排序"><span class="nav-number">19.</span> <span class="nav-text">拓扑排序</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#M阶B树和M阶B-树的主要区别"><span class="nav-number">20.</span> <span class="nav-text">M阶B树和M阶B+树的主要区别</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Provence</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: '60zWr4rbDnDlADQqNvvFcdyR-gzGzoHsz',
+        appKey: 'O5FKNYCgpStp3991PuerMonY',
+        placeholder: '欢迎畅所欲言~',
+        avatar:'monsterid',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("60zWr4rbDnDlADQqNvvFcdyR-gzGzoHsz", "O5FKNYCgpStp3991PuerMonY");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+  <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"scale":1,"hHeadPos":0.5,"vHeadPos":0.618},"display":{"superSample":2,"width":200,"height":400,"position":"right","hOffset":0,"vOffset":-20},"mobile":{"show":false},"react":{"opacity":0.7},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>
