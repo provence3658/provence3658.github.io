@@ -1,0 +1,1272 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="请简述TCP&#x2F;UDP的区别 UDP是无连接的，即在传送数据之前不需要建立连接。 TCP提供面向连接的服务，在传送数据之前必须先建立连接，数据传送结束后要释放连接。  UDP是面向报文的，UDP对应用层交下来的报文，在添加首部后就向下交付IP层。UDP没有拥塞控制，网络出现拥塞不会使源主机的发送速率降低，适合实时应用，允许丢失一些数据，但不允许数据有较大的时延。 TCP是面向字节流的，TCP把应用程">
+<meta property="og:type" content="article">
+<meta property="og:title" content="计算机网络面试题">
+<meta property="og:url" content="http://blog.provence36.cn/2020/04/23/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E9%9D%A2%E8%AF%95%E9%A2%98/index.html">
+<meta property="og:site_name" content="Provence&#39; Blog">
+<meta property="og:description" content="请简述TCP&#x2F;UDP的区别 UDP是无连接的，即在传送数据之前不需要建立连接。 TCP提供面向连接的服务，在传送数据之前必须先建立连接，数据传送结束后要释放连接。  UDP是面向报文的，UDP对应用层交下来的报文，在添加首部后就向下交付IP层。UDP没有拥塞控制，网络出现拥塞不会使源主机的发送速率降低，适合实时应用，允许丢失一些数据，但不允许数据有较大的时延。 TCP是面向字节流的，TCP把应用程">
+<meta property="og:image" content="http://blog.provence36.cn/2020/04/23/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E9%9D%A2%E8%AF%95%E9%A2%98/%E4%B8%89%E6%AC%A1%E6%8F%A1%E6%89%8B%E5%9B%9B%E6%AC%A1%E6%8C%A5%E6%89%8B.jpg">
+<meta property="og:image" content="http://blog.provence36.cn/2020/04/23/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E9%9D%A2%E8%AF%95%E9%A2%98/%E6%85%A2%E5%BC%80%E5%A7%8B%E4%B8%8E%E6%8B%A5%E5%A1%9E%E9%81%BF%E5%85%8D.png">
+<meta property="og:image" content="http://blog.provence36.cn/2020/04/23/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E9%9D%A2%E8%AF%95%E9%A2%98/%E5%BF%AB%E9%87%8D%E4%BC%A0.jpg">
+<meta property="og:image" content="http://blog.provence36.cn/2020/04/23/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E9%9D%A2%E8%AF%95%E9%A2%98/%E5%BF%AB%E6%81%A2%E5%A4%8D.jpg">
+<meta property="og:image" content="http://blog.provence36.cn/2020/04/23/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E9%9D%A2%E8%AF%95%E9%A2%98/DNS%E8%A7%A3%E6%9E%90.png">
+<meta property="article:published_time" content="2020-04-23T13:49:35.000Z">
+<meta property="article:modified_time" content="2020-04-23T13:50:31.414Z">
+<meta property="article:author" content="Provence">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://blog.provence36.cn/2020/04/23/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E9%9D%A2%E8%AF%95%E9%A2%98/%E4%B8%89%E6%AC%A1%E6%8F%A1%E6%89%8B%E5%9B%9B%E6%AC%A1%E6%8C%A5%E6%89%8B.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://blog.provence36.cn/2020/04/23/计算机网络面试题/"/>
+
+
+
+
+
+  <title>计算机网络面试题 | Provence' Blog</title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Provence' Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://blog.provence36.cn/2020/04/23/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E9%9D%A2%E8%AF%95%E9%A2%98/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Provence">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://avatars3.githubusercontent.com/u/26401802?s=400&u=87db6b0edfa75ed2b59f1fe0f0da23215082c344&v=4">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Provence' Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">计算机网络面试题</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-04-23T21:49:35+08:00">
+                2020-04-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%9D%AD%E7%94%B5%E5%A4%8D%E8%AF%95%E5%87%86%E5%A4%87/" itemprop="url" rel="index">
+                    <span itemprop="name">杭电复试准备</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2020/04/23/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E9%9D%A2%E8%AF%95%E9%A2%98/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2020/04/23/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E9%9D%A2%E8%AF%95%E9%A2%98/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2020/04/23/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E9%9D%A2%E8%AF%95%E9%A2%98/" class="leancloud_visitors" data-flag-title="计算机网络面试题">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  5k 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  17 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h4 id="请简述TCP-UDP的区别"><a href="#请简述TCP-UDP的区别" class="headerlink" title="请简述TCP/UDP的区别"></a>请简述TCP/UDP的区别</h4><ul>
+<li><p>UDP是<strong>无连接</strong>的，即在传送数据之前不需要建立连接。</p>
+<p>TCP提供<strong>面向连接</strong>的服务，在传送数据之前必须先建立连接，数据传送结束后要释放连接。</p>
+</li>
+<li><p>UDP是<strong>面向报文</strong>的，UDP对应用层交下来的报文，在添加首部后就向下交付IP层。UDP没有拥塞控制，网络出现拥塞不会使源主机的发送速率降低，适合实时应用，允许丢失一些数据，但不允许数据有较大的时延。</p>
+<p>TCP是<strong>面向字节流</strong>的，TCP把应用程序交下来的数据看成是一连串无结构的字节流。</p>
+</li>
+<li><p>TCP提供<strong>可靠交付</strong>的服务，通过TCP连接传送的数据，无差错，不丢失，不重复，且按序到达。</p>
+<p>UDP<strong>尽最大努力交付</strong>，即不保证可靠交付。</p>
+</li>
+<li><p>TCP首部开销20字节，UDP的首部开销小，只有8个字节。</p>
+</li>
+<li><p>每一条TCP连接只能是点到点的；UDP支持一对一，一对多，多对一和多对多的交互通信。</p>
+</li>
+</ul>
+<h4 id="请简单说一下你了解的端口及对应的服务"><a href="#请简单说一下你了解的端口及对应的服务" class="headerlink" title="请简单说一下你了解的端口及对应的服务"></a>请简单说一下你了解的端口及对应的服务</h4><table>
+<thead>
+<tr>
+<th>应用程序</th>
+<th>熟知端口号</th>
+<th>使用协议</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>FTP数据传送</td>
+<td>20</td>
+<td>TCP</td>
+</tr>
+<tr>
+<td>FTP控制</td>
+<td>21</td>
+<td>TCP</td>
+</tr>
+<tr>
+<td>远程终端协议TELNET</td>
+<td>23</td>
+<td>TCP</td>
+</tr>
+<tr>
+<td>SMTP简单邮件传送协议</td>
+<td>25</td>
+<td>TCP</td>
+</tr>
+<tr>
+<td>DNS域名服务器</td>
+<td>53</td>
+<td>UDP</td>
+</tr>
+<tr>
+<td>简单文件传送协议TFTP</td>
+<td>69</td>
+<td>UDP</td>
+</tr>
+<tr>
+<td>超文本传送协议HTTP</td>
+<td>80</td>
+<td>TCP</td>
+</tr>
+<tr>
+<td>邮件读取协议POP3</td>
+<td>110</td>
+<td>TCP</td>
+</tr>
+<tr>
+<td>MySQL服务</td>
+<td>3306</td>
+<td>TCP</td>
+</tr>
+</tbody></table>
+<h4 id="说一说TCP的三次握手和四次挥手"><a href="#说一说TCP的三次握手和四次挥手" class="headerlink" title="说一说TCP的三次握手和四次挥手"></a>说一说TCP的三次握手和四次挥手</h4><img src="/2020/04/23/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E9%9D%A2%E8%AF%95%E9%A2%98/%E4%B8%89%E6%AC%A1%E6%8F%A1%E6%89%8B%E5%9B%9B%E6%AC%A1%E6%8C%A5%E6%89%8B.jpg" class="">
+
+<h5 id="三次握手"><a href="#三次握手" class="headerlink" title="三次握手"></a>三次握手</h5><p>我要和你建立链接，你真的要和我建立链接么，我真的要和你建立链接，成功</p>
+<ol>
+<li>第一次握手：客户端将标志位<code>SYN</code>置为1，随机产生一个值<code>Sequence Number</code>为x，并将数据包发送给服务器。此时，客户端进入<code>SYN_SEND</code>（同步已发送）状态，等待服务器的确认；</li>
+<li>第二次握手：服务器收到数据包后由标志位<code>SYN</code>=1知道客户端请求建立连接。服务器将标志位<code>SYN</code>和<code>ACK</code>都置为1，设置<code>Acknowledgment Number</code>为x+1，随机产生一个值<code>Sequence Number</code>为y，并将该数据包发送给客户端以确认连接请求，此时，服务器进入<code>SYN_RECV</code>（同步收到）状态；</li>
+<li>第三次握手：客户端收到服务器的<code>SYN+ACK</code>报文段，检查<code>ACK</code>是否为1，<code>Acknowledgment Number</code>是否为x+1，如果是，则将<code>ACK</code>置为1，设置<code>Acknowledgment Number</code>为y+1，就该数据包发送给服务器；服务器收到数据包后，检查<code>ACK</code>是否为1，<code>Acknowledgment Number</code>是否为y+1，如果是，则连接成功，客户端和服务器端都进入<code>ESTABLISHED</code>（已建立连接）状态，完成TCP三次握手。</li>
+</ol>
+<h5 id="四次挥手"><a href="#四次挥手" class="headerlink" title="四次挥手"></a>四次挥手</h5><p>我要和你断开链接；好的，断吧。我也要和你断开链接；好的，断吧</p>
+<ol>
+<li>第一次挥手：客户端发送一个<code>FIN</code>报文段，设置<code>Sequence Number</code>=u（前面传送过的数据的最后一个字节的序号加1），<strong>用来关闭客户端到服务器的数据传送</strong>；此时，客户端进入<code>FIN_WAIT_1</code>（终止等待1）状态。</li>
+<li>第二次挥手：服务器收到了客户端发送的<code>FIN</code>报文段，向客户端回一个<code>ACK</code>报文段，<code>Acknowledgment Number</code>为u+1，服务器进入<code>CLOSE_WAIT</code>（等待关闭）状态。此时TCP连接处于半关闭状态，即客户端已经没有要发送的数据了，但服务端若发送数据，则客户端仍要接收。</li>
+<li>第三次挥手：服务器发送一个<code>FIN</code>报文段，设置<code>Sequence Number</code>=w，<strong>用来关闭服务器到客户端的数据传送</strong>；此时，服务器进入<code>LAST_ACK</code>（最后确认）状态。</li>
+<li>第四次挥手：客户端收到服务器发送的<code>FIN</code>报文段，向服务器回一个<code>ACK</code>报文段，<code>Acknowledgment Number</code>为w+1，客户端进入<code>TIME_WAIT</code>状态。服务器进入<code>CLOSED</code>状态，完成四次挥手。</li>
+</ol>
+<h4 id="为什么TCP链接需要三次握手，两次不可以么，为什么？"><a href="#为什么TCP链接需要三次握手，两次不可以么，为什么？" class="headerlink" title="为什么TCP链接需要三次握手，两次不可以么，为什么？"></a>为什么TCP链接需要三次握手，两次不可以么，为什么？</h4><p>采用三次握手是<strong>为了防止失效的连接请求报文段突然又传送到主机B，因而产生错误</strong>。</p>
+<p>失效的连接请求报文段是指：主机A发出的连接请求没有收到主机B的确认，于是经过一段时间后，主机A又重新向主机B发送连接请求，且建立成功，完成数据传输。</p>
+<p>考虑一种特殊情况，主机A第一次发送的连接请求并没有丢失，而是因为网络节点导致延迟达到主机B，主机B以为是主机A又发起的新连接，于是主机B同意连接，并向主机A发回确认，但是此时主机A根本不会理会，主机B就一直在等待主机A发送数据，导致主机B的资源浪费。</p>
+<h4 id="TCP协议如何来保证传输的可靠性"><a href="#TCP协议如何来保证传输的可靠性" class="headerlink" title="TCP协议如何来保证传输的可靠性"></a>TCP协议如何来保证传输的可靠性</h4><p>对于可靠性，TCP通过以下方式进行保证：</p>
+<ul>
+<li>数据包校验：目的是检测数据在传输过程中的任何变化，若校验出包有错，则丢弃报文段并且不给出响应，这时TCP发送数据端超时后会重发数据；</li>
+<li>对失序数据包重排序：既然TCP报文段作为IP数据报来传输，而IP数据报的到达可能会失序，因此TCP报文段的到达也可能会失序。TCP将对失序数据进行重新排序，然后才交给应用层；</li>
+<li>丢弃重复数据：对于重复数据，能够丢弃重复数据；</li>
+<li>应答机制：当TCP收到发自TCP连接另一端的数据，它将发送一个确认。这个确认不是立即发送，通常将推迟几分之一秒；</li>
+<li>超时重发：当TCP发出一个段后，它启动一个定时器，等待目的端确认收到这个报文段。如果不能及时收到一个确认，将重发这个报文段；</li>
+<li>流量控制：TCP连接的每一方都有固定大小的缓冲空间。TCP的接收端只允许另一端发送接收端缓冲区所能接纳的数据，这可以防止较快主机致使较慢主机的缓冲区溢出，这就是流量控制。TCP使用的流量控制协议是可变大小的滑动窗口协议。</li>
+</ul>
+<h4 id="TCP的拥塞处理"><a href="#TCP的拥塞处理" class="headerlink" title="TCP的拥塞处理"></a>TCP的拥塞处理</h4><p>计算机网络中的带宽、交换结点中的缓存及处理机等都是网络的资源。在某段时间，若对网络中某一资源的需求超过了该资源所能提供的可用部分，网络的性能就会变坏，这种情况就叫做拥塞。<strong>拥塞控制就是 防止过多的数据注入网络中，这样可以使网络中的路由器或链路不致过载。</strong>注意，拥塞控制和流量控制不同，前者是一个全局性的过程，而后者指点对点通信量的控制。拥塞控制的方法主要有以下四种：</p>
+<p>1). 慢启动：不要一开始就发送大量的数据，先探测一下网络的拥塞程度，也就是说由小到大逐渐增加拥塞窗口的大小;</p>
+<p>2). 拥塞避免：拥塞避免算法让拥塞窗口缓慢增长，即每经过一个往返时间RTT就把发送方的拥塞窗口cwnd加1，而不是加倍，这样拥塞窗口按线性规律缓慢增长。</p>
+<img src="/2020/04/23/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E9%9D%A2%E8%AF%95%E9%A2%98/%E6%85%A2%E5%BC%80%E5%A7%8B%E4%B8%8E%E6%8B%A5%E5%A1%9E%E9%81%BF%E5%85%8D.png" class="">
+
+<p>3). 快重传：快重传要求接收方在收到一个 失序的报文段 后就立即发出 重复确认（为的是使发送方及早知道有报文段没有到达对方）而不要等到自己发送数据时捎带确认。快重传算法规定，发送方只要一连收到三个重复确认就应当立即重传对方尚未收到的报文段，而不必继续等待设置的重传计时器时间到期。</p>
+<img src="/2020/04/23/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E9%9D%A2%E8%AF%95%E9%A2%98/%E5%BF%AB%E9%87%8D%E4%BC%A0.jpg" class="">
+
+<p>4). 快恢复：快重传配合使用的还有快恢复算法，当发送方连续收到三个重复确认时，就执行“乘法减小”算法，把ssthresh门限减半，但是接下去并不执行慢开始算法：因为如果网络出现拥塞的话就不会收到好几个重复的确认，所以发送方现在认为网络可能没有出现拥塞。所以此时不执行慢开始算法，而是将cwnd设置为ssthresh的大小，然后执行拥塞避免算法。</p>
+<img src="/2020/04/23/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E9%9D%A2%E8%AF%95%E9%A2%98/%E5%BF%AB%E6%81%A2%E5%A4%8D.jpg" class="">
+
+<h4 id="简单解释一些ARP协议的工作过程"><a href="#简单解释一些ARP协议的工作过程" class="headerlink" title="简单解释一些ARP协议的工作过程"></a>简单解释一些ARP协议的工作过程</h4><p>ARP协议是为了从网络层使用的IP地址解析出在数据链路层使用的硬件地址。</p>
+<ol>
+<li>每个主机都会在自己的ARP缓冲区建立一个ARP列表，以表示IP地址和MAC地址之间的对应关系。</li>
+<li>当源主机要发送数据时，首先检查ARP列表中是否有对应IP地址的目的主机的MAC地址，如果有，则直接发送数据，如果没有，就向本网段的所有主机发送ARP请求分组，发送的内容有：源主机的IP地址，源主机的MAC地址，目的主机的IP地址。</li>
+<li>当本局域网的所有主机都收到了该ARP请求分组后，先检查ARP请求分组中的目的主机的IP地址是否和自己的IP地址相同，如果不同，则忽略该ARP请求分组，如果相同，则把ARP请求分组中的源主机的IP地址和MAC地址写入ARP列表中，如果已经存在，则覆盖，然后以单播的方式向源主机发送ARP响应分组，内容是自己的MAC地址。</li>
+<li>源主机收到ARP响应分组后，将目的主机的IP地址和MAC地址写入ARP列表，就可以向目的主机发送数据了。</li>
+</ol>
+<h4 id="DNS域名系统，简单描述其工作原理"><a href="#DNS域名系统，简单描述其工作原理" class="headerlink" title="DNS域名系统，简单描述其工作原理"></a>DNS域名系统，简单描述其工作原理</h4><ol>
+<li>客户机向其本地域名服务器发出DNS请求报文</li>
+<li>本地域名服务器收到请求后，查询本地缓存，假设没有该记录，则以DNS客户的身份向根域名服务器发出解析请求</li>
+<li>根域名服务器收到请求后，判断该域名所属域，将对应的顶级域名服务器的IP地址返回给本地域名服务器</li>
+<li>本地域名服务器向顶级域名服务器发出解析请求报文</li>
+<li>顶级域名服务器收到请求后，将所对应的授权域名服务器的IP地址返回给本地域名服务器</li>
+<li>本地域名服务器向授权域名服务器发起解析请求报文</li>
+<li>授权域名服务器收到请求后，将查询结果返回给本地域名服务器</li>
+<li>本地域名服务器将查询结果保存到本地缓存，同时返回给客户机</li>
+</ol>
+<img src="/2020/04/23/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E9%9D%A2%E8%AF%95%E9%A2%98/DNS%E8%A7%A3%E6%9E%90.png" class="">
+
+<h4 id="OSI，TCP-IP，五层协议的体系结构，以及各层协议"><a href="#OSI，TCP-IP，五层协议的体系结构，以及各层协议" class="headerlink" title="OSI，TCP/IP，五层协议的体系结构，以及各层协议"></a>OSI，TCP/IP，五层协议的体系结构，以及各层协议</h4><table>
+  <tr>
+    <td>协议</td>
+    <td colspan="7">层次</td>
+  </tr>
+  <tr>
+    <td>OSI分层（7层）</td>
+    <td>物理层</td>
+    <td>数据链路层</td>
+    <td>网络层</td>
+    <td>传输层</td>
+    <td>会话层</td>
+    <td>表示层</td>
+    <td>应用层</td>
+  </tr>
+  <tr>
+    <td>TCP/IP分层（4层）</td>
+    <td colspan="2">网络接口层</td>
+    <td>网际层</td>
+    <td>运输层</td>
+    <td colspan="3">应用层</td>
+  </tr>
+  <tr>
+    <td>五层协议（5层）</td>
+    <td>物理层</td>
+    <td>数据链路层</td>
+    <td>网络层</td>
+    <td>运输层</td>
+    <td colspan="3">应用层</td>
+  </tr>
+</table>
+##### **应用层（application layer）**
+
+<p><strong>应用层的任务是通过应用进程间的交互来完成特定网络应用。</strong>应用层协议定义的是<strong>应用进程</strong>（进程：主机中正在运行的程序）<strong>间的通信和交互的规则</strong>。对于不同的网络应用需要不同的应用层协议。在互联网中应用层协议很多，如<strong>域名系统DNS</strong>，支持万维网应用的<strong>HTTP协议</strong>，支持电子邮件的<strong>SMTP协议</strong>等等。我们把应用层交互的数据单元称为<strong>报文</strong>（message）。</p>
+<p>应用层使用的协议：</p>
+<ol>
+<li><p><strong>域名系统（Domain Name System缩写DNS，Domain Name被译为域名）</strong></p>
+<p>域名系统是因特网使用的命名系统，用来把便于人们记忆的含有特定含义的主机名（如<a href="http://www.provence36.cn）转换为便于机器处理的IP地址。DNS系统采用客户/服务器模型，其协议运行在UDP之上，使用53号端口。" target="_blank" rel="noopener">www.provence36.cn）转换为便于机器处理的IP地址。DNS系统采用客户/服务器模型，其协议运行在UDP之上，使用53号端口。</a></p>
+</li>
+<li><p><strong>HTTP协议</strong></p>
+<p>HTTP协议定义了浏览器（即万维网客户进程）怎样向万维网服务器请求万维网文档，以及服务器怎样把文档传送给浏览器。从层次的角度看，HTTP是面向事务的应用层协议，它是万维网上能够可靠地交换文件（包括文本、声音、图像等各种多媒体文件）的重要基础。</p>
+</li>
+</ol>
+<h5 id="运输层（transport-layer）"><a href="#运输层（transport-layer）" class="headerlink" title="运输层（transport layer）"></a>运输层（transport layer）</h5><p>运输层的主要任务就是负责<strong>向两台主机进程之间的通信提供通用的数据传输服务</strong>。应用进程利用该服务传送应用层报文。“通用的”是指并不针对某一个特定的网络应用，而是多种应用可以使用同一个运输层服务。由于一台主机可同时运行多个线程，因此运输层有<strong>复用和分用</strong>的功能。<strong>复用指多个应用层进程可同时使用下面运输层的服务，分用指运输层把收到的信息分别交付上面应用层中的相应进程。</strong></p>
+<p>运输层主要使用以下两种协议：</p>
+<ol>
+<li><p><strong>传输控制协议TCP</strong>（Transmisson Control Protocol）</p>
+<p>提供<strong>面向连接</strong>的，<strong>可靠的</strong>数据传输服务，其数据传输单位是<strong>报文段</strong>（segment）。</p>
+</li>
+<li><p><strong>用户数据协议UDP</strong>（User Datagram Protocol）</p>
+<p>提供<strong>无连接</strong>的，尽最大努力的数据传输服务（<strong>不保证数据传输的可靠性</strong>），其数据传输单位是<strong>用户数据报</strong>。</p>
+</li>
+</ol>
+<h5 id="网络层（network-layer）"><a href="#网络层（network-layer）" class="headerlink" title="网络层（network layer）"></a>网络层（network layer）</h5><p>网络层负责为分组交换网上的<strong>不同主机</strong>提供通信服务。在发送数据时，网络层把运输层产生的报文段或用户数据报封装成<strong>分组或包</strong>进行传送。在TCP/IP体系中，由于网络层使用IP协议，因此分组也叫<strong>IP数据报</strong>。</p>
+<p>网络层的另一个任务是要选择合适的路由，使源主机运输层所传下来的分组能够通过网络中的路由器找到目的主机。</p>
+<h5 id="数据链路层（data-link-layer）"><a href="#数据链路层（data-link-layer）" class="headerlink" title="数据链路层（data link layer）"></a>数据链路层（data link layer）</h5><p>在两个相邻结点之间传送数据时，数据链路层将网络层交下来的IP数据报<strong>组装成帧</strong>；每一帧包括数据和必要的<strong>控制信息</strong>（如同步信息、地址信息、差错控制等）。</p>
+<p>控制信息的作用：</p>
+<ol>
+<li>在接收数据时，控制信息使接收端能够知道一个帧从哪个比特开始和到哪个比特结束。这样，数据链路层在收到一个帧后，就可以从中提取出数据部分，上交给网络层。</li>
+<li>使接收端能够检测到所收到的帧中有无差错。</li>
+</ol>
+<h5 id="物理层（physical-layer）"><a href="#物理层（physical-layer）" class="headerlink" title="物理层（physical layer）"></a>物理层（physical layer）</h5><p>物理层的作用是实现相邻计算机节点之间比特流的透明传送，尽可能屏蔽掉具体传输介质和物理设备的差异。传输单位是<strong>比特</strong>。</p>
+<h4 id="IP地址分为哪几类？简单说一下各个分类"><a href="#IP地址分为哪几类？简单说一下各个分类" class="headerlink" title="IP地址分为哪几类？简单说一下各个分类"></a>IP地址分为哪几类？简单说一下各个分类</h4><table>
+  <tr>
+      <td>网络类别</td>
+      <td>网络号</td>
+      <td>地址范围</td>
+  </tr>
+  <tr>
+      <td>A类</td>
+      <td>以0开头</td>
+      <td>1.0.0.0 - 127.255.255.255</td>
+  </tr>
+  <tr>
+      <td>B类</td>
+      <td>以10开头</td>
+      <td>128.0.0.0 - 191.255.255.255</td>
+  </tr>
+  <tr>
+      <td>C类</td>
+      <td>以110开头</td>
+      <td>192.0.0.0 - 223.255.255.255</td>
+  </tr>
+  <tr>
+      <td>D类</td>
+      <td colspan="2">前四位是1110，用于多播（一对多通信）</td>
+  </tr>
+  <tr>
+      <td>E类</td>
+      <td colspan="2">前四位是1111，保留为以后用</td>
+  </tr>
+</table>
+
+<p>A类地址：</p>
+<ul>
+<li>可指派的网络号是126个（2^7-2）<ul>
+<li>网络号全0的IP地址是保留地址，意思是”本网络“</li>
+<li>网络号为127保留作为本地软件环回测试本主机进程之间的通信之用</li>
+</ul>
+</li>
+<li>最大主机数是2^24-2<ul>
+<li>全0的主机号字段表示该IP地址是”本主机“所连接到的单个网络地址</li>
+<li>全1的主机号字段表示该网络上的所有主机</li>
+</ul>
+</li>
+</ul>
+<p>B类地址：</p>
+<ul>
+<li>可指派的网络号是2^14-1<ul>
+<li>最小网络地址是128.1.0.0</li>
+</ul>
+</li>
+<li>最大主机数是2^16-2</li>
+</ul>
+<p>C类地址：</p>
+<ul>
+<li>可指派的网络号是2^21-1<ul>
+<li>最小网络地址是192.0.1.0</li>
+</ul>
+</li>
+<li>最大主机数是2^8-2</li>
+</ul>
+<h4 id="有哪些私有地址和保留地址？"><a href="#有哪些私有地址和保留地址？" class="headerlink" title="有哪些私有地址和保留地址？"></a>有哪些私有地址和保留地址？</h4><p>A类地址：</p>
+<ul>
+<li>私有地址：10.0.0.0 - 10.255.255.255</li>
+<li>保留地址：127.0.0.0 - 127.255.255.255 循环测试</li>
+</ul>
+<p>B类地址：</p>
+<ul>
+<li><p>私有地址：172.16.0.0 - 172.31.255.255</p>
+</li>
+<li><p>保留地址：169.254.0.0 - 169.254.255.255 </p>
+<p>如果你的IP地址是自动获取IP地址，而你在网络上又没有找到可用的DHCP服务器，就会得到其中一个IP。</p>
+</li>
+</ul>
+<p>C类地址：</p>
+<ul>
+<li>私有地址：192.168.0.0 - 192.168.255.255</li>
+</ul>
+<h4 id="在浏览器中输入网址之后执行会发生什么？"><a href="#在浏览器中输入网址之后执行会发生什么？" class="headerlink" title="在浏览器中输入网址之后执行会发生什么？"></a>在浏览器中输入网址之后执行会发生什么？</h4><p><strong>第一步：通过访问的域名找出其IP地址.（即域名解析）</strong></p>
+<p>DNS查找过程如下：</p>
+<ul>
+<li><p>浏览器缓存</p>
+<p>浏览器会缓存DNS记录一段时间。 有趣的是，操作系统没有告诉浏览器储存DNS记录的时间，这样不同浏览器会储存个自固定的一个时间（2分钟到30分钟不等）。</p>
+</li>
+<li><p>操作系统缓存</p>
+<p>如果在浏览器缓存里没有找到需要的记录，浏览器会做一个系统调用。这样便可获得系统缓存中的记录。</p>
+</li>
+<li><p>本地hosts文件</p>
+<p>接着，前面的查询请求发向路由器，它一般会有自己的DNS缓存。</p>
+</li>
+<li><p>ISP DNS 缓存（本地域名服务器）</p>
+</li>
+<li><p>若缓存没有，则迭代查询</p>
+<p>根域名服务器 -&gt; 顶级域名服务器 -&gt; 权限域名服务器</p>
+</li>
+</ul>
+<p><strong>第二步：建立TCP连接（三次握手）</strong></p>
+<p><strong>第三步：客户端发送HTTP请求报文</strong></p>
+<ul>
+<li><p>应用层：客户端发送HTTP请求报文 （HTTP协议）</p>
+</li>
+<li><p>传输层：切分长数据，并确保可靠性。（tcp协议）</p>
+</li>
+<li><p>网络层：进行路由 （ip协议、路由选择使用OSPF协议）</p>
+</li>
+<li><p>数据链路层：传输数据（将ip地址转换为MAC地址，用ARP协议）</p>
+</li>
+<li><p>物理层：物理传输bit</p>
+</li>
+</ul>
+<p><strong>第四步：服务器发送HTTP响应报文</strong></p>
+<p>服务器端经过物理层→数据链路层→网络层→传输层→应用层，解析请求报文，发送HTTP响应报文。</p>
+<p><strong>第五步：关闭TCP连接</strong></p>
+<p><strong>第六步：浏览器解析HTML、布局，展示给用户</strong></p>
+<h3 id="数据库"><a href="#数据库" class="headerlink" title="数据库"></a>数据库</h3><h4 id="什么是存储过程？有哪些优缺点？"><a href="#什么是存储过程？有哪些优缺点？" class="headerlink" title="什么是存储过程？有哪些优缺点？"></a>什么是存储过程？有哪些优缺点？</h4><p>存储过程是为了完成特定功能的SQL语句集，经编译创建并保存在数据库中，用户可通过指定存储过程的名字并给定参数(需要时)来调用执行。</p>
+<p><strong>优点：</strong></p>
+<ol>
+<li>重复使用。存储过程可以重复使用，从而可以减少数据库开发人员的工作量。</li>
+<li>提高性能。存储过程在创建的时候就进行了编译，将来使用的时候不用再重新编译。一般的SQL语句每执行一次就需要编译一次，所以使用存储过程提高了效率。</li>
+<li>减少网络流量。存储过程位于服务器上，调用的时候只需要传递存储过程的名称以及参数就可以了，因此降低了网络传输的数据量。</li>
+<li>安全性。参数化的存储过程可以防止SQL注入式的攻击，而且可以将Grant、Deny以及Revoke权限应用于存储过程。</li>
+</ol>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/04/23/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E6%88%90%E9%9D%A2%E8%AF%95%E9%A2%98/" rel="next" title="操作系统成面试题">
+                <i class="fa fa-chevron-left"></i> 操作系统成面试题
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/04/23/%E6%95%B0%E6%8D%AE%E5%BA%93%E9%9D%A2%E8%AF%95%E9%A2%98/" rel="prev" title="数据库面试题">
+                数据库面试题 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="https://avatars3.githubusercontent.com/u/26401802?s=400&u=87db6b0edfa75ed2b59f1fe0f0da23215082c344&v=4"
+                alt="Provence" />
+            
+              <p class="site-author-name" itemprop="name">Provence</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">36</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">19</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/provence3658" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:13386528836@163.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#请简述TCP-UDP的区别"><span class="nav-number">1.</span> <span class="nav-text">请简述TCP&#x2F;UDP的区别</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#请简单说一下你了解的端口及对应的服务"><span class="nav-number">2.</span> <span class="nav-text">请简单说一下你了解的端口及对应的服务</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#说一说TCP的三次握手和四次挥手"><span class="nav-number">3.</span> <span class="nav-text">说一说TCP的三次握手和四次挥手</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#三次握手"><span class="nav-number">3.1.</span> <span class="nav-text">三次握手</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#四次挥手"><span class="nav-number">3.2.</span> <span class="nav-text">四次挥手</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#为什么TCP链接需要三次握手，两次不可以么，为什么？"><span class="nav-number">4.</span> <span class="nav-text">为什么TCP链接需要三次握手，两次不可以么，为什么？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#TCP协议如何来保证传输的可靠性"><span class="nav-number">5.</span> <span class="nav-text">TCP协议如何来保证传输的可靠性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#TCP的拥塞处理"><span class="nav-number">6.</span> <span class="nav-text">TCP的拥塞处理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#简单解释一些ARP协议的工作过程"><span class="nav-number">7.</span> <span class="nav-text">简单解释一些ARP协议的工作过程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#DNS域名系统，简单描述其工作原理"><span class="nav-number">8.</span> <span class="nav-text">DNS域名系统，简单描述其工作原理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#OSI，TCP-IP，五层协议的体系结构，以及各层协议"><span class="nav-number">9.</span> <span class="nav-text">OSI，TCP&#x2F;IP，五层协议的体系结构，以及各层协议</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#运输层（transport-layer）"><span class="nav-number">9.1.</span> <span class="nav-text">运输层（transport layer）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#网络层（network-layer）"><span class="nav-number">9.2.</span> <span class="nav-text">网络层（network layer）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#数据链路层（data-link-layer）"><span class="nav-number">9.3.</span> <span class="nav-text">数据链路层（data link layer）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#物理层（physical-layer）"><span class="nav-number">9.4.</span> <span class="nav-text">物理层（physical layer）</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#IP地址分为哪几类？简单说一下各个分类"><span class="nav-number">10.</span> <span class="nav-text">IP地址分为哪几类？简单说一下各个分类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#有哪些私有地址和保留地址？"><span class="nav-number">11.</span> <span class="nav-text">有哪些私有地址和保留地址？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#在浏览器中输入网址之后执行会发生什么？"><span class="nav-number">12.</span> <span class="nav-text">在浏览器中输入网址之后执行会发生什么？</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据库"><span class="nav-number"></span> <span class="nav-text">数据库</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#什么是存储过程？有哪些优缺点？"><span class="nav-number">1.</span> <span class="nav-text">什么是存储过程？有哪些优缺点？</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Provence</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: '60zWr4rbDnDlADQqNvvFcdyR-gzGzoHsz',
+        appKey: 'O5FKNYCgpStp3991PuerMonY',
+        placeholder: '欢迎畅所欲言~',
+        avatar:'monsterid',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("60zWr4rbDnDlADQqNvvFcdyR-gzGzoHsz", "O5FKNYCgpStp3991PuerMonY");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+  <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"scale":1,"hHeadPos":0.5,"vHeadPos":0.618},"display":{"superSample":2,"width":200,"height":400,"position":"right","hOffset":0,"vOffset":-20},"mobile":{"show":false},"react":{"opacity":0.7},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>
