@@ -86,7 +86,7 @@
 <meta property="og:site_name" content="Provence&#39; Blog">
 <meta property="og:description" content="线性表的存储结构线性表有两种存储结构，分别是顺序存储结构和链式存储结构。  顺序存储结构  结点中只有自身的信息域，因此存储密度大、存储空间利用率高。  随机访问  插入和删除需要移动大量元素     链式存储结构  结点中除自身信息域外还有指针域，因此存储密度小、存储空间利用率低。 在逻辑上相邻的结点在物理上不必相邻，因此不能随机访问，只能顺序访问。 插入和删除操作方便灵活，不必移动结点，只需修">
 <meta property="article:published_time" content="2020-04-23T13:41:24.000Z">
-<meta property="article:modified_time" content="2020-04-25T08:23:14.693Z">
+<meta property="article:modified_time" content="2020-04-25T13:23:37.951Z">
 <meta property="article:author" content="Provence">
 <meta name="twitter:card" content="summary">
 
@@ -412,6 +412,8 @@
 </ul>
 </li>
 </ol>
+<a id="more"></a>
+
 <h4 id="如何实现循环队列？好处？为什么要空一个位置？"><a href="#如何实现循环队列？好处？为什么要空一个位置？" class="headerlink" title="如何实现循环队列？好处？为什么要空一个位置？"></a>如何实现循环队列？好处？为什么要空一个位置？</h4><p>如何实现：把数组弄成一个环，让rear和front指针沿着环走，这样就可以产生循环队列。</p>
 <p>好处：循环队列是顺序队列的改进，在顺序队列中，在元素进队的时候，rear要向后移动，元素出队的时候，front也要向后移动，这样经过一系列的出队和入队操作之后，两个指针最后会达到数组的末端，此时虽然队中已经没有元素了，但是还是不能让元素入队，即出现了“假溢出”的现象。循环队列就能避免出现这个现象。</p>
 <p>空一个位置：这是为了用来区分队空与队满的情况。如果不空一个位置，则判断队空和队满的条件是一样的。</p>
