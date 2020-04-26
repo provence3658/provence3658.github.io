@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="索引是什么？有什么作用以及优缺点？索引就是加快检索表中数据的方法。在数据库中，索引允许数据库程序迅速地找到表中的数据，而不必扫描整个数据库。MySQL数据库几个基本的索引类型：普通索引、唯一索引、主键索引、全文索引  索引加快数据库的检索速度 索引降低了插入、删除、修改等维护任务的速度 唯一索引可以确保每一行数据的唯一性 通过使用索引，可以在查询的过程中使用优化隐藏器，提高系统的性能 索引需要占物">
+<meta name="description" content="索引是什么？有什么作用以及优缺点？索引是存储在一张表中特定列上的数据结构。 MySQL 常见索引类型 全局索引 为了解决针对文本的模糊查询效率较低的问题。  哈希索引 HASH 索引具有一次定位的好处，不需要像树那样逐个节点查找，但它只在“&#x3D;”和“in”条件下高效，对于范围查询、排序及组合索引仍然效率不高。  B-Tree索引 MySQL里默认和最常用的索引类型。  R-Tree索引 MySQL很">
 <meta property="og:type" content="article">
 <meta property="og:title" content="数据库面试题">
 <meta property="og:url" content="http://blog.provence36.cn/2020/04/23/%E6%95%B0%E6%8D%AE%E5%BA%93%E9%9D%A2%E8%AF%95%E9%A2%98/index.html">
 <meta property="og:site_name" content="Provence&#39; Blog">
-<meta property="og:description" content="索引是什么？有什么作用以及优缺点？索引就是加快检索表中数据的方法。在数据库中，索引允许数据库程序迅速地找到表中的数据，而不必扫描整个数据库。MySQL数据库几个基本的索引类型：普通索引、唯一索引、主键索引、全文索引  索引加快数据库的检索速度 索引降低了插入、删除、修改等维护任务的速度 唯一索引可以确保每一行数据的唯一性 通过使用索引，可以在查询的过程中使用优化隐藏器，提高系统的性能 索引需要占物">
+<meta property="og:description" content="索引是什么？有什么作用以及优缺点？索引是存储在一张表中特定列上的数据结构。 MySQL 常见索引类型 全局索引 为了解决针对文本的模糊查询效率较低的问题。  哈希索引 HASH 索引具有一次定位的好处，不需要像树那样逐个节点查找，但它只在“&#x3D;”和“in”条件下高效，对于范围查询、排序及组合索引仍然效率不高。  B-Tree索引 MySQL里默认和最常用的索引类型。  R-Tree索引 MySQL很">
 <meta property="og:image" content="http://blog.provence36.cn/2020/04/23/%E6%95%B0%E6%8D%AE%E5%BA%93%E9%9D%A2%E8%AF%95%E9%A2%98/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E4%B8%89%E7%BA%A7%E6%A8%A1%E5%BC%8F.jpeg">
 <meta property="og:image" content="http://blog.provence36.cn/2020/04/23/%E6%95%B0%E6%8D%AE%E5%BA%93%E9%9D%A2%E8%AF%95%E9%A2%98/SQL%E7%9A%84%E6%89%A7%E8%A1%8C%E9%A1%BA%E5%BA%8F.png">
 <meta property="og:image" content="http://blog.provence36.cn/Users/provence/blog/source/_posts/%E6%95%B0%E6%8D%AE%E5%BA%93%E9%9D%A2%E8%AF%95%E9%A2%98/SQL%E7%9A%84%E6%89%A7%E8%A1%8C%E9%A1%BA%E5%BA%8F.png">
 <meta property="article:published_time" content="2020-04-23T13:50:42.000Z">
-<meta property="article:modified_time" content="2020-04-26T13:28:40.127Z">
+<meta property="article:modified_time" content="2020-04-26T14:08:31.255Z">
 <meta property="article:author" content="Provence">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://blog.provence36.cn/2020/04/23/%E6%95%B0%E6%8D%AE%E5%BA%93%E9%9D%A2%E8%AF%95%E9%A2%98/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E4%B8%89%E7%BA%A7%E6%A8%A1%E5%BC%8F.jpeg">
@@ -359,7 +359,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  2.4k 字
+                  2.9k 字
                 </span>
               
 
@@ -375,7 +375,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  8 分钟
+                  10 分钟
                 </span>
               
             </div>
@@ -396,8 +396,22 @@
       
 
       
-        <h4 id="索引是什么？有什么作用以及优缺点？"><a href="#索引是什么？有什么作用以及优缺点？" class="headerlink" title="索引是什么？有什么作用以及优缺点？"></a>索引是什么？有什么作用以及优缺点？</h4><p>索引就是加快检索表中数据的方法。在数据库中，索引允许数据库程序迅速地找到表中的数据，而不必扫描整个数据库。<br>MySQL数据库几个基本的索引类型：普通索引、唯一索引、主键索引、全文索引</p>
-<ul>
+        <h4 id="索引是什么？有什么作用以及优缺点？"><a href="#索引是什么？有什么作用以及优缺点？" class="headerlink" title="索引是什么？有什么作用以及优缺点？"></a>索引是什么？有什么作用以及优缺点？</h4><p>索引是存储在一张表中特定列上的数据结构。</p>
+<h5 id="MySQL-常见索引类型"><a href="#MySQL-常见索引类型" class="headerlink" title="MySQL 常见索引类型"></a>MySQL 常见索引类型</h5><ol>
+<li><p>全局索引</p>
+<p>为了解决针对文本的模糊查询效率较低的问题。</p>
+</li>
+<li><p>哈希索引</p>
+<p>HASH 索引具有一次定位的好处，不需要像树那样逐个节点查找，但它只在“=”和“in”条件下高效，对于范围查询、排序及组合索引仍然效率不高。</p>
+</li>
+<li><p>B-Tree索引</p>
+<p>MySQL里默认和最常用的索引类型。</p>
+</li>
+<li><p>R-Tree索引</p>
+<p>MySQL很少使用。相对于 B-Tree 来说，R-Tree 的优势在于范围查找。</p>
+</li>
+</ol>
+<h5 id="作用以及优缺点"><a href="#作用以及优缺点" class="headerlink" title="作用以及优缺点"></a>作用以及优缺点</h5><ul>
 <li>索引加快数据库的检索速度</li>
 <li>索引降低了插入、删除、修改等维护任务的速度</li>
 <li>唯一索引可以确保每一行数据的唯一性</li>
@@ -501,6 +515,18 @@
 <p><code>varchar</code>：varchar 指的是长度为 n 个字节的可变长度，并且是<code>非Unicode</code>的字符数据。n 值是介于 1 - 8000 之间的数值。存储大小为实际大小。</p>
 <p>使用 char 存储定长的数据非常方便、char 检索效率高。</p>
 <p>使用 varchar 可以存储变长的数据，但存储效率没有 char 高。</p>
+<h4 id="什么是-内连接、外连接、交叉连接、笛卡尔积"><a href="#什么是-内连接、外连接、交叉连接、笛卡尔积" class="headerlink" title="什么是 内连接、外连接、交叉连接、笛卡尔积"></a>什么是 内连接、外连接、交叉连接、笛卡尔积</h4><h5 id="外连接-OUTER-JOIN"><a href="#外连接-OUTER-JOIN" class="headerlink" title="外连接(OUTER JOIN)"></a>外连接(OUTER JOIN)</h5><p>外连接分为三种，分别是<code>左外连接(LEFT OUTER JOIN 或 LEFT JOIN)</code> 、<code>右外连接(RIGHT OUTER JOIN 或 RIGHT JOIN)</code> 、<code>全外连接(FULL OUTER JOIN 或 FULL JOIN)</code></p>
+<ul>
+<li><p>左外连接：又称为左连接，这种连接方式会显示左表不符合条件的数据行，右边不符合条件的数据行直接显示 NULL</p>
+</li>
+<li><p>右外连接：也被称为右连接，他与左连接相对，这种连接方式会显示右表不符合条件的数据行，左表不符合条件的数据行直接显示 NULL</p>
+</li>
+<li><p><strong>MySQL 暂不支持全外连接</strong></p>
+</li>
+</ul>
+<h5 id="内连接-INNER-JOIN"><a href="#内连接-INNER-JOIN" class="headerlink" title="内连接(INNER JOIN)"></a>内连接(INNER JOIN)</h5><p>结合两个表中相同的字段，返回关联字段相符的记录。</p>
+<h5 id="笛卡尔积-Cartesian-product"><a href="#笛卡尔积-Cartesian-product" class="headerlink" title="笛卡尔积(Cartesian product)"></a>笛卡尔积(Cartesian product)</h5><p>A 集合和 B 集合相乘，包含了集合 A 中的元素和集合 B 中元素之和，也就是 A 元素的个数 * B 元素的个数</p>
+<h5 id="交叉连接"><a href="#交叉连接" class="headerlink" title="交叉连接"></a>交叉连接</h5><p>就是笛卡尔积在 SQL 中的实现，SQL中使用关键字<code>CROSS JOIN</code>来表示交叉连接，在交叉连接中，随便增加一个表的字段，都会对结果造成很大的影响。直接用 FROM 也能表示交叉连接的效果。如果表中字段比较多，不适宜用交叉连接，交叉连接的效率比较差。</p>
 
       
     </div>
@@ -692,7 +718,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#索引是什么？有什么作用以及优缺点？"><span class="nav-number">1.</span> <span class="nav-text">索引是什么？有什么作用以及优缺点？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#什么是事务？事务的四大特性？"><span class="nav-number">2.</span> <span class="nav-text">什么是事务？事务的四大特性？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#数据库隔离性的四个级别？"><span class="nav-number">3.</span> <span class="nav-text">数据库隔离性的四个级别？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#什么是视图？视图的作用以及视图的使用场景有哪些？"><span class="nav-number">4.</span> <span class="nav-text">什么是视图？视图的作用以及视图的使用场景有哪些？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#说一说三个范式和BCNF范式"><span class="nav-number">5.</span> <span class="nav-text">说一说三个范式和BCNF范式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#数据库的三级模式"><span class="nav-number">6.</span> <span class="nav-text">数据库的三级模式</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#模式（schema）"><span class="nav-number">6.1.</span> <span class="nav-text">模式（schema）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#外模式（external-schema）"><span class="nav-number">6.2.</span> <span class="nav-text">外模式（external schema）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#内模式（internal-schema）"><span class="nav-number">6.3.</span> <span class="nav-text">内模式（internal schema）</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#数据库系统的存取方法"><span class="nav-number">7.</span> <span class="nav-text">数据库系统的存取方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#SQL的执行顺序是怎样的"><span class="nav-number">8.</span> <span class="nav-text">SQL的执行顺序是怎样的</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#FROM-连接"><span class="nav-number">8.1.</span> <span class="nav-text">FROM 连接</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#ON-过滤"><span class="nav-number">8.2.</span> <span class="nav-text">ON 过滤</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#JOIN-连接"><span class="nav-number">8.3.</span> <span class="nav-text">JOIN 连接</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#WHERE-过滤"><span class="nav-number">8.4.</span> <span class="nav-text">WHERE 过滤</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#GROUP-BY"><span class="nav-number">8.5.</span> <span class="nav-text">GROUP BY</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#HAVING"><span class="nav-number">8.6.</span> <span class="nav-text">HAVING</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#SELECT"><span class="nav-number">8.7.</span> <span class="nav-text">SELECT</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#DISTINCT"><span class="nav-number">8.8.</span> <span class="nav-text">DISTINCT</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#ORDER-BY"><span class="nav-number">8.9.</span> <span class="nav-text">ORDER BY</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#varchar-和-char-的区别和使用场景"><span class="nav-number">9.</span> <span class="nav-text">varchar 和 char 的区别和使用场景</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#索引是什么？有什么作用以及优缺点？"><span class="nav-number">1.</span> <span class="nav-text">索引是什么？有什么作用以及优缺点？</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#MySQL-常见索引类型"><span class="nav-number">1.1.</span> <span class="nav-text">MySQL 常见索引类型</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#作用以及优缺点"><span class="nav-number">1.2.</span> <span class="nav-text">作用以及优缺点</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#什么是事务？事务的四大特性？"><span class="nav-number">2.</span> <span class="nav-text">什么是事务？事务的四大特性？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#数据库隔离性的四个级别？"><span class="nav-number">3.</span> <span class="nav-text">数据库隔离性的四个级别？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#什么是视图？视图的作用以及视图的使用场景有哪些？"><span class="nav-number">4.</span> <span class="nav-text">什么是视图？视图的作用以及视图的使用场景有哪些？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#说一说三个范式和BCNF范式"><span class="nav-number">5.</span> <span class="nav-text">说一说三个范式和BCNF范式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#数据库的三级模式"><span class="nav-number">6.</span> <span class="nav-text">数据库的三级模式</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#模式（schema）"><span class="nav-number">6.1.</span> <span class="nav-text">模式（schema）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#外模式（external-schema）"><span class="nav-number">6.2.</span> <span class="nav-text">外模式（external schema）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#内模式（internal-schema）"><span class="nav-number">6.3.</span> <span class="nav-text">内模式（internal schema）</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#数据库系统的存取方法"><span class="nav-number">7.</span> <span class="nav-text">数据库系统的存取方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#SQL的执行顺序是怎样的"><span class="nav-number">8.</span> <span class="nav-text">SQL的执行顺序是怎样的</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#FROM-连接"><span class="nav-number">8.1.</span> <span class="nav-text">FROM 连接</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#ON-过滤"><span class="nav-number">8.2.</span> <span class="nav-text">ON 过滤</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#JOIN-连接"><span class="nav-number">8.3.</span> <span class="nav-text">JOIN 连接</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#WHERE-过滤"><span class="nav-number">8.4.</span> <span class="nav-text">WHERE 过滤</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#GROUP-BY"><span class="nav-number">8.5.</span> <span class="nav-text">GROUP BY</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#HAVING"><span class="nav-number">8.6.</span> <span class="nav-text">HAVING</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#SELECT"><span class="nav-number">8.7.</span> <span class="nav-text">SELECT</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#DISTINCT"><span class="nav-number">8.8.</span> <span class="nav-text">DISTINCT</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#ORDER-BY"><span class="nav-number">8.9.</span> <span class="nav-text">ORDER BY</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#varchar-和-char-的区别和使用场景"><span class="nav-number">9.</span> <span class="nav-text">varchar 和 char 的区别和使用场景</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#什么是-内连接、外连接、交叉连接、笛卡尔积"><span class="nav-number">10.</span> <span class="nav-text">什么是 内连接、外连接、交叉连接、笛卡尔积</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#外连接-OUTER-JOIN"><span class="nav-number">10.1.</span> <span class="nav-text">外连接(OUTER JOIN)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#内连接-INNER-JOIN"><span class="nav-number">10.2.</span> <span class="nav-text">内连接(INNER JOIN)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#笛卡尔积-Cartesian-product"><span class="nav-number">10.3.</span> <span class="nav-text">笛卡尔积(Cartesian product)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#交叉连接"><span class="nav-number">10.4.</span> <span class="nav-text">交叉连接</span></a></li></ol></li></ol></div>
             
 
           </div>
