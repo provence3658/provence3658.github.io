@@ -79,12 +79,14 @@
 
 
 
+<meta name="description" content="计算机系统概述冯·诺依曼计算机的主要设计思想是什么？ 采用二进制形式表示数据和指令；指令由操作码和地址码组成。 采用存储程序，即把编写好的程序和原始数据预先放入计算机主存储器中，使计算机工作时能够连续、自动、高速地从存储器中取出一条条指令并执行，从而自动完成预定的任务 指令的执行是顺序的，即一般按照指令在存储器中存放的顺序执行，程序分支由转移指令实现 计算机硬件系统由运算器、控制器、存储器、输入设">
 <meta property="og:type" content="article">
 <meta property="og:title" content="计算机组成面试题">
 <meta property="og:url" content="http://blog.provence36.cn/2020/04/23/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E9%9D%A2%E8%AF%95%E9%A2%98/index.html">
 <meta property="og:site_name" content="Provence&#39; Blog">
+<meta property="og:description" content="计算机系统概述冯·诺依曼计算机的主要设计思想是什么？ 采用二进制形式表示数据和指令；指令由操作码和地址码组成。 采用存储程序，即把编写好的程序和原始数据预先放入计算机主存储器中，使计算机工作时能够连续、自动、高速地从存储器中取出一条条指令并执行，从而自动完成预定的任务 指令的执行是顺序的，即一般按照指令在存储器中存放的顺序执行，程序分支由转移指令实现 计算机硬件系统由运算器、控制器、存储器、输入设">
 <meta property="article:published_time" content="2020-04-23T13:47:42.000Z">
-<meta property="article:modified_time" content="2020-04-23T13:48:40.811Z">
+<meta property="article:modified_time" content="2020-04-27T11:47:06.547Z">
 <meta property="article:author" content="Provence">
 <meta name="twitter:card" content="summary">
 
@@ -353,7 +355,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  0 字
+                  2k 字
                 </span>
               
 
@@ -369,7 +371,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1 分钟
+                  6 分钟
                 </span>
               
             </div>
@@ -390,7 +392,84 @@
       
 
       
-        
+        <h3 id="计算机系统概述"><a href="#计算机系统概述" class="headerlink" title="计算机系统概述"></a>计算机系统概述</h3><h4 id="冯·诺依曼计算机的主要设计思想是什么？"><a href="#冯·诺依曼计算机的主要设计思想是什么？" class="headerlink" title="冯·诺依曼计算机的主要设计思想是什么？"></a>冯·诺依曼计算机的主要设计思想是什么？</h4><ol>
+<li>采用二进制形式表示数据和指令；指令由操作码和地址码组成。</li>
+<li>采用存储程序，即把编写好的程序和原始数据预先放入计算机主存储器中，使计算机工作时能够连续、自动、高速地从存储器中取出一条条指令并执行，从而自动完成预定的任务</li>
+<li>指令的执行是顺序的，即一般按照指令在存储器中存放的顺序执行，程序分支由转移指令实现</li>
+<li>计算机硬件系统由运算器、控制器、存储器、输入设备和输出设备五大部件组成</li>
+<li>计算机以运算器为中心，输入输出设备与存储器的数据传送通过运算器完成</li>
+</ol>
+<a id="more"></a>
+
+<h4 id="计算机中有哪三种类型的语言？简述他们的特点和区别"><a href="#计算机中有哪三种类型的语言？简述他们的特点和区别" class="headerlink" title="计算机中有哪三种类型的语言？简述他们的特点和区别"></a>计算机中有哪三种类型的语言？简述他们的特点和区别</h4><ol>
+<li>机器语言：是最底层的计算机语言，由代码”0“、”1“组成，它是计算机唯一可以直接识别和执行的语言</li>
+<li>汇编语言：用英文单词或其缩写代替二进制的指令代码，更容易为人们记忆和理解</li>
+<li>高级语言：是一种接近人们使用习惯的语言。通常高级语言需要经过编译程序编译成汇编语言程序，然后经过汇编操作得到机器语言程序。</li>
+</ol>
+<h4 id="机器字长、指令字长、存储字长的区别和联系？"><a href="#机器字长、指令字长、存储字长的区别和联系？" class="headerlink" title="机器字长、指令字长、存储字长的区别和联系？"></a>机器字长、指令字长、存储字长的区别和联系？</h4><p>机器字长：计算机能直接处理的二进制数据的位数</p>
+<p>指令字长：一个指令字中包含的二进制代码的位数</p>
+<p>存储字长：一个存储单元存储的二进制代码的长度</p>
+<p>它们都必须是字节的整数倍。</p>
+<p>指令字长一般取存储字长的整数倍，若指令字长等于存储字长的2倍，则需要2次访存来取出一条指令，因此取指周期为机器周期的2倍。</p>
+<h4 id="计算机硬件系统的组成部件及其功能"><a href="#计算机硬件系统的组成部件及其功能" class="headerlink" title="计算机硬件系统的组成部件及其功能"></a>计算机硬件系统的组成部件及其功能</h4><p>运算器：计算机的执行部件，用于对数据进行加工处理</p>
+<p>存储器：计算机的存储部件，用来存放程序和数据</p>
+<p>控制器：计算机的控制中心，由其控制各部件自动协调地进行工作</p>
+<p>输入设备：用来将人们熟悉的信息转化为机器能识别的形式</p>
+<p>输出设备：可将机器运算结果转换为人们熟悉的信息形式</p>
+<h4 id="程序在计算机上的执行过程"><a href="#程序在计算机上的执行过程" class="headerlink" title="程序在计算机上的执行过程"></a>程序在计算机上的执行过程</h4><p>从程序的起始地址运行程序；用程序首地址从存储器中取出第一条指令，经过取指令、 分析指令、执行指令等步骤控制计算机各个功能部件协调运行，完成这条指令功能，并计算下一条指令的地址；用新得到的指令地址继续读出第二条指令并执行之，直到程序结束为止。</p>
+<h3 id="数据的表示和运算"><a href="#数据的表示和运算" class="headerlink" title="数据的表示和运算"></a>数据的表示和运算</h3><h4 id="在计算机中，为什么要采用二进制来表示数据？"><a href="#在计算机中，为什么要采用二进制来表示数据？" class="headerlink" title="在计算机中，为什么要采用二进制来表示数据？"></a>在计算机中，为什么要采用二进制来表示数据？</h4><ol>
+<li>比较容易找到具有二值状态的物理器件来表示数据和实现存储 </li>
+<li>二值性使二进制数的存储具有抗干扰性强、可靠性高等优点 </li>
+<li>二进制数的运算规则非常简单，运算过程中的输入状态和输出状态较少，便于使用电子器件和线路加以实现</li>
+<li>为实现逻辑运算和逻辑判断提供了便利</li>
+</ol>
+<h3 id="存储系统"><a href="#存储系统" class="headerlink" title="存储系统"></a>存储系统</h3><h4 id="存储器的分类方法"><a href="#存储器的分类方法" class="headerlink" title="存储器的分类方法"></a>存储器的分类方法</h4><ol>
+<li><p>按在计算机中的作用分类</p>
+<ol>
+<li>高速缓冲存储器（Cache）：位于主存在CPU之间，用来存放正在执行的程序段和数据，以便CPU能高速地使用它们。</li>
+<li>主存储器：存放计算机运行期间所需的大量程序和数据，CPU可以直接随机地对其进行访问。</li>
+<li>辅存储器：存放暂时不用的程序和数据，以及一些需要永久保存的信息，它不能与CPU直接交换信息。</li>
+</ol>
+</li>
+<li><p>按存取方式分类</p>
+<ol>
+<li>随机存储器（RAM）：存储器的任何一个存储单元的内容可以随机存取，而且存取时间与存储单元的物理位置无关。其优点是读写方便、使用灵活，主要用作主存或高速缓冲存储器。</li>
+<li>只读存储器（ROM）：存储器的内容只能随机读出而不能写入。信息一旦写入存储器就固定不变，在断电后也可以继续保存。</li>
+</ol>
+</li>
+<li><p>按信息的保存分类</p>
+<p>永久记忆存储器、非永久记忆存储器</p>
+</li>
+</ol>
+<h4 id="存储器的性能指标"><a href="#存储器的性能指标" class="headerlink" title="存储器的性能指标?"></a>存储器的性能指标?</h4><p>存储器主要有三个性能指标，即存储容量、单位成本和存储速度。</p>
+<h4 id="存储系统分哪几个层次-各有什么特点-为什么采用分层体系结构"><a href="#存储系统分哪几个层次-各有什么特点-为什么采用分层体系结构" class="headerlink" title="存储系统分哪几个层次?各有什么特点?为什么采用分层体系结构?"></a>存储系统分哪几个层次?各有什么特点?为什么采用分层体系结构?</h4><ol>
+<li><p>Cache-主存层次：为了解决 CPU 和主存的速度不匹配的问题。</p>
+<p>特点：CPU 可以直接从 Cache 中获得信息，从而提高访存速度，Cache 和主存层次之间的信息调度由辅助硬件完成</p>
+</li>
+<li><p>主存-辅存层次：主要解决存储系统的容量问题。</p>
+<p>特点：采用虚拟存储技术，把主存辅存看成一个整体，从整体上看，速度取决于主存，容量取决于辅存，主存和辅存层次之间的信息调度由辅助硬件和操作系统共同完成</p>
+</li>
+</ol>
+<h4 id="比较-SRAM-和-DRAM-有何不同之处"><a href="#比较-SRAM-和-DRAM-有何不同之处" class="headerlink" title="比较 SRAM 和 DRAM 有何不同之处?"></a>比较 SRAM 和 DRAM 有何不同之处?</h4><p>SRAM 是由触发器工作原理存储信息，当信息读出后，它仍保持其原状态，不需再生。但是只要电源被切断，原来保存的信息便会丢失。SRAM的存取速度快，但集成度低，功耗较大，所以一般用来组成高速缓冲存储器。</p>
+<p>DRAM 是由电容存储电荷的原理存储信息，即使电源不掉电也会自动消失，所以必须进行刷新或再生。相对于SRAM来说，DRAM具有容易集成、价位低、容量大和功耗低等优点，但DRAM的存取速度比SRAM的慢，一般用来组成大容量主存系统。</p>
+<h4 id="什么是刷新-刷新有几种方式"><a href="#什么是刷新-刷新有几种方式" class="headerlink" title="什么是刷新?刷新有几种方式?"></a>什么是刷新?刷新有几种方式?</h4><p>DRAM 是由电容存储电荷的原理存储信息，电容上的电荷要放电，为了维持所存的信息， 需要在一定的时间内(2ms)内，将所存的信息读出再重新写入，这一过程叫刷新。</p>
+<p>刷新有3中方式：</p>
+<ol>
+<li>集中刷新：在刷新周期内，集中一段时间对存储芯片的每一行刷新一遍，在这段时间内不能对存储器进行访问。</li>
+<li>分散刷新：系统把每一行的刷新分散到各个存储周期内，将存储周期分为2半，前半段进行读/写操作，后半段进行刷新，显然整个系统的速度降低了，但是分散刷新没有存储器的死时间</li>
+<li>异步刷新：在刷新周期内分散地对存储芯片的每一行刷新一遍，这样就避免了分散式刷新中不必要的多次刷新，提高了整机速度。</li>
+</ol>
+<h4 id="Cache-有哪几种地址映射方法-各有何特点"><a href="#Cache-有哪几种地址映射方法-各有何特点" class="headerlink" title="Cache 有哪几种地址映射方法?各有何特点?"></a>Cache 有哪几种地址映射方法?各有何特点?</h4><ol>
+<li><p>直接映射：主存数据块只能装入Cache中的唯一位置</p>
+</li>
+<li><p>全相联映射：可以把主存数据块装入Cache中的任何位置</p>
+</li>
+<li><p>组相联映射：将Cache分为若干组，一个数据块可以装入一组内的任何一个位置</p>
+</li>
+</ol>
+<h4 id="简述虚拟存储器的含义和作用"><a href="#简述虚拟存储器的含义和作用" class="headerlink" title="简述虚拟存储器的含义和作用"></a>简述虚拟存储器的含义和作用</h4><p>虚拟存储器是指具有请求调入功能和置换功能，能从逻辑上对内存容量进行扩充的一 种存储器系统。</p>
+<p>作用：分割地址空间，解决主存容量问题和实现程序的重定位。</p>
+
       
     </div>
     
@@ -481,8 +560,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -562,6 +650,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#计算机系统概述"><span class="nav-number">1.</span> <span class="nav-text">计算机系统概述</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#冯·诺依曼计算机的主要设计思想是什么？"><span class="nav-number">1.1.</span> <span class="nav-text">冯·诺依曼计算机的主要设计思想是什么？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#计算机中有哪三种类型的语言？简述他们的特点和区别"><span class="nav-number">1.2.</span> <span class="nav-text">计算机中有哪三种类型的语言？简述他们的特点和区别</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#机器字长、指令字长、存储字长的区别和联系？"><span class="nav-number">1.3.</span> <span class="nav-text">机器字长、指令字长、存储字长的区别和联系？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#计算机硬件系统的组成部件及其功能"><span class="nav-number">1.4.</span> <span class="nav-text">计算机硬件系统的组成部件及其功能</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#程序在计算机上的执行过程"><span class="nav-number">1.5.</span> <span class="nav-text">程序在计算机上的执行过程</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据的表示和运算"><span class="nav-number">2.</span> <span class="nav-text">数据的表示和运算</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#在计算机中，为什么要采用二进制来表示数据？"><span class="nav-number">2.1.</span> <span class="nav-text">在计算机中，为什么要采用二进制来表示数据？</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#存储系统"><span class="nav-number">3.</span> <span class="nav-text">存储系统</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#存储器的分类方法"><span class="nav-number">3.1.</span> <span class="nav-text">存储器的分类方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#存储器的性能指标"><span class="nav-number">3.2.</span> <span class="nav-text">存储器的性能指标?</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#存储系统分哪几个层次-各有什么特点-为什么采用分层体系结构"><span class="nav-number">3.3.</span> <span class="nav-text">存储系统分哪几个层次?各有什么特点?为什么采用分层体系结构?</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#比较-SRAM-和-DRAM-有何不同之处"><span class="nav-number">3.4.</span> <span class="nav-text">比较 SRAM 和 DRAM 有何不同之处?</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#什么是刷新-刷新有几种方式"><span class="nav-number">3.5.</span> <span class="nav-text">什么是刷新?刷新有几种方式?</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Cache-有哪几种地址映射方法-各有何特点"><span class="nav-number">3.6.</span> <span class="nav-text">Cache 有哪几种地址映射方法?各有何特点?</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#简述虚拟存储器的含义和作用"><span class="nav-number">3.7.</span> <span class="nav-text">简述虚拟存储器的含义和作用</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
