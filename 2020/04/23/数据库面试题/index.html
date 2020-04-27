@@ -89,7 +89,7 @@
 <meta property="og:image" content="http://blog.provence36.cn/2020/04/23/%E6%95%B0%E6%8D%AE%E5%BA%93%E9%9D%A2%E8%AF%95%E9%A2%98/SQL%E7%9A%84%E6%89%A7%E8%A1%8C%E9%A1%BA%E5%BA%8F.png">
 <meta property="og:image" content="http://blog.provence36.cn/Users/provence/blog/source/_posts/%E6%95%B0%E6%8D%AE%E5%BA%93%E9%9D%A2%E8%AF%95%E9%A2%98/SQL%E7%9A%84%E6%89%A7%E8%A1%8C%E9%A1%BA%E5%BA%8F.png">
 <meta property="article:published_time" content="2020-04-23T13:50:42.000Z">
-<meta property="article:modified_time" content="2020-04-27T11:50:58.787Z">
+<meta property="article:modified_time" content="2020-04-27T11:53:10.042Z">
 <meta property="article:author" content="Provence">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://blog.provence36.cn/2020/04/23/%E6%95%B0%E6%8D%AE%E5%BA%93%E9%9D%A2%E8%AF%95%E9%A2%98/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E4%B8%89%E7%BA%A7%E6%A8%A1%E5%BC%8F.jpeg">
@@ -402,10 +402,11 @@
 <li>重复使用。存储过程可以重复使用，从而可以减少数据库开发人员的工作量。</li>
 <li>提高性能。存储过程在创建的时候就进行了编译，将来使用的时候不用再重新编译。一般的SQL语句每执行一次就需要编译一次，所以使用存储过程提高了效率。</li>
 <li>减少网络流量。存储过程位于服务器上，调用的时候只需要传递存储过程的名称以及参数就可以了，因此降低了网络传输的数据量。</li>
-<li>安全性。参数化的存储过程可以防止SQL注入式的攻击，而且可以将Grant、Deny以及Revoke权限应用于存储过程。<a id="more"></a>
-<h4 id="索引是什么？有什么作用以及优缺点？"><a href="#索引是什么？有什么作用以及优缺点？" class="headerlink" title="索引是什么？有什么作用以及优缺点？"></a>索引是什么？有什么作用以及优缺点？</h4></li>
+<li>安全性。参数化的存储过程可以防止SQL注入式的攻击，而且可以将Grant、Deny以及Revoke权限应用于存储过程。</li>
 </ol>
-<p>索引是存储在一张表中特定列上的数据结构。</p>
+<a id="more"></a>
+
+<h4 id="索引是什么？有什么作用以及优缺点？"><a href="#索引是什么？有什么作用以及优缺点？" class="headerlink" title="索引是什么？有什么作用以及优缺点？"></a>索引是什么？有什么作用以及优缺点？</h4><p>索引是存储在一张表中特定列上的数据结构。</p>
 <h5 id="MySQL-常见索引类型"><a href="#MySQL-常见索引类型" class="headerlink" title="MySQL 常见索引类型"></a>MySQL 常见索引类型</h5><ol>
 <li><p>全局索引</p>
 <p>为了解决针对文本的模糊查询效率较低的问题。</p>
