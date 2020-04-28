@@ -86,7 +86,7 @@
 <meta property="og:site_name" content="Provence&#39; Blog">
 <meta property="og:description" content="线性表的存储结构线性表有两种存储结构，分别是顺序存储结构和链式存储结构。  顺序存储结构  结点中只有自身的信息域，因此存储密度大、存储空间利用率高。 随机访问 插入和删除需要移动大量元素    链式存储结构  结点中除自身信息域外还有指针域，因此存储密度小、存储空间利用率低。 在逻辑上相邻的结点在物理上不必相邻，因此不能随机访问，只能顺序访问。 插入和删除操作方便灵活，不必移动结点，只需修改结点">
 <meta property="article:published_time" content="2020-04-23T13:41:24.000Z">
-<meta property="article:modified_time" content="2020-04-27T13:16:54.940Z">
+<meta property="article:modified_time" content="2020-04-28T14:40:07.294Z">
 <meta property="article:author" content="Provence">
 <meta name="twitter:card" content="summary">
 
@@ -355,7 +355,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  4.1k 字
+                  5.3k 字
                 </span>
               
 
@@ -371,7 +371,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  14 分钟
+                  18 分钟
                 </span>
               
             </div>
@@ -433,7 +433,7 @@
 <p>左子树上的所有结点的关键字都小于根结点的关键字，右子树上的所有结点的关键字都大于根结点的关键字。左右子树又各是一棵二叉排序树。</p>
 </li>
 <li><p>平衡二叉树</p>
-<p>树上任意结点的左子树和右子树的高度差不超过1</p>
+<p>二叉排序树上任意结点的左子树和右子树的高度差不超过1</p>
 </li>
 </ol>
 <h4 id="度为二的树和二叉树的区别"><a href="#度为二的树和二叉树的区别" class="headerlink" title="度为二的树和二叉树的区别"></a>度为二的树和二叉树的区别</h4><ol>
@@ -489,6 +489,52 @@
 <p>若树非空，则先按从左到右的顺序遍历根结点的每棵子树，再访问根结点。</p>
 </li>
 </ol>
+<h4 id="什么是二叉排序树？二叉排序树的查找过程？"><a href="#什么是二叉排序树？二叉排序树的查找过程？" class="headerlink" title="什么是二叉排序树？二叉排序树的查找过程？"></a>什么是二叉排序树？二叉排序树的查找过程？</h4><p>定义：</p>
+<ol>
+<li>要么二叉排序树是一棵空树。</li>
+<li>要么二叉排序树由根结点、左子树、右子树组成，其中左子树和右子树都是二叉排序树，且左子树上所有结点的数据域均<strong>小于</strong>根结点的数据域，右子树上所有结点的数据域均<strong>大于</strong>根结点的数据域。</li>
+</ol>
+<p>查找过程：</p>
+<p>若查找的关键字等于根结点的关键字，则查找成功。</p>
+<p>若查找的关键字小于根结点的关键字，递归查找左子树。</p>
+<p>若查找的关键字大于根结点的关键字，递归查找右子树。</p>
+<p>若子树为空，则查找失败。</p>
+<p>二叉排序树的中序遍历是一个递增序列。</p>
+<h4 id="哈夫曼树"><a href="#哈夫曼树" class="headerlink" title="哈夫曼树"></a>哈夫曼树</h4><p>定义：</p>
+<p>在含有n个带权叶子结点的二叉树中，其中带权路径长度最小的树为哈弗曼树。</p>
+<p>构造方法：</p>
+<ol>
+<li>初试状态下共有n个结点，将他们视作n棵只有根结点的树。</li>
+<li>合并其中根结点权值最小的两棵树，生成两棵树根结点的父结点，权值为这两个根结点的权值之和，这样树的数量就减少了一个。</li>
+<li>重复上一步，直到只剩一棵树。</li>
+</ol>
+<p>特点：</p>
+<ol>
+<li>权值越小，离根结点越远。</li>
+<li>树中所有结点度都为2。</li>
+</ol>
+<p>应用：</p>
+<p>哈夫曼编码：是总长度最短的前缀编码。</p>
+<h4 id="图的相关概念"><a href="#图的相关概念" class="headerlink" title="图的相关概念"></a>图的相关概念</h4><p>图：由结点的有穷集合V和边的集合E组成。</p>
+<p>类别：有向图和无向图。</p>
+<p>顶点的度：出度和入度。</p>
+<p>有向完全图和无向完全图：  </p>
+<ul>
+<li><p>若有向图有n个顶点，则最多有n(n-1)条边，则称为有向完全图；</p>
+</li>
+<li><p>若无向图有n个顶点，则最多有n(n-1)/2条边，则称为无向完全图。</p>
+</li>
+</ul>
+<p>路径：由顶点和相邻顶点序偶构成的边所形成的序列。</p>
+<p>简单路径：序列中的顶点和路径不重复出现的路径。</p>
+<p>回路：路径中第一个顶点和最后一个顶点相同的路径。</p>
+<p>连通：   </p>
+<ul>
+<li><p>无向图中，如果Vi到Vj有路径，则称这两个顶点连通。如果图中任意两个顶点之间都连通，则称改图为连通图。</p>
+</li>
+<li><p>有向图中，如果Vi到Vj有路径，则称这两个顶点连通。如果图中每一对顶点Vi和Vj，从Vi到Vj和Vj到Vi都有路径，则称改图为强连通图。</p>
+</li>
+</ul>
 <h4 id="图的存储方式和遍历方式"><a href="#图的存储方式和遍历方式" class="headerlink" title="图的存储方式和遍历方式"></a>图的存储方式和遍历方式</h4><p>存储方式：</p>
 <ol>
 <li><p>邻接矩阵法</p>
@@ -501,7 +547,7 @@
 <p>有向图的一种链式存储结构</p>
 </li>
 <li><p>邻接多重表</p>
-<p>无向图的链式存储结构</p>
+<p>无向图的一种链式存储结构</p>
 </li>
 </ol>
 <p>遍历方式：</p>
@@ -510,39 +556,14 @@
 <p>深度优先搜索是一个递归的过程。首先，选定一个出发点后进行遍历，如果有邻接的未被访问过的结点则访问这个结点。如果没有邻接且未被访问过的结点，则回退一步，看该结点有没有邻接且未被访问过的结点。有则访问，无则再次回退，重复此过程，直到该连通块中所有顶点都被访问过。</p>
 </li>
 <li><p>广度优先搜索</p>
-<p>广度优先搜索类似于树的层次遍历。从图中某顶点v出发，在访问了v之后依次访问v的各个未曾访问过的邻接点，然后分别从这些邻接点出发依次访问它们的邻接点，直至图中所有的顶点都被访问到。</p>
+<p>从图中某顶点v出发，在访问了v之后依次访问v的各个未曾访问过的邻接点，然后分别从这些邻接点出发依次访问它们的各个未曾访问过的邻接点，直至图中所有的顶点都被访问到。</p>
 </li>
 </ol>
 <p>图的深度优先搜索是否唯一：</p>
 <p>如果每个结点都只有一个孩子结点，那就是唯一的。否则，不唯一。</p>
 <p>深度优先搜索形成的是森林。</p>
-<h4 id="图的相关概念"><a href="#图的相关概念" class="headerlink" title="图的相关概念"></a>图的相关概念</h4><p>图：由结点的有穷集合V和边的集合E组成。</p>
-<p>类别：有向图和无向图。</p>
-<p>顶点的度：出度和入度。</p>
-<p>有向完全图和无向完全图：  </p>
-<p>若有向图有n个顶点，则最多有n(n-1)条边，则称为有向完全图；</p>
-<p>若无向图有n个顶点，则最多有n(n-1)/2条边，则称为无向完全图。</p>
-<p>路径：由顶点和相邻顶点序偶构成的边所形成的序列。</p>
-<p>简单路径：序列中的顶点和路径不重复出现的路径。</p>
-<p>回路：路径中第一个顶点和最后一个顶点相同的路径。</p>
-<p>连通：   </p>
-<p>无向图中，如果Vi到Vj有路径，则称这两个顶点连通。如果图中任意两个顶点之间都连通，则称改图为连通图。</p>
-<p>有向图中，如果Vi到Vj有路径，则称这两个顶点连通。如果图中每一对顶点Vi和Vj，从Vi到Vj和Vj到Vi都有路径，则称改图为强连通图。</p>
 <h4 id="图和树的区别"><a href="#图和树的区别" class="headerlink" title="图和树的区别"></a>图和树的区别</h4><p>树是一种“层次”关系，图是“网络”关系。</p>
 <p>树是一对多的关系，图是多对多的关系。</p>
-<h4 id="什么是二叉排序树？二叉排序树的查找过程？"><a href="#什么是二叉排序树？二叉排序树的查找过程？" class="headerlink" title="什么是二叉排序树？二叉排序树的查找过程？"></a>什么是二叉排序树？二叉排序树的查找过程？</h4><p>定义：</p>
-<ol>
-<li>要么二叉排序树是一棵空树。</li>
-<li>要么二叉排序树由根结点、左子树、右子树组成，其中左子树和右子树都是二叉排序树，且左子树上所有结点的数据域均<strong>小于</strong>根结点的数据域，右子树上所有结点的数据域均<strong>大于</strong>根结点的数据域。</li>
-</ol>
-<p>查找过程：</p>
-<p>若查找的关键字等于根结点的关键字，则查找成功。</p>
-<p>若查找的关键字小于根结点的关键字，递归查找左子树。</p>
-<p>若查找的关键字大于根结点的关键字，递归查找右子树。</p>
-<p>若子树为空，则查找失败。</p>
-<p>二叉排序树的中序遍历是一个递增序列。</p>
-<h4 id="什么是堆？有什么作用？"><a href="#什么是堆？有什么作用？" class="headerlink" title="什么是堆？有什么作用？"></a>什么是堆？有什么作用？</h4><p>堆是一棵完全二叉树，树中每个结点的值都不小于（或不大于）其左右孩子结点的值。如果父亲结点的值大于等于孩子结点的值，那么称这样的堆为大根堆；如果父亲结点的值小于等于孩子结点的值，那么称这样的堆为小根堆；</p>
-<p>作用：应用于堆排序。</p>
 <h4 id="什么是最小生成树？求最小生成树的方法"><a href="#什么是最小生成树？求最小生成树的方法" class="headerlink" title="什么是最小生成树？求最小生成树的方法"></a>什么是最小生成树？求最小生成树的方法</h4><p>最小生成树是在一个给定的无向图中求一棵树，使得这棵树拥有图中的所有顶点，且所有边都是来自图中的边，并且满足整棵树的边权之和最小。</p>
 <ol>
 <li><p>Prim算法</p>
@@ -565,33 +586,90 @@
 <li><p>SPFA算法</p>
 </li>
 </ol>
+<h4 id="拓扑排序"><a href="#拓扑排序" class="headerlink" title="拓扑排序"></a>拓扑排序</h4><p>拓扑排序是对有向无环图的顶点的一种排序，它使得若存在一条顶点A到顶点B的路径，则在排序中顶点B出现在顶点A的后面。每个有向无环图都有一个或多个拓扑排序序列。</p>
+<p>求解拓扑排序的方法：</p>
+<ol>
+<li>定义一个队列Q，并把所有入度为0的结点加入队列。</li>
+<li>取队首结点，输出。然后删去所有从它出发的边，并令这些边到达的顶点的入度减1，如果某个顶点的入度减为0，则将其加入队列。</li>
+<li>反复进行2操作，直到队列为空。如果队列为空时入过队的结点数目恰好为N，说明拓扑排序成功，图G为有向无环图；否则，拓扑排序失败，图G中有环。</li>
+</ol>
+<p>拓扑排序的很重要的应用就是判断一个给定的图是否是有向无环图。</p>
+<h4 id="关键路径"><a href="#关键路径" class="headerlink" title="关键路径"></a>关键路径</h4><p>AOE网中的最长路径是关键路径，关键路径上的活动为关键活动。</p>
+<p>求解关键活动的方法：</p>
+<ol>
+<li>按拓扑序和逆拓扑序分别计算各顶点的最早发生时间和最迟发生时间。<br>最早（拓扑序）：ve[j] = max{ve[i] + length[i-&gt;j]}<br>最迟（逆拓扑序）：vl[i] = min{vl[j] - length[i-&gt;j]}</li>
+<li>用上面的结果计算各边的最早开始时间和最迟开始时间。<br>最早：e[i-&gt;j] = ve[i]<br>最迟：l[i-&gt;j] = vl[j] - length[i-&gt;j]</li>
+<li>e[i-&gt;j] == l[i-&gt;j]的活动就是关键活动</li>
+</ol>
+<h4 id="折半查找，以及其适用范围和时间复杂度"><a href="#折半查找，以及其适用范围和时间复杂度" class="headerlink" title="折半查找，以及其适用范围和时间复杂度"></a>折半查找，以及其适用范围和时间复杂度</h4><p>基本思路：首先，假设表中元素是升序排列，将给定值key与表中中间位置的关键字比较，若相等，则查找成功；若不等，则利用中间位置将表分为前半部分和后半部分，如果中间位置的关键字大于给定的key，则进一步查找表的前半部分，否则查找表的后半部分。重复以上操作，直到找到满足条件的记录，使查找成功，或直到子表不存在为止，此时查找不成功。</p>
+<p>适用范围：有序的顺序表</p>
+<p>时间复杂度：O(log2n)</p>
+<h4 id="分块查找"><a href="#分块查找" class="headerlink" title="分块查找"></a>分块查找</h4><p>综合了顺序查找和折半查找。</p>
+<p>基本思想：</p>
+<p>将查找表分为若干子块。块内的元素可以无序，但块之间是有序的，即第一个块中的关键字均小于第二个块中的关键字，第二个块中的关键字均小于第三个块中的关键字，以此类推。再建一个索引表，索引表中的每个元素含有各块的最大关键字和各块中第一个元素的地址，索引表按关键字有序排列。</p>
+<p>分块查找的步骤：</p>
+<ol>
+<li>在索引表中确定待查记录所在的块，可以顺序查找或折半查找</li>
+<li>在块内顺序查找</li>
+</ol>
+<h4 id="介绍一下B树和B-树"><a href="#介绍一下B树和B-树" class="headerlink" title="介绍一下B树和B+树"></a>介绍一下B树和B+树</h4><h5 id="B树"><a href="#B树" class="headerlink" title="B树"></a>B树</h5><p>B树是一棵多路平衡查找树。</p>
+<p>M阶B树：</p>
+<ol>
+<li>排序方式：所有节点关键字是按递增次序排列，并遵循左小右大原则</li>
+<li>子树个数：根结点的子树（2 ≤ n ≤ M），其他非叶结点的子树（ceil(M/2) ≤ n ≤ M）</li>
+<li>关键字个数：子树个数-1</li>
+<li>所有的叶结点都出现在同一层次上，并且不带信息</li>
+</ol>
+<p>B树的查找：</p>
+<p>包含两个基本操作：<strong>在B树中找结点</strong>和<strong>在结点中找关键字</strong>。由于B树尝存储在磁盘上，因此前一个查找操作时在磁盘上进行的，而后一个查找操作是在内存中进行的，即在找到目标结点后，先将结点中的信息读入内存，然后采用顺序查找法或折半查找法查找。</p>
+<h5 id="B-树"><a href="#B-树" class="headerlink" title="B+树"></a>B+树</h5><p>M阶B+树：</p>
+<ol>
+<li>子树个数：根结点的子树（2 ≤ n ≤ M），其他非叶结点的子树（ceil(M/2) ≤ n ≤ M）</li>
+<li>关键字个数：等于子树个数</li>
+<li>所有的叶结点包含全部关键字及指向相应记录的指针，叶结点中将关键字按大小顺序排序，并且相邻叶结点按大小顺序相互链接起来。</li>
+</ol>
+<h5 id="M阶B树和M阶B-树的主要区别"><a href="#M阶B树和M阶B-树的主要区别" class="headerlink" title="M阶B树和M阶B+树的主要区别"></a>M阶B树和M阶B+树的主要区别</h5><ol>
+<li>在B+树中，具有n个关键字的结点只含有n棵子树，而在B树中，具有n个关键字的结点含有n+1棵子树。</li>
+<li>在B+树中，叶结点包含信息，所有非叶结点仅起索引作用，非叶结点中的每个索引项只含有对应子树的最大关键字和指向该子树的指针。而在B树中，每个关键字对应记录的存储地址。</li>
+<li>在B+树中，叶结点包含了全部关键字，即在非叶结点中出现的关键字也会出现在叶结点中；而在B树中，叶结点包含的关键字和其他结点包含的关键字是不重复的。</li>
+</ol>
+<h5 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h5><ol>
+<li>B+<strong>树的层级更少</strong>：相较于B树，B+树每个非叶子节点存储的关键字数更多，树的层级更少所以查询数据更快。</li>
+<li>B+<strong>树查询速度更稳定</strong>：B+树所有关键字数据地址都存在叶子节点上，所以每次查找的次数都相同所以查询速度要比B树更稳定。</li>
+<li>B+<strong>树全节点遍历更快：</strong>B+树遍历整棵树只需要遍历所有的叶子节点即可，而不需要像B树一样需要对每一层进行遍历，这有利于数据库做全表扫描。</li>
+</ol>
+<p><strong>B树</strong>相对于<strong>B+树</strong>的优点是，如果经常访问的数据离根节点很近，而<strong>B树</strong>的<strong>非叶子</strong>节点本身存有关键字其数据的地址，所以这种数据检索的时候会要比<strong>B+树</strong>快。</p>
 <h4 id="什么哈希表？如何构造哈希函数？什么是哈希冲突？如何解决？"><a href="#什么哈希表？如何构造哈希函数？什么是哈希冲突？如何解决？" class="headerlink" title="什么哈希表？如何构造哈希函数？什么是哈希冲突？如何解决？"></a>什么哈希表？如何构造哈希函数？什么是哈希冲突？如何解决？</h4><p>哈希表是根据关键字而直接访问的数据结构。哈希表建立了关键字和存储地址之间的一种映射关系。</p>
 <p>哈希函数的构造方法：</p>
 <ol>
-<li>直接定址法</li>
-<li>除留余数法</li>
-<li>数字分析法</li>
-<li>平方取中法</li>
+<li>直接定址法：直接取关键字的某个线性函数值为哈希地址</li>
+<li>除留余数法：关键是要选好除数p，等概率，减少冲突</li>
+<li>数字分析法：取关键字的若干不易冲突的数位组成哈希地址</li>
+<li>平方取中法：取关键字平方后的中间几位为哈希地址</li>
 </ol>
 <p>哈希冲突：多个关键字映射到同一个存储地址。</p>
 <p>解决办法：</p>
 <ol>
 <li><p>开放定址法</p>
 <ol>
-<li>线性探测法：产生堆积问题</li>
-<li>平方探测法：不能探测到哈希表上所有的地址</li>
+<li><p>线性探测法</p>
+<p>冲突发生时，顺序查看表中下一个单元直到找到空闲单元</p>
+<p>产生堆积问题，降低查找效率</p>
+</li>
+<li><p>平方探测法</p>
+<p>可以避免堆积问题，但不能探测到哈希表上所有的地址</p>
+</li>
+<li><p>再散列法</p>
+<p>当通过第一个哈希函数得到的地址发生冲突时，则利用第二个哈希函数计算该关键字的地址增量</p>
+</li>
 </ol>
 </li>
 <li><p>链地址法</p>
 <p>将所有关键字为同义词的结点链接在同一个链表中</p>
+<p>适用于经常插入和删除的情况</p>
 </li>
 </ol>
-<h4 id="快排的操作流程"><a href="#快排的操作流程" class="headerlink" title="快排的操作流程"></a>快排的操作流程</h4><ol>
-<li>先从数列中取出一个数作为基准数</li>
-<li>将比这个数大的数都放到右边，比这个数小的数都放到左边</li>
-<li>再对其左右分区重复以上过程，直到各区间只有一个数</li>
-</ol>
-<h4 id="各种排序算法的复杂度、稳定性"><a href="#各种排序算法的复杂度、稳定性" class="headerlink" title="各种排序算法的复杂度、稳定性"></a>各种排序算法的复杂度、稳定性</h4><table>
+<h4 id="KMP算法"><a href="#KMP算法" class="headerlink" title="KMP算法"></a>KMP算法</h4><h4 id="各种排序算法的复杂度、稳定性"><a href="#各种排序算法的复杂度、稳定性" class="headerlink" title="各种排序算法的复杂度、稳定性"></a>各种排序算法的复杂度、稳定性</h4><table>
   <tr>
       <td rowspan="2"></td>
     <td rowspan="2">排序方法</td>
@@ -615,9 +693,9 @@
   </tr>
   <tr>
     <td>折半插入</td>
-    <td></td>
-    <td></td>
-    <td></td>
+    <td>O(n^2)</td>
+    <td>O(n^2)</td>
+    <td>O(n^2)</td>
     <td>O(1)</td>
     <td>稳定</td>
   </tr>
@@ -682,36 +760,13 @@
   </tr>
 </table>
 
-<h4 id="折半查找，以及其适用范围和时间复杂度"><a href="#折半查找，以及其适用范围和时间复杂度" class="headerlink" title="折半查找，以及其适用范围和时间复杂度"></a>折半查找，以及其适用范围和时间复杂度</h4><p>基本思路：在当前的查找区间[low…high]中，首先确定mid=(low+high)/2，然后拿关键字与mid位置的值比较，若相等，则查找成功，返回该位置，否则确定新的查找区间，若mid位置上的值&gt;关键字，[low…mid-1]，若mid位置上的值&lt;关键字，[mid+1…high]。</p>
-<p>适用范围：顺序结构存储，按关键字大小有序排列</p>
-<p>时间复杂度：O(log2n)</p>
-<h4 id="哈夫曼树"><a href="#哈夫曼树" class="headerlink" title="哈夫曼树"></a>哈夫曼树</h4><p>定义：</p>
-<p>给定n个权值作为n个叶子结点，构造一棵二叉树，使得这棵树的带权路径长度最小。称这样的树为哈弗曼树。</p>
-<p>构造方法：</p>
-<ol>
-<li>初试状态下共有n个结点，将他们视作n棵只有根结点的树。</li>
-<li>合并其中根结点权值最小的两棵树，生成两棵树根结点的父结点，权值为这两个根结点的权值之和，这样树的数量就减少了一个。</li>
-<li>重复上一步，直到只剩一棵树。</li>
+<h4 id="快排的操作流程"><a href="#快排的操作流程" class="headerlink" title="快排的操作流程"></a>快排的操作流程</h4><ol>
+<li>先从数列中取出一个数作为基准数</li>
+<li>将比这个数大的数都放到右边，比这个数小的数都放到左边</li>
+<li>再对其左右分区重复以上过程，直到各区间只有一个数</li>
 </ol>
-<p>特点：</p>
-<ol>
-<li>权值越小，离根结点越远。</li>
-<li>树中所有结点度都为2。</li>
-</ol>
-<p>应用：</p>
-<p>哈夫曼编码</p>
-<p>哈夫曼编码是长度最短的前缀编码。</p>
-<h4 id="平衡二叉树"><a href="#平衡二叉树" class="headerlink" title="平衡二叉树"></a>平衡二叉树</h4><p>平衡二叉树是一种特殊的二叉排序树，其左右子树都是平衡二叉树，且左右子树的高度差的绝对值不超过1。</p>
-<p>平衡因子：左右子树的高度差</p>
-<p>平衡调整：</p>
-<h4 id="拓扑排序"><a href="#拓扑排序" class="headerlink" title="拓扑排序"></a>拓扑排序</h4><p>拓扑排序是将有向无环图G的所有顶点排成一个线性序列，使得对图G中的任意两个顶点u、v，如果存在边u-&gt;v，那么在序列中u一定在v的前面。这个序列被称为拓扑序列。</p>
-<p>拓扑排序的很重要的应用就是判断一个给定的图是否是有向无环图。</p>
-<h4 id="M阶B树和M阶B-树的主要区别"><a href="#M阶B树和M阶B-树的主要区别" class="headerlink" title="M阶B树和M阶B+树的主要区别"></a>M阶B树和M阶B+树的主要区别</h4><ol>
-<li>在B+树中，具有n个关键字的结点只含有n棵子树，而在B树中，具有n个关键字的结点含有n+1棵子树。</li>
-<li>在B+树中，叶结点包含信息，所有非叶结点仅起索引作用，非叶结点中的每个索引项只含有对应子树的最大关键字和指向该子树的指针。而在B树中，每个关键字对应记录的存储地址。</li>
-<li>在B+树中，叶结点包含了全部关键字，即在非叶结点中出现的关键字也会出现在叶结点中；而在B树中，叶结点包含的关键字和其他结点包含的关键字是不重复的。</li>
-</ol>
-<p>高速缓存</p>
+<h4 id="归并排序"><a href="#归并排序" class="headerlink" title="归并排序"></a>归并排序</h4><h4 id="什么是堆？有什么作用？"><a href="#什么是堆？有什么作用？" class="headerlink" title="什么是堆？有什么作用？"></a>什么是堆？有什么作用？</h4><p>堆是一棵完全二叉树，树中每个结点的值都不小于（或不大于）其左右孩子结点的值。如果父亲结点的值大于等于孩子结点的值，那么称这样的堆为大根堆；如果父亲结点的值小于等于孩子结点的值，那么称这样的堆为小根堆；</p>
+<p>作用：应用于堆排序。</p>
 
       
     </div>
@@ -903,7 +958,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#线性表的存储结构"><span class="nav-number">1.</span> <span class="nav-text">线性表的存储结构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#如何实现循环队列？好处？为什么要空一个位置？"><span class="nav-number">2.</span> <span class="nav-text">如何实现循环队列？好处？为什么要空一个位置？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#来讲讲二叉树吧"><span class="nav-number">3.</span> <span class="nav-text">来讲讲二叉树吧</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#度为二的树和二叉树的区别"><span class="nav-number">4.</span> <span class="nav-text">度为二的树和二叉树的区别</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#二叉树的存储方式和遍历方式"><span class="nav-number">5.</span> <span class="nav-text">二叉树的存储方式和遍历方式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#树的存储结构和遍历方式"><span class="nav-number">6.</span> <span class="nav-text">树的存储结构和遍历方式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#图的存储方式和遍历方式"><span class="nav-number">7.</span> <span class="nav-text">图的存储方式和遍历方式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#图的相关概念"><span class="nav-number">8.</span> <span class="nav-text">图的相关概念</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#图和树的区别"><span class="nav-number">9.</span> <span class="nav-text">图和树的区别</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#什么是二叉排序树？二叉排序树的查找过程？"><span class="nav-number">10.</span> <span class="nav-text">什么是二叉排序树？二叉排序树的查找过程？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#什么是堆？有什么作用？"><span class="nav-number">11.</span> <span class="nav-text">什么是堆？有什么作用？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#什么是最小生成树？求最小生成树的方法"><span class="nav-number">12.</span> <span class="nav-text">什么是最小生成树？求最小生成树的方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#求最短路径的方法"><span class="nav-number">13.</span> <span class="nav-text">求最短路径的方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#什么哈希表？如何构造哈希函数？什么是哈希冲突？如何解决？"><span class="nav-number">14.</span> <span class="nav-text">什么哈希表？如何构造哈希函数？什么是哈希冲突？如何解决？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#快排的操作流程"><span class="nav-number">15.</span> <span class="nav-text">快排的操作流程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#各种排序算法的复杂度、稳定性"><span class="nav-number">16.</span> <span class="nav-text">各种排序算法的复杂度、稳定性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#折半查找，以及其适用范围和时间复杂度"><span class="nav-number">17.</span> <span class="nav-text">折半查找，以及其适用范围和时间复杂度</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#哈夫曼树"><span class="nav-number">18.</span> <span class="nav-text">哈夫曼树</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#平衡二叉树"><span class="nav-number">19.</span> <span class="nav-text">平衡二叉树</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#拓扑排序"><span class="nav-number">20.</span> <span class="nav-text">拓扑排序</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#M阶B树和M阶B-树的主要区别"><span class="nav-number">21.</span> <span class="nav-text">M阶B树和M阶B+树的主要区别</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#线性表的存储结构"><span class="nav-number">1.</span> <span class="nav-text">线性表的存储结构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#如何实现循环队列？好处？为什么要空一个位置？"><span class="nav-number">2.</span> <span class="nav-text">如何实现循环队列？好处？为什么要空一个位置？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#来讲讲二叉树吧"><span class="nav-number">3.</span> <span class="nav-text">来讲讲二叉树吧</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#度为二的树和二叉树的区别"><span class="nav-number">4.</span> <span class="nav-text">度为二的树和二叉树的区别</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#二叉树的存储方式和遍历方式"><span class="nav-number">5.</span> <span class="nav-text">二叉树的存储方式和遍历方式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#树的存储结构和遍历方式"><span class="nav-number">6.</span> <span class="nav-text">树的存储结构和遍历方式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#什么是二叉排序树？二叉排序树的查找过程？"><span class="nav-number">7.</span> <span class="nav-text">什么是二叉排序树？二叉排序树的查找过程？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#哈夫曼树"><span class="nav-number">8.</span> <span class="nav-text">哈夫曼树</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#图的相关概念"><span class="nav-number">9.</span> <span class="nav-text">图的相关概念</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#图的存储方式和遍历方式"><span class="nav-number">10.</span> <span class="nav-text">图的存储方式和遍历方式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#图和树的区别"><span class="nav-number">11.</span> <span class="nav-text">图和树的区别</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#什么是最小生成树？求最小生成树的方法"><span class="nav-number">12.</span> <span class="nav-text">什么是最小生成树？求最小生成树的方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#求最短路径的方法"><span class="nav-number">13.</span> <span class="nav-text">求最短路径的方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#拓扑排序"><span class="nav-number">14.</span> <span class="nav-text">拓扑排序</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#关键路径"><span class="nav-number">15.</span> <span class="nav-text">关键路径</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#折半查找，以及其适用范围和时间复杂度"><span class="nav-number">16.</span> <span class="nav-text">折半查找，以及其适用范围和时间复杂度</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#分块查找"><span class="nav-number">17.</span> <span class="nav-text">分块查找</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#介绍一下B树和B-树"><span class="nav-number">18.</span> <span class="nav-text">介绍一下B树和B+树</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#B树"><span class="nav-number">18.1.</span> <span class="nav-text">B树</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#B-树"><span class="nav-number">18.2.</span> <span class="nav-text">B+树</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#M阶B树和M阶B-树的主要区别"><span class="nav-number">18.3.</span> <span class="nav-text">M阶B树和M阶B+树的主要区别</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#特点"><span class="nav-number">18.4.</span> <span class="nav-text">特点</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#什么哈希表？如何构造哈希函数？什么是哈希冲突？如何解决？"><span class="nav-number">19.</span> <span class="nav-text">什么哈希表？如何构造哈希函数？什么是哈希冲突？如何解决？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#KMP算法"><span class="nav-number">20.</span> <span class="nav-text">KMP算法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#各种排序算法的复杂度、稳定性"><span class="nav-number">21.</span> <span class="nav-text">各种排序算法的复杂度、稳定性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#快排的操作流程"><span class="nav-number">22.</span> <span class="nav-text">快排的操作流程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#归并排序"><span class="nav-number">23.</span> <span class="nav-text">归并排序</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#什么是堆？有什么作用？"><span class="nav-number">24.</span> <span class="nav-text">什么是堆？有什么作用？</span></a></li></ol></div>
             
 
           </div>
