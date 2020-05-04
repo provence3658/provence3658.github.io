@@ -85,10 +85,12 @@
 <meta property="og:url" content="http://blog.provence36.cn/2020/04/23/%E5%85%B6%E4%BB%96%E9%9D%A2%E8%AF%95%E9%A2%98/index.html">
 <meta property="og:site_name" content="Provence&#39; Blog">
 <meta property="og:description" content="面向对象与面向过程的区别1）面向过程就是分析出解决问题所需要的步骤，然后用函数把这些步骤一步一步实现，使用的时候一个一个依次调用 2）面向对象是把构成问题事物分解成各个对象，描述某一个事物做某件事情的行为，以功能来划分问题。 例如五子棋，面向过程的设计思路就是首先分析问题的步骤：1、开始游戏，2、黑子先走，3、绘制画面，4、判断输赢，5、轮到白子，6、绘制画面，7、判断输赢，8、返回步骤2，9、输">
+<meta property="og:image" content="http://blog.provence36.cn/2020/04/23/%E5%85%B6%E4%BB%96%E9%9D%A2%E8%AF%95%E9%A2%98/%E7%BC%96%E8%AF%91%E8%BF%87%E7%A8%8B.png">
 <meta property="article:published_time" content="2020-04-23T13:52:01.000Z">
-<meta property="article:modified_time" content="2020-05-03T05:33:06.948Z">
+<meta property="article:modified_time" content="2020-05-04T13:15:37.864Z">
 <meta property="article:author" content="Provence">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://blog.provence36.cn/2020/04/23/%E5%85%B6%E4%BB%96%E9%9D%A2%E8%AF%95%E9%A2%98/%E7%BC%96%E8%AF%91%E8%BF%87%E7%A8%8B.png">
 
 
 
@@ -355,7 +357,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  799 字
+                  1.4k 字
                 </span>
               
 
@@ -371,7 +373,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  2 分钟
+                  4 分钟
                 </span>
               
             </div>
@@ -416,7 +418,35 @@
 </ul>
 <p>适用场景：</p>
 <p>适用于需求确定，无大的需求变更，工作能够采用线性的方式完成的软件。</p>
-<h4 id="增量模型"><a href="#增量模型" class="headerlink" title="增量模型"></a>增量模型</h4><h4 id="喷泉模型"><a href="#喷泉模型" class="headerlink" title="喷泉模型"></a>喷泉模型</h4><h4 id="编译的过程分为哪些阶段"><a href="#编译的过程分为哪些阶段" class="headerlink" title="编译的过程分为哪些阶段"></a>编译的过程分为哪些阶段</h4>
+<h4 id="增量模型"><a href="#增量模型" class="headerlink" title="增量模型"></a>增量模型</h4><p>在整体上按照瀑布模型的流程实施项目开发，以方便对项目的管理；但在软件的实际开发中，则将软件系统按功能分解为许多增减构件，并以构件为单位逐个地创建与交付，直到全部增量构件创建完成，并都被集成到系统之中交付用户使用。</p>
+<p>特点：</p>
+<ul>
+<li>当使用增量模型时，第一个增量往往是核心的产品；</li>
+<li>客户对每个增量的使用和评估都作为下一个增量发布的新特性和功能；</li>
+</ul>
+<p>优点：</p>
+<ul>
+<li>第一个可交付版本所需要的成本和时间很少；</li>
+<li>开发由增量表示的小系统所承担的风险不大；</li>
+<li>由于很快发布了第一个版本，因此可以减少用户需求的变更；</li>
+<li>运行增量投资，即在项目开始时，可以仅对一个或两个增量投资；</li>
+</ul>
+<p>缺点：</p>
+<ul>
+<li><p>适用场景：</p>
+</li>
+</ul>
+<p>项目在既定的商业要求期限之前不可能找到足够的开发人员的情况。</p>
+<h4 id="喷泉模型"><a href="#喷泉模型" class="headerlink" title="喷泉模型"></a>喷泉模型</h4><p>优点：</p>
+<ul>
+<li>喷泉模型的各个阶段没有明显的界线，开发人员可以同步进行。其优点是可以提高如阿健项目的开发效率。节省开发时间。</li>
+</ul>
+<h4 id="编译过程分为哪些阶段"><a href="#编译过程分为哪些阶段" class="headerlink" title="编译过程分为哪些阶段"></a>编译过程分为哪些阶段</h4><p>第一阶段：词法分析<br>输入源程序，对构成源程序的字符串进行扫描和分解，识别出一个个的单词</p>
+<p>第二阶段：语法分析<br>在词法分析的基础上，根据语言的语法规则，把单词符号串分解成各类语法单位（语法范畴），如“短语”、“句子”、“程序段”和“程序”等。</p>
+<p>第三阶段:词义分析与中间代码产生<br>对语法分析所识别出的各类语法范畴，分析其含义，并进行初步翻译（产生中间代码）。</p>
+<p>第四阶段：优化<br>优化的任务在于对前段产生的中间代码进行加工变换，以期在最后阶段能产生出更为高效（省时间和空间）的目标代码。</p>
+<p>第五阶段：目标代码生成<br>把中间代码（或经优化处理之后）变换成特定机器上的低级语言代码。</p>
+<img src="/2020/04/23/%E5%85%B6%E4%BB%96%E9%9D%A2%E8%AF%95%E9%A2%98/%E7%BC%96%E8%AF%91%E8%BF%87%E7%A8%8B.png" class="">
       
     </div>
     
@@ -603,7 +633,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#面向对象与面向过程的区别"><span class="nav-number">1.</span> <span class="nav-text">面向对象与面向过程的区别</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#软件生命周期是什么"><span class="nav-number">2.</span> <span class="nav-text">软件生命周期是什么</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#瀑布模型说一下"><span class="nav-number">3.</span> <span class="nav-text">瀑布模型说一下</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#增量模型"><span class="nav-number">4.</span> <span class="nav-text">增量模型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#喷泉模型"><span class="nav-number">5.</span> <span class="nav-text">喷泉模型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#编译的过程分为哪些阶段"><span class="nav-number">6.</span> <span class="nav-text">编译的过程分为哪些阶段</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#面向对象与面向过程的区别"><span class="nav-number">1.</span> <span class="nav-text">面向对象与面向过程的区别</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#软件生命周期是什么"><span class="nav-number">2.</span> <span class="nav-text">软件生命周期是什么</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#瀑布模型说一下"><span class="nav-number">3.</span> <span class="nav-text">瀑布模型说一下</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#增量模型"><span class="nav-number">4.</span> <span class="nav-text">增量模型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#喷泉模型"><span class="nav-number">5.</span> <span class="nav-text">喷泉模型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#编译过程分为哪些阶段"><span class="nav-number">6.</span> <span class="nav-text">编译过程分为哪些阶段</span></a></li></ol></div>
             
 
           </div>

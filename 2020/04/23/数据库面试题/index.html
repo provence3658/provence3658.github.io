@@ -87,9 +87,8 @@
 <meta property="og:description" content="什么是存储过程？有哪些优缺点？存储过程是一组为了完成特定功能的SQL 语句集，它存储在数据库中，一次编译后永久有效，用户可通过指定存储过程的名字并给定参数(需要时)来调用执行。 优点：  重复使用。存储过程可以重复使用，从而可以减少数据库开发人员的工作量。 提高性能。存储过程在创建的时候就进行了编译，将来使用的时候不用再重新编译。一般的SQL语句每执行一次就需要编译一次，所以使用存储过程提高了效率">
 <meta property="og:image" content="http://blog.provence36.cn/2020/04/23/%E6%95%B0%E6%8D%AE%E5%BA%93%E9%9D%A2%E8%AF%95%E9%A2%98/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E4%B8%89%E7%BA%A7%E6%A8%A1%E5%BC%8F.jpeg">
 <meta property="og:image" content="http://blog.provence36.cn/2020/04/23/%E6%95%B0%E6%8D%AE%E5%BA%93%E9%9D%A2%E8%AF%95%E9%A2%98/SQL%E7%9A%84%E6%89%A7%E8%A1%8C%E9%A1%BA%E5%BA%8F.png">
-<meta property="og:image" content="http://blog.provence36.cn/Users/provence/blog/source/_posts/%E6%95%B0%E6%8D%AE%E5%BA%93%E9%9D%A2%E8%AF%95%E9%A2%98/SQL%E7%9A%84%E6%89%A7%E8%A1%8C%E9%A1%BA%E5%BA%8F.png">
 <meta property="article:published_time" content="2020-04-23T13:50:42.000Z">
-<meta property="article:modified_time" content="2020-05-03T09:29:15.281Z">
+<meta property="article:modified_time" content="2020-05-04T13:16:14.110Z">
 <meta property="article:author" content="Provence">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://blog.provence36.cn/2020/04/23/%E6%95%B0%E6%8D%AE%E5%BA%93%E9%9D%A2%E8%AF%95%E9%A2%98/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E4%B8%89%E7%BA%A7%E6%A8%A1%E5%BC%8F.jpeg">
@@ -359,7 +358,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  4k 字
+                  4.8k 字
                 </span>
               
 
@@ -375,7 +374,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  14 分钟
+                  16 分钟
                 </span>
               
             </div>
@@ -501,8 +500,6 @@
 </ol>
 <h4 id="SQL的执行顺序是怎样的"><a href="#SQL的执行顺序是怎样的" class="headerlink" title="SQL的执行顺序是怎样的"></a>SQL的执行顺序是怎样的</h4><img src="/2020/04/23/%E6%95%B0%E6%8D%AE%E5%BA%93%E9%9D%A2%E8%AF%95%E9%A2%98/SQL%E7%9A%84%E6%89%A7%E8%A1%8C%E9%A1%BA%E5%BA%8F.png" class="">
 
-<img src="/Users/provence/blog/source/_posts/数据库面试题/SQL的执行顺序.png" style="zoom:50%;" />
-
 <h5 id="FROM-连接"><a href="#FROM-连接" class="headerlink" title="FROM 连接"></a>FROM 连接</h5><p>首先，对 SELECT 语句执行查询时，对<code>FROM</code> 关键字两边的表执行连接，会形成<code>笛卡尔积</code>，这时候会产生一个<code>虚表VT1(virtual table)</code></p>
 <h5 id="ON-过滤"><a href="#ON-过滤" class="headerlink" title="ON 过滤"></a>ON 过滤</h5><p>然后对 FROM 连接的结果进行 ON 筛选，创建 VT2，把符合记录的条件存在 VT2 中。</p>
 <h5 id="JOIN-连接"><a href="#JOIN-连接" class="headerlink" title="JOIN 连接"></a>JOIN 连接</h5><p>第三步，如果是 <code>OUTER JOIN(left join、right join)</code> ，那么这一步就将添加外部行，如果是 left join 就把 ON 过滤条件的左表添加进来，如果是 right join ，就把右表添加进来，从而生成新的虚拟表 VT3。</p>
@@ -557,7 +554,56 @@
 <p>脏读：读到了没有提交的数据。</p>
 <p>如：老板更新工资表，把你的工资设为1000，但还没有提交，我去查工资的时候，读到是1000，然后老板把我的工资改成了800，并提交了。之后，我再次查工资的时候发现变成了800。</p>
 <p>若老板更新工资表先加排他锁，我查工资先加共享锁，那老板工资更新后没提交，我是不能读取其中的数据的，只有提交了800后，我才能查到我的工资是800。</p>
-<h4 id="B-S和C-S的区别"><a href="#B-S和C-S的区别" class="headerlink" title="B/S和C/S的区别"></a>B/S和C/S的区别</h4>
+<h4 id="B-S和C-S的区别"><a href="#B-S和C-S的区别" class="headerlink" title="B/S和C/S的区别"></a>B/S和C/S的区别</h4><h4 id="数据库并发机制怎么实现"><a href="#数据库并发机制怎么实现" class="headerlink" title="数据库并发机制怎么实现"></a>数据库并发机制怎么实现</h4><p>事务并发带来的问题有修改丢失、脏读、不可重复读、幻读。</p>
+<ul>
+<li><p>修改丢失：两个事务读入同一数据并修改，后提交的结果破坏前提交的结果，导致前提交的修改被丢失</p>
+</li>
+<li><p>脏读：事务读取了另一个事务未提交的数据</p>
+</li>
+<li><p>不可重复读：同一事务中对同一个数据项多次读取的结果互不相同，数据的更新带来的问题</p>
+</li>
+<li><p>幻读：数据记录的插入/删除问题，比如同一事务中对符合同一条件的数据记录的多次查询的结果互不相同</p>
+</li>
+</ul>
+<p>数据库设置了事务隔离级别，有 读未提交、读已提交、可重复读、串行化。如”读已提交“这一事务隔离级别，要求事务在修改数据之前必须对其加排他锁，直到事务结束才释放；在读取数据之前必须对其加共享锁，读完即可释放。解决了修改丢失、脏读问题。</p>
+<p>隔离级别越高，事务并发就越安全，但执行效率也就越低。所以，我们常常结合事务隔离级别和其它并发机制来保证事务的并发，以此来兼顾事务并发的效率与安全性。如，乐观锁和悲观锁是并发控制主要采用的技术手段。</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>乐观锁</th>
+<th>悲观锁</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>思想</td>
+<td>假设不会发生并发冲突，只在提交操作时检查是否违反数据完整性</td>
+<td>假设会发生并发冲突，会屏蔽一切可能违反数据完整性的操作</td>
+</tr>
+<tr>
+<td>实现</td>
+<td>通过记录数据版本实现的</td>
+<td>利用数据库本身提供的锁机制来实现的</td>
+</tr>
+<tr>
+<td>应用场景</td>
+<td>应用于并发可能性并不太大、数据竞争不激烈的环境中</td>
+<td>用于数据争用激烈的环境或者发生并发冲突时使用锁保护数据的成本要低于回滚事务的成本的环境中</td>
+</tr>
+</tbody></table>
+<h4 id="数据库的主键和外键"><a href="#数据库的主键和外键" class="headerlink" title="数据库的主键和外键"></a>数据库的主键和外键</h4><p>表的主键可以唯一标识一条记录，不能有重复的，不允许为空</p>
+<p>表的外键是另一表的主键，外键可以有重复的，可以是空值</p>
+<p>比如：</p>
+<ul>
+<li><p>学生表(学号，姓名，性别，班级)<br>其中每个学生的学号是唯一的，学号就是一个主键</p>
+</li>
+<li><p>课程表(课程编号，课程名，学分)<br>其中课程编号是唯一的，课程编号就是一个主键</p>
+</li>
+<li><p>成绩表(学号，课程号，成绩)<br>成绩表中单一一个属性无法唯一标识一条记录，学号和课程号的组合才可以唯一标识一条记录，所以学号和课程号的属性组是一个主键</p>
+<p>成绩表中的学号不是成绩表的主键，但它和学生表中的学号相对应，并且学生表中的学号是学生表的主键，则称成绩表中的学号是学生表的外键，同理成绩表中的课程号是课程表的外键</p>
+</li>
+</ul>
+
       
     </div>
     
@@ -748,7 +794,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#什么是存储过程？有哪些优缺点？"><span class="nav-number">1.</span> <span class="nav-text">什么是存储过程？有哪些优缺点？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#索引是什么？有什么作用以及优缺点？"><span class="nav-number">2.</span> <span class="nav-text">索引是什么？有什么作用以及优缺点？</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#MySQL-常见索引类型"><span class="nav-number">2.1.</span> <span class="nav-text">MySQL 常见索引类型</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#作用"><span class="nav-number">2.2.</span> <span class="nav-text">作用</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#缺点"><span class="nav-number">2.3.</span> <span class="nav-text">缺点</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#什么是事务？事务的四大特性？"><span class="nav-number">3.</span> <span class="nav-text">什么是事务？事务的四大特性？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#SQL-Server中事务有哪三种语句"><span class="nav-number">4.</span> <span class="nav-text">SQL Server中事务有哪三种语句</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#数据库隔离性的四个级别？"><span class="nav-number">5.</span> <span class="nav-text">数据库隔离性的四个级别？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#什么是视图？视图的作用以及视图的使用场景有哪些？"><span class="nav-number">6.</span> <span class="nav-text">什么是视图？视图的作用以及视图的使用场景有哪些？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#说一说三个范式和BCNF范式"><span class="nav-number">7.</span> <span class="nav-text">说一说三个范式和BCNF范式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#数据库的三级模式"><span class="nav-number">8.</span> <span class="nav-text">数据库的三级模式</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#模式（schema）"><span class="nav-number">8.1.</span> <span class="nav-text">模式（schema）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#外模式（external-schema）"><span class="nav-number">8.2.</span> <span class="nav-text">外模式（external schema）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#内模式（internal-schema）"><span class="nav-number">8.3.</span> <span class="nav-text">内模式（internal schema）</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#数据库系统的存取方法"><span class="nav-number">9.</span> <span class="nav-text">数据库系统的存取方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#SQL的执行顺序是怎样的"><span class="nav-number">10.</span> <span class="nav-text">SQL的执行顺序是怎样的</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#FROM-连接"><span class="nav-number">10.1.</span> <span class="nav-text">FROM 连接</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#ON-过滤"><span class="nav-number">10.2.</span> <span class="nav-text">ON 过滤</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#JOIN-连接"><span class="nav-number">10.3.</span> <span class="nav-text">JOIN 连接</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#WHERE-过滤"><span class="nav-number">10.4.</span> <span class="nav-text">WHERE 过滤</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#GROUP-BY"><span class="nav-number">10.5.</span> <span class="nav-text">GROUP BY</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#HAVING"><span class="nav-number">10.6.</span> <span class="nav-text">HAVING</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#SELECT"><span class="nav-number">10.7.</span> <span class="nav-text">SELECT</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#DISTINCT"><span class="nav-number">10.8.</span> <span class="nav-text">DISTINCT</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#ORDER-BY"><span class="nav-number">10.9.</span> <span class="nav-text">ORDER BY</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#varchar-和-char-的区别和使用场景"><span class="nav-number">11.</span> <span class="nav-text">varchar 和 char 的区别和使用场景</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#什么是-内连接、外连接、交叉连接、笛卡尔积"><span class="nav-number">12.</span> <span class="nav-text">什么是 内连接、外连接、交叉连接、笛卡尔积</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#外连接-OUTER-JOIN"><span class="nav-number">12.1.</span> <span class="nav-text">外连接(OUTER JOIN)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#内连接-INNER-JOIN"><span class="nav-number">12.2.</span> <span class="nav-text">内连接(INNER JOIN)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#笛卡尔积-Cartesian-product"><span class="nav-number">12.3.</span> <span class="nav-text">笛卡尔积(Cartesian product)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#交叉连接"><span class="nav-number">12.4.</span> <span class="nav-text">交叉连接</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#数据库索引为什么采用B树-B-树结构"><span class="nav-number">13.</span> <span class="nav-text">数据库索引为什么采用B树&#x2F;B+树结构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#数据库有哪些锁，各自的作用，举个例子说明一下"><span class="nav-number">14.</span> <span class="nav-text">数据库有哪些锁，各自的作用，举个例子说明一下</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#B-S和C-S的区别"><span class="nav-number">15.</span> <span class="nav-text">B&#x2F;S和C&#x2F;S的区别</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#什么是存储过程？有哪些优缺点？"><span class="nav-number">1.</span> <span class="nav-text">什么是存储过程？有哪些优缺点？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#索引是什么？有什么作用以及优缺点？"><span class="nav-number">2.</span> <span class="nav-text">索引是什么？有什么作用以及优缺点？</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#MySQL-常见索引类型"><span class="nav-number">2.1.</span> <span class="nav-text">MySQL 常见索引类型</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#作用"><span class="nav-number">2.2.</span> <span class="nav-text">作用</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#缺点"><span class="nav-number">2.3.</span> <span class="nav-text">缺点</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#什么是事务？事务的四大特性？"><span class="nav-number">3.</span> <span class="nav-text">什么是事务？事务的四大特性？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#SQL-Server中事务有哪三种语句"><span class="nav-number">4.</span> <span class="nav-text">SQL Server中事务有哪三种语句</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#数据库隔离性的四个级别？"><span class="nav-number">5.</span> <span class="nav-text">数据库隔离性的四个级别？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#什么是视图？视图的作用以及视图的使用场景有哪些？"><span class="nav-number">6.</span> <span class="nav-text">什么是视图？视图的作用以及视图的使用场景有哪些？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#说一说三个范式和BCNF范式"><span class="nav-number">7.</span> <span class="nav-text">说一说三个范式和BCNF范式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#数据库的三级模式"><span class="nav-number">8.</span> <span class="nav-text">数据库的三级模式</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#模式（schema）"><span class="nav-number">8.1.</span> <span class="nav-text">模式（schema）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#外模式（external-schema）"><span class="nav-number">8.2.</span> <span class="nav-text">外模式（external schema）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#内模式（internal-schema）"><span class="nav-number">8.3.</span> <span class="nav-text">内模式（internal schema）</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#数据库系统的存取方法"><span class="nav-number">9.</span> <span class="nav-text">数据库系统的存取方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#SQL的执行顺序是怎样的"><span class="nav-number">10.</span> <span class="nav-text">SQL的执行顺序是怎样的</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#FROM-连接"><span class="nav-number">10.1.</span> <span class="nav-text">FROM 连接</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#ON-过滤"><span class="nav-number">10.2.</span> <span class="nav-text">ON 过滤</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#JOIN-连接"><span class="nav-number">10.3.</span> <span class="nav-text">JOIN 连接</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#WHERE-过滤"><span class="nav-number">10.4.</span> <span class="nav-text">WHERE 过滤</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#GROUP-BY"><span class="nav-number">10.5.</span> <span class="nav-text">GROUP BY</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#HAVING"><span class="nav-number">10.6.</span> <span class="nav-text">HAVING</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#SELECT"><span class="nav-number">10.7.</span> <span class="nav-text">SELECT</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#DISTINCT"><span class="nav-number">10.8.</span> <span class="nav-text">DISTINCT</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#ORDER-BY"><span class="nav-number">10.9.</span> <span class="nav-text">ORDER BY</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#varchar-和-char-的区别和使用场景"><span class="nav-number">11.</span> <span class="nav-text">varchar 和 char 的区别和使用场景</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#什么是-内连接、外连接、交叉连接、笛卡尔积"><span class="nav-number">12.</span> <span class="nav-text">什么是 内连接、外连接、交叉连接、笛卡尔积</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#外连接-OUTER-JOIN"><span class="nav-number">12.1.</span> <span class="nav-text">外连接(OUTER JOIN)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#内连接-INNER-JOIN"><span class="nav-number">12.2.</span> <span class="nav-text">内连接(INNER JOIN)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#笛卡尔积-Cartesian-product"><span class="nav-number">12.3.</span> <span class="nav-text">笛卡尔积(Cartesian product)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#交叉连接"><span class="nav-number">12.4.</span> <span class="nav-text">交叉连接</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#数据库索引为什么采用B树-B-树结构"><span class="nav-number">13.</span> <span class="nav-text">数据库索引为什么采用B树&#x2F;B+树结构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#数据库有哪些锁，各自的作用，举个例子说明一下"><span class="nav-number">14.</span> <span class="nav-text">数据库有哪些锁，各自的作用，举个例子说明一下</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#B-S和C-S的区别"><span class="nav-number">15.</span> <span class="nav-text">B&#x2F;S和C&#x2F;S的区别</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#数据库并发机制怎么实现"><span class="nav-number">16.</span> <span class="nav-text">数据库并发机制怎么实现</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#数据库的主键和外键"><span class="nav-number">17.</span> <span class="nav-text">数据库的主键和外键</span></a></li></ol></div>
             
 
           </div>
