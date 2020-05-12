@@ -91,7 +91,7 @@
 <meta property="og:image" content="http://blog.provence36.cn/2020/04/23/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E9%9D%A2%E8%AF%95%E9%A2%98/%E5%BF%AB%E6%81%A2%E5%A4%8D.jpg">
 <meta property="og:image" content="http://blog.provence36.cn/2020/04/23/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E9%9D%A2%E8%AF%95%E9%A2%98/DNS%E8%A7%A3%E6%9E%90.png">
 <meta property="article:published_time" content="2020-04-23T13:49:35.000Z">
-<meta property="article:modified_time" content="2020-05-04T12:49:53.889Z">
+<meta property="article:modified_time" content="2020-05-09T09:56:53.013Z">
 <meta property="article:author" content="Provence">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://blog.provence36.cn/2020/04/23/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E9%9D%A2%E8%AF%95%E9%A2%98/%E4%B8%89%E6%AC%A1%E6%8F%A1%E6%89%8B%E5%9B%9B%E6%AC%A1%E6%8C%A5%E6%89%8B.jpg">
@@ -361,7 +361,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  7.1k 字
+                  7.2k 字
                 </span>
               
 
@@ -377,7 +377,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  24 分钟
+                  25 分钟
                 </span>
               
             </div>
@@ -481,37 +481,54 @@
 <h5 id="四次挥手"><a href="#四次挥手" class="headerlink" title="四次挥手"></a>四次挥手</h5><p>我要和你断开链接；好的，断吧。我也要和你断开链接；好的，断吧</p>
 <ol>
 <li>第一次挥手：客户端发送一个<code>FIN</code>报文段，设置<code>Sequence Number</code>=u（前面传送过的数据的最后一个字节的序号加1），<strong>用来关闭客户端到服务器的数据传送</strong>；此时，客户端进入<code>FIN_WAIT_1</code>（终止等待1）状态。</li>
-<li>第二次挥手：服务器收到了客户端发送的<code>FIN</code>报文段，向客户端回一个<code>ACK</code>报文段，<code>Acknowledgment Number</code>为u+1，服务器进入<code>CLOSE_WAIT</code>（等待关闭）状态。此时TCP连接处于半关闭状态，即客户端已经没有要发送的数据了，但服务端若发送数据，则客户端仍要接收。</li>
+<li>第二次挥手：服务器收到了客户端发送的<code>FIN</code>报文段，向客户端回一个<code>ACK</code>报文段，<code>Acknowledgment Number</code>为u+1，服务器进入<code>CLOSE_WAIT</code>（等待关闭）状态。此时TCP连接处于<strong>半关闭状态</strong>，即客户端已经没有要发送的数据了，但服务端若发送数据，则客户端仍要接收。</li>
 <li>第三次挥手：服务器发送一个<code>FIN</code>报文段，设置<code>Sequence Number</code>=w，<strong>用来关闭服务器到客户端的数据传送</strong>；此时，服务器进入<code>LAST_ACK</code>（最后确认）状态。</li>
 <li>第四次挥手：客户端收到服务器发送的<code>FIN</code>报文段，向服务器回一个<code>ACK</code>报文段，<code>Acknowledgment Number</code>为w+1，客户端进入<code>TIME_WAIT</code>状态。服务器进入<code>CLOSED</code>状态，完成四次挥手。</li>
 </ol>
 <h4 id="为什么TCP链接需要三次握手，两次不可以么，为什么？"><a href="#为什么TCP链接需要三次握手，两次不可以么，为什么？" class="headerlink" title="为什么TCP链接需要三次握手，两次不可以么，为什么？"></a>为什么TCP链接需要三次握手，两次不可以么，为什么？</h4><p>采用三次握手是<strong>为了防止失效的连接请求报文段突然又传送到主机B，因而产生错误</strong>。</p>
 <p>失效的连接请求报文段是指：主机A发出的连接请求没有收到主机B的确认，于是经过一段时间后，主机A又重新向主机B发送连接请求，且建立成功，完成数据传输。</p>
 <p>考虑一种特殊情况，主机A第一次发送的连接请求并没有丢失，而是因为网络节点导致延迟达到主机B，主机B以为是主机A又发起的新连接，于是主机B同意连接，并向主机A发回确认，但是此时主机A根本不会理会，主机B就一直在等待主机A发送数据，导致主机B的资源浪费。</p>
-<h4 id="TCP协议如何来保证传输的可靠性"><a href="#TCP协议如何来保证传输的可靠性" class="headerlink" title="TCP协议如何来保证传输的可靠性"></a>TCP协议如何来保证传输的可靠性</h4><p>对于可靠性，TCP通过以下方式进行保证：</p>
+<h4 id="TCP的可靠传输"><a href="#TCP的可靠传输" class="headerlink" title="TCP的可靠传输"></a>TCP的可靠传输</h4><p>对于可靠性，TCP通过以下方式进行保证：</p>
 <ul>
-<li>数据包校验：目的是检测数据在传输过程中的任何变化，若校验出包有错，则丢弃报文段并且不给出响应，这时TCP发送数据端超时后会重发数据；</li>
-<li>对失序数据包重排序：既然TCP报文段作为IP数据报来传输，而IP数据报的到达可能会失序，因此TCP报文段的到达也可能会失序。TCP将对失序数据进行重新排序，然后才交给应用层；</li>
-<li>丢弃重复数据：对于重复数据，能够丢弃重复数据；</li>
-<li>应答机制：当TCP收到发自TCP连接另一端的数据，它将发送一个确认。这个确认不是立即发送，通常将推迟几分之一秒；</li>
-<li>超时重发：当TCP发出一个段后，它启动一个定时器，等待目的端确认收到这个报文段。如果不能及时收到一个确认，将重发这个报文段；</li>
-<li>流量控制：TCP连接的每一方都有固定大小的缓冲空间。TCP的接收端只允许另一端发送接收端缓冲区所能接纳的数据，这可以防止较快主机致使较慢主机的缓冲区溢出，这就是流量控制。TCP使用的流量控制协议是可变大小的滑动窗口协议。</li>
+<li><p>校验</p>
+<p>TCP首部校验和计算三部分：TCP首部+TCP数据+TCP伪首部。</p>
+<p>若校验出包有错，则丢弃报文段并且不给出响应，这时TCP发送数据端超时后会重发数据。</p>
+</li>
+<li><p>序号</p>
+<p>TCP连接中传送的数据流中的每一个字节都编上一个序号，保证数据能有序地提交给应用层。</p>
+</li>
+<li><p>确认</p>
+<p>TCP首部的确认号是期望收到对方的下一个报文段的数据的第一个字节的序号。TCP默认使用累计确认</p>
+</li>
+<li><p>重传</p>
+<p>超时和冗余ACK会导致TCP对报文段进行重传。</p>
+<p>当TCP发出一个段后，它启动一个定时器，等待目的端确认收到这个报文段。如果不能及时收到一个确认，将重发这个报文段。</p>
+<p>TCP规定每当比期望序号大的失序报文段到达时，发送一个冗余ACK，指明下一个期待字节的序号。当发送方收到对同一个报文段的3个冗余ACK时，就可以认为跟在这个被确认报文段之后的报文段已经丢失。</p>
+</li>
 </ul>
-<h4 id="TCP的拥塞处理"><a href="#TCP的拥塞处理" class="headerlink" title="TCP的拥塞处理"></a>TCP的拥塞处理</h4><p>计算机网络中的带宽、交换结点中的缓存及处理机等都是网络的资源。在某段时间，若对网络中某一资源的需求超过了该资源所能提供的可用部分，网络的性能就会变坏，这种情况就叫做拥塞。<strong>拥塞控制就是 防止过多的数据注入网络中，这样可以使网络中的路由器或链路不致过载。</strong>注意，拥塞控制和流量控制不同，前者是一个全局性的过程，而后者指点对点通信量的控制。拥塞控制的方法主要有以下四种：</p>
+<h4 id="TCP的流量控制"><a href="#TCP的流量控制" class="headerlink" title="TCP的流量控制"></a>TCP的流量控制</h4><p>TCP的流量控制是利用滑动窗口机制实现的，接收方在返回的数据中会包含自己的接收窗口的大小，以控制发送方的数据发送。</p>
+<p>与数据链路层的流量控制的区别：</p>
+<ul>
+<li><p>传输层定义了端到端用户之间的流量控制，数据链路层定义了两个中间的相邻结点的流量控制。</p>
+</li>
+<li><p>数据链路层的滑动窗口协议的窗口大小不能动态变化，传输层可以动态变化。</p>
+</li>
+</ul>
+<h4 id="TCP的拥塞处理"><a href="#TCP的拥塞处理" class="headerlink" title="TCP的拥塞处理"></a>TCP的拥塞处理</h4><p><strong>拥塞控制就是防止过多的数据注入网络中，这样可以使网络中的路由器或链路不致过载。</strong>拥塞控制和流量控制不同，前者是一个全局性的过程，而后者指点对点通信量的控制。拥塞控制的方法主要有以下四种：</p>
 <p>1). 慢启动：不要一开始就发送大量的数据，先探测一下网络的拥塞程度，也就是说由小到大逐渐增加拥塞窗口的大小;</p>
-<p>2). 拥塞避免：拥塞避免算法让拥塞窗口缓慢增长，即每经过一个往返时间RTT就把发送方的拥塞窗口cwnd加1，而不是加倍，这样拥塞窗口按线性规律缓慢增长。</p>
+<p>2). 拥塞避免：拥塞避免算法让拥塞窗口缓慢增长，即每经过一个往返时间RTT就把发送方的拥塞窗口cwnd加1，这样拥塞窗口按线性规律缓慢增长。</p>
 <img src="/2020/04/23/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E9%9D%A2%E8%AF%95%E9%A2%98/%E6%85%A2%E5%BC%80%E5%A7%8B%E4%B8%8E%E6%8B%A5%E5%A1%9E%E9%81%BF%E5%85%8D.png" class="">
 
-<p>3). 快重传：快重传要求接收方在收到一个 失序的报文段 后就立即发出 重复确认（为的是使发送方及早知道有报文段没有到达对方）而不要等到自己发送数据时捎带确认。快重传算法规定，发送方只要一连收到三个重复确认就应当立即重传对方尚未收到的报文段，而不必继续等待设置的重传计时器时间到期。</p>
+<p>3). 快重传：快重传要求接收方在收到一个 失序的报文段 后就立即发出 重复确认（为的是使发送方及早知道有报文段没有到达对方）。快重传算法规定，发送方只要一连收到三个重复确认就应当立即重传对方尚未收到的报文段，而不必继续等待设置的重传计时器时间到期。</p>
 <img src="/2020/04/23/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E9%9D%A2%E8%AF%95%E9%A2%98/%E5%BF%AB%E9%87%8D%E4%BC%A0.jpg" class="">
 
-<p>4). 快恢复：快重传配合使用的还有快恢复算法，当发送方连续收到三个重复确认时，就执行“乘法减小”算法，把ssthresh门限减半，但是接下去并不执行慢开始算法：因为如果网络出现拥塞的话就不会收到好几个重复的确认，所以发送方现在认为网络可能没有出现拥塞。所以此时不执行慢开始算法，而是将cwnd设置为ssthresh的大小，然后执行拥塞避免算法。</p>
+<p>4). 快恢复：当发送方连续收到三个重复确认时，就执行“乘法减小”算法，把慢开始门限ssthresh设置为出现拥塞时发送方cwnd的一半，然后开始执行拥塞避免算法，使拥塞窗口缓慢地线性增大。</p>
 <img src="/2020/04/23/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E9%9D%A2%E8%AF%95%E9%A2%98/%E5%BF%AB%E6%81%A2%E5%A4%8D.jpg" class="">
 
 <h4 id="简单解释一些ARP协议的工作过程"><a href="#简单解释一些ARP协议的工作过程" class="headerlink" title="简单解释一些ARP协议的工作过程"></a>简单解释一些ARP协议的工作过程</h4><p>ARP协议是为了从网络层使用的IP地址解析出在数据链路层使用的硬件地址。</p>
 <ol>
 <li>每个主机都会在自己的ARP缓冲区建立一个ARP列表，以表示IP地址和MAC地址之间的对应关系。</li>
-<li>当源主机要发送数据时，首先检查ARP列表中是否有对应IP地址的目的主机的MAC地址，如果有，则直接发送数据，如果没有，就向本网段的所有主机发送ARP请求分组，发送的内容有：源主机的IP地址，源主机的MAC地址，目的主机的IP地址。</li>
+<li>当源主机要发送数据时，首先检查ARP列表中是否有对应IP地址的目的主机的MAC地址，如果有，则直接发送数据，如果没有，就向本网段的所有主机发送ARP请求分组，发送的内容有：源主机的IP地址和MAC地址，目的主机的IP地址。</li>
 <li>当本局域网的所有主机都收到了该ARP请求分组后，先检查ARP请求分组中的目的主机的IP地址是否和自己的IP地址相同，如果不同，则忽略该ARP请求分组，如果相同，则把ARP请求分组中的源主机的IP地址和MAC地址写入ARP列表中，如果已经存在，则覆盖，然后以单播的方式向源主机发送ARP响应分组，内容是自己的IP地址和MAC地址。</li>
 <li>源主机收到ARP响应分组后，将目的主机的IP地址和MAC地址写入ARP列表，就可以向目的主机发送数据了。</li>
 </ol>
@@ -852,7 +869,7 @@
 <h5 id="OSPF"><a href="#OSPF" class="headerlink" title="OSPF"></a>OSPF</h5><p>特点：</p>
 <ol>
 <li>向本自治系统中所有路由器发送信息</li>
-<li>发送的信息就是与本路由器相邻的所有路由器的链路状态（链路状态就是本路由器和哪些路由器相邻以及该链路的度量）</li>
+<li>发送的信息就是与本路由器相邻的所有路由器的链路状态（链路状态就是本路由器和哪些路由器相邻以及该链路的度量，时延距离带宽费用等）</li>
 <li>只有当链路状态发生变化时，路由器才用泛洪法向所有路由器发送此信息，并且更新过程收敛快。</li>
 <li>是网络层协议，它不使用UDP或TCP而是直接IP数据报传送</li>
 </ol>
@@ -863,6 +880,58 @@
 <li>BGP支持CIDR</li>
 <li>和本节点相邻的路由器发送信息，发送的信息时本节点的BGP路由表</li>
 </ol>
+<h4 id="7层协议各层的作用"><a href="#7层协议各层的作用" class="headerlink" title="7层协议各层的作用"></a>7层协议各层的作用</h4><table>
+<thead>
+<tr>
+<th></th>
+<th>传输单位</th>
+<th>任务</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>物理层</td>
+<td>比特</td>
+<td>比特流的透明传输</td>
+<td>在物理媒体上为数据端设备透明地传输比特流</td>
+</tr>
+<tr>
+<td>数据链路层</td>
+<td>帧</td>
+<td>将网络层传来的IP数据报组装成帧</td>
+<td>成帧、差错控制、流量控制和传输管理</td>
+</tr>
+<tr>
+<td>网络层</td>
+<td>数据报</td>
+<td>把分组从源端传到目的端，为分组交换网上的不同主机提供通信服务</td>
+<td>路由选择、流量控制、差错控制</td>
+</tr>
+<tr>
+<td>传输层</td>
+<td>报文段（TCP）或用户数据报（UDP）</td>
+<td>两个进程间的通信</td>
+<td></td>
+</tr>
+<tr>
+<td>会话层</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>表示层</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>应用层</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
 
       
     </div>
@@ -1054,7 +1123,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#请简述TCP-UDP的区别"><span class="nav-number">1.</span> <span class="nav-text">请简述TCP&#x2F;UDP的区别</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#为什么实时视频电话等实时应用要用UDP？"><span class="nav-number">2.</span> <span class="nav-text">为什么实时视频电话等实时应用要用UDP？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#请简单说一下你了解的端口及对应的服务"><span class="nav-number">3.</span> <span class="nav-text">请简单说一下你了解的端口及对应的服务</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#说一说TCP的三次握手和四次挥手"><span class="nav-number">4.</span> <span class="nav-text">说一说TCP的三次握手和四次挥手</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#三次握手"><span class="nav-number">4.1.</span> <span class="nav-text">三次握手</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#四次挥手"><span class="nav-number">4.2.</span> <span class="nav-text">四次挥手</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#为什么TCP链接需要三次握手，两次不可以么，为什么？"><span class="nav-number">5.</span> <span class="nav-text">为什么TCP链接需要三次握手，两次不可以么，为什么？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#TCP协议如何来保证传输的可靠性"><span class="nav-number">6.</span> <span class="nav-text">TCP协议如何来保证传输的可靠性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#TCP的拥塞处理"><span class="nav-number">7.</span> <span class="nav-text">TCP的拥塞处理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#简单解释一些ARP协议的工作过程"><span class="nav-number">8.</span> <span class="nav-text">简单解释一些ARP协议的工作过程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#DNS域名系统，简单描述其工作原理"><span class="nav-number">9.</span> <span class="nav-text">DNS域名系统，简单描述其工作原理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#OSI，TCP-IP，五层协议的体系结构，以及各层协议"><span class="nav-number">10.</span> <span class="nav-text">OSI，TCP&#x2F;IP，五层协议的体系结构，以及各层协议</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#应用层（application-layer）"><span class="nav-number">10.1.</span> <span class="nav-text">应用层（application layer）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#运输层（transport-layer）"><span class="nav-number">10.2.</span> <span class="nav-text">运输层（transport layer）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#网络层（network-layer）"><span class="nav-number">10.3.</span> <span class="nav-text">网络层（network layer）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#数据链路层（data-link-layer）"><span class="nav-number">10.4.</span> <span class="nav-text">数据链路层（data link layer）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#物理层（physical-layer）"><span class="nav-number">10.5.</span> <span class="nav-text">物理层（physical layer）</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#IP地址分为哪几类？简单说一下各个分类"><span class="nav-number">11.</span> <span class="nav-text">IP地址分为哪几类？简单说一下各个分类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#有哪些私有地址和保留地址？"><span class="nav-number">12.</span> <span class="nav-text">有哪些私有地址和保留地址？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#在浏览器中输入网址之后执行会发生什么？"><span class="nav-number">13.</span> <span class="nav-text">在浏览器中输入网址之后执行会发生什么？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#路由协议有哪些"><span class="nav-number">14.</span> <span class="nav-text">路由协议有哪些</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#路由器有什么功能，怎么实现该功能"><span class="nav-number">15.</span> <span class="nav-text">路由器有什么功能，怎么实现该功能</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#端到端通信和点到点通信有什么区别"><span class="nav-number">16.</span> <span class="nav-text">端到端通信和点到点通信有什么区别</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#TCP-IP-有几层-还有就是为什么没有物理层"><span class="nav-number">17.</span> <span class="nav-text">TCP&#x2F;IP 有几层 还有就是为什么没有物理层?</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#计算机网络里面哪里有流量控制"><span class="nav-number">18.</span> <span class="nav-text">计算机网络里面哪里有流量控制</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#各层有什么设备？"><span class="nav-number">19.</span> <span class="nav-text">各层有什么设备？</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#物理层"><span class="nav-number">19.1.</span> <span class="nav-text">物理层</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#数据链路层"><span class="nav-number">19.2.</span> <span class="nav-text">数据链路层</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#网络层"><span class="nav-number">19.3.</span> <span class="nav-text">网络层</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#交换机、路由器、集线器三者的区别？"><span class="nav-number">20.</span> <span class="nav-text">交换机、路由器、集线器三者的区别？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#交换机能不能用在大型的网络中？"><span class="nav-number">21.</span> <span class="nav-text">交换机能不能用在大型的网络中？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#IP地址和MAC地址的区别"><span class="nav-number">22.</span> <span class="nav-text">IP地址和MAC地址的区别</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#路由选择协议RIP、OSPF、BGP"><span class="nav-number">23.</span> <span class="nav-text">路由选择协议RIP、OSPF、BGP</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#RIP"><span class="nav-number">23.1.</span> <span class="nav-text">RIP</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#OSPF"><span class="nav-number">23.2.</span> <span class="nav-text">OSPF</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#BGP"><span class="nav-number">23.3.</span> <span class="nav-text">BGP</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#请简述TCP-UDP的区别"><span class="nav-number">1.</span> <span class="nav-text">请简述TCP&#x2F;UDP的区别</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#为什么实时视频电话等实时应用要用UDP？"><span class="nav-number">2.</span> <span class="nav-text">为什么实时视频电话等实时应用要用UDP？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#请简单说一下你了解的端口及对应的服务"><span class="nav-number">3.</span> <span class="nav-text">请简单说一下你了解的端口及对应的服务</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#说一说TCP的三次握手和四次挥手"><span class="nav-number">4.</span> <span class="nav-text">说一说TCP的三次握手和四次挥手</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#三次握手"><span class="nav-number">4.1.</span> <span class="nav-text">三次握手</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#四次挥手"><span class="nav-number">4.2.</span> <span class="nav-text">四次挥手</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#为什么TCP链接需要三次握手，两次不可以么，为什么？"><span class="nav-number">5.</span> <span class="nav-text">为什么TCP链接需要三次握手，两次不可以么，为什么？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#TCP的可靠传输"><span class="nav-number">6.</span> <span class="nav-text">TCP的可靠传输</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#TCP的流量控制"><span class="nav-number">7.</span> <span class="nav-text">TCP的流量控制</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#TCP的拥塞处理"><span class="nav-number">8.</span> <span class="nav-text">TCP的拥塞处理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#简单解释一些ARP协议的工作过程"><span class="nav-number">9.</span> <span class="nav-text">简单解释一些ARP协议的工作过程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#DNS域名系统，简单描述其工作原理"><span class="nav-number">10.</span> <span class="nav-text">DNS域名系统，简单描述其工作原理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#OSI，TCP-IP，五层协议的体系结构，以及各层协议"><span class="nav-number">11.</span> <span class="nav-text">OSI，TCP&#x2F;IP，五层协议的体系结构，以及各层协议</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#应用层（application-layer）"><span class="nav-number">11.1.</span> <span class="nav-text">应用层（application layer）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#运输层（transport-layer）"><span class="nav-number">11.2.</span> <span class="nav-text">运输层（transport layer）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#网络层（network-layer）"><span class="nav-number">11.3.</span> <span class="nav-text">网络层（network layer）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#数据链路层（data-link-layer）"><span class="nav-number">11.4.</span> <span class="nav-text">数据链路层（data link layer）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#物理层（physical-layer）"><span class="nav-number">11.5.</span> <span class="nav-text">物理层（physical layer）</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#IP地址分为哪几类？简单说一下各个分类"><span class="nav-number">12.</span> <span class="nav-text">IP地址分为哪几类？简单说一下各个分类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#有哪些私有地址和保留地址？"><span class="nav-number">13.</span> <span class="nav-text">有哪些私有地址和保留地址？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#在浏览器中输入网址之后执行会发生什么？"><span class="nav-number">14.</span> <span class="nav-text">在浏览器中输入网址之后执行会发生什么？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#路由协议有哪些"><span class="nav-number">15.</span> <span class="nav-text">路由协议有哪些</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#路由器有什么功能，怎么实现该功能"><span class="nav-number">16.</span> <span class="nav-text">路由器有什么功能，怎么实现该功能</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#端到端通信和点到点通信有什么区别"><span class="nav-number">17.</span> <span class="nav-text">端到端通信和点到点通信有什么区别</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#TCP-IP-有几层-还有就是为什么没有物理层"><span class="nav-number">18.</span> <span class="nav-text">TCP&#x2F;IP 有几层 还有就是为什么没有物理层?</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#计算机网络里面哪里有流量控制"><span class="nav-number">19.</span> <span class="nav-text">计算机网络里面哪里有流量控制</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#各层有什么设备？"><span class="nav-number">20.</span> <span class="nav-text">各层有什么设备？</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#物理层"><span class="nav-number">20.1.</span> <span class="nav-text">物理层</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#数据链路层"><span class="nav-number">20.2.</span> <span class="nav-text">数据链路层</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#网络层"><span class="nav-number">20.3.</span> <span class="nav-text">网络层</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#交换机、路由器、集线器三者的区别？"><span class="nav-number">21.</span> <span class="nav-text">交换机、路由器、集线器三者的区别？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#交换机能不能用在大型的网络中？"><span class="nav-number">22.</span> <span class="nav-text">交换机能不能用在大型的网络中？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#IP地址和MAC地址的区别"><span class="nav-number">23.</span> <span class="nav-text">IP地址和MAC地址的区别</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#路由选择协议RIP、OSPF、BGP"><span class="nav-number">24.</span> <span class="nav-text">路由选择协议RIP、OSPF、BGP</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#RIP"><span class="nav-number">24.1.</span> <span class="nav-text">RIP</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#OSPF"><span class="nav-number">24.2.</span> <span class="nav-text">OSPF</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#BGP"><span class="nav-number">24.3.</span> <span class="nav-text">BGP</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7层协议各层的作用"><span class="nav-number">25.</span> <span class="nav-text">7层协议各层的作用</span></a></li></ol></div>
             
 
           </div>
